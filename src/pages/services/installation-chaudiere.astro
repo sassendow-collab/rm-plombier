@@ -1,0 +1,207 @@
+---
+import Base from '../../layouts/Base.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/#services' },
+  { name: 'Installation chaudière', url: '/services/installation-chaudiere/' },
+];
+
+const jsonLd = [
+  {
+    '@type': 'Service',
+    '@id': 'https://rm-plombier.fr/services/installation-chaudiere/#service',
+    name: 'Installation et remplacement de chaudière',
+    description: 'Installation et remplacement de chaudière gaz, condensation, pompe à chaleur. Artisan qualifié à Neyron. Devis gratuit.',
+    provider: { '@type': 'Plumber', '@id': 'https://rm-plombier.fr/#business' },
+    areaServed: [
+      { '@type': 'City', name: 'Neyron' },
+      { '@type': 'City', name: 'Miribel' },
+      { '@type': 'City', name: 'Rillieux-la-Pape' },
+      { '@type': 'City', name: 'Beynost' },
+      { '@type': 'City', name: 'Montluel' },
+      { '@type': 'City', name: 'Caluire-et-Cuire' },
+    ],
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: crumb.name,
+      item: `https://rm-plombier.fr${crumb.url}`,
+    })),
+  },
+];
+
+const prestations = [
+  'Visite technique et conseil personnalisé',
+  'Dépose de l\'ancienne chaudière (avec évacuation)',
+  'Fourniture et pose de la nouvelle chaudière',
+  'Raccordement hydraulique et gaz',
+  'Raccordement au conduit d\'évacuation des fumées',
+  'Mise en service et réglages',
+  'Certificat de conformité gaz',
+  'Contrat d\'entretien annuel (en option)',
+  'Aide aux démarches pour les primes énergie',
+];
+
+const etapes = [
+  { title: 'Visite technique gratuite', desc: 'Nous examinons votre installation actuelle, évaluons vos besoins et mesurons les contraintes techniques du logement.' },
+  { title: 'Proposition et devis', desc: 'Nous vous présentons les solutions adaptées avec un devis détaillé incluant fourniture, pose et aides déductibles.' },
+  { title: 'Commande et planification', desc: 'Après validation, nous commandons l\'équipement et fixons la date d\'installation (généralement sous 1 à 2 semaines).' },
+  { title: 'Installation', desc: 'Dépose de l\'ancien équipement, pose de la nouvelle chaudière, raccordements. Durée moyenne : une journée.' },
+  { title: 'Mise en service et formation', desc: 'Nous mettons en route la chaudière, optimisons les réglages et vous expliquons le fonctionnement (thermostat, programmation, entretien courant).' },
+];
+
+const communes = [
+  { label: 'Installation chaudière à Miribel', href: '/plombier-miribel/', detail: 'Pavillons et résidences' },
+  { label: 'Installation chaudière à Rillieux-la-Pape', href: '/plombier-rillieux-la-pape/', detail: 'Appartements et maisons' },
+  { label: 'Installation chaudière à Beynost', href: '/plombier-beynost/', detail: 'Maisons neuves et rénovation' },
+  { label: 'Remplacement chaudière à Montluel', href: '/plombier-montluel/', detail: 'Transition fioul vers gaz ou PAC' },
+  { label: 'Installation chaudière à Caluire-et-Cuire', href: '/plombier-caluire-et-cuire/', detail: 'Tout type de logement' },
+];
+
+const faq = [
+  { q: 'Combien coûte le remplacement d\'une chaudière ?', a: 'Le budget dépend du type de chaudière choisie et de la complexité de l\'installation. Pour une chaudière gaz condensation, comptez entre 3 000 et 5 500 euros pose comprise, avant déduction des aides. Nous établissons un devis précis après visite.' },
+  { q: 'Quelle chaudière choisir pour remplacer une chaudière fioul ?', a: 'Deux options principales : la chaudière gaz à condensation (si vous êtes raccordé au réseau de gaz) ou la pompe à chaleur air-eau (pas besoin de gaz). Le choix dépend de votre situation. Nous analysons les deux options lors de la visite technique.' },
+  { q: 'Combien de temps dure l\'installation ?', a: 'Un remplacement standard (dépose + pose + raccordement) se réalise en une journée. Si des modifications de circuit sont nécessaires, cela peut prendre deux jours.' },
+  { q: 'L\'entretien annuel est-il obligatoire ?', a: 'Oui, l\'entretien annuel des chaudières gaz est une obligation légale. Il doit être réalisé par un professionnel qualifié. Nous proposons un contrat d\'entretien avec prise de rendez-vous automatique.' },
+];
+---
+
+<Base
+  title="Installation chaudière Ain et Rhône | RM Plombier SARL"
+  description="Installation et remplacement de chaudière gaz, condensation, pompe à chaleur. Artisan qualifié à Neyron. Devis gratuit au 06 35 46 49 24."
+  canonical="https://rm-plombier.fr/services/installation-chaudiere/"
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+>
+
+  <!-- HERO COMPACT -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+          <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+          <span class="text-sm font-medium text-white/90">Chauffage et eau chaude</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">
+          Installation et remplacement de chaudière à Neyron et dans <span class="text-accent">l'Ain</span>
+        </h1>
+        <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
+          Chaudière gaz, condensation, pompe à chaleur. RM Plombier SARL installe et remplace votre système de chauffage avec un conseil adapté à votre logement.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Appelez le 06 35 46 49 24
+          </a>
+          <a href="/contact/" class="btn-ghost text-base py-4 px-8">
+            Obtenir un devis
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 60" fill="none"><path d="M0 60H1440V30C1200 0 960 60 720 30C480 0 240 60 0 30V60Z" fill="#F8FAFC"/></svg></div>
+  </section>
+
+  <!-- DESCRIPTION DÉTAILLÉE -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 lg:px-6 reveal">
+      <span class="section-label">Présentation du service</span>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-8">Un chauffage performant adapté à votre logement</h2>
+      <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed">
+        <p>Votre chaudière montre des signes de fatigue, consomme trop ou tombe en panne régulièrement ? RM Plombier SARL vous accompagne dans le remplacement de votre ancien équipement ou l'installation d'un système de chauffage neuf, adapté à votre logement et à vos habitudes.</p>
+        <p>Nous installons tous les types de chaudières : gaz à condensation, basse température, ainsi que les pompes à chaleur air-eau pour les maisons individuelles. Le choix du bon équipement dépend de plusieurs facteurs que nous analysons lors de la visite technique : surface du logement, niveau d'isolation, nombre d'occupants, type de radiateurs existants, accès au réseau de gaz.</p>
+        <p>Notre expertise couvre aussi bien les constructions neuves que les rénovations. Dans les maisons récentes de Beynost ou les lotissements de Miribel, nous installons des systèmes performants calibrés pour les normes RT2012 ou RE2020. Dans les maisons plus anciennes de Montluel ou les appartements de Caluire-et-Cuire, nous adaptons l'installation aux contraintes existantes : emplacement de la chaudière, diamètre des conduits, compatibilité avec les radiateurs en place.</p>
+        <p>Le remplacement d'une chaudière est aussi l'occasion de réaliser des économies d'énergie significatives. Une chaudière gaz à condensation consomme 15 à 30 % de moins qu'un modèle classique. Une pompe à chaleur peut diviser votre facture de chauffage par trois dans les conditions adaptées. Nous vous présentons les différentes options avec une estimation chiffrée des économies annuelles.</p>
+        <p>Les aides financières rendent ces investissements plus accessibles. MaPrimeRénov', les certificats d'économie d'énergie (CEE), l'éco-prêt à taux zéro : nous vous orientons vers les dispositifs auxquels vous avez droit et pouvons vous aider dans les démarches administratives. Le montant des aides peut couvrir une part importante du coût total.</p>
+        <p>Après installation, nous assurons la mise en service, les réglages et la vérification de l'ensemble du circuit de chauffage. Nous proposons également un contrat d'entretien annuel pour maintenir votre équipement en bon état et respecter l'obligation légale d'entretien des chaudières gaz.</p>
+        <p class="font-semibold text-slate-900">Contactez-nous au 06 35 46 49 24 pour une visite technique gratuite.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS INCLUSES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Ce que nous faisons</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Prestations incluses</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {prestations.map(p => (
+          <div class="flex items-start gap-3 bg-surface rounded-xl p-5 border border-slate-100">
+            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span class="text-slate-700 text-sm lg:text-base leading-relaxed">{p}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPES D'INTERVENTION -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Notre méthode</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Étapes d'intervention</h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-6 lg:left-8 top-0 bottom-0 w-0.5 bg-primary/20 hidden sm:block"></div>
+        <div class="space-y-6">
+          {etapes.map((e, i) => (
+            <div class="flex gap-4 lg:gap-6 items-start relative">
+              <div class="w-12 h-12 lg:w-16 lg:h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 relative z-10 shadow-lg shadow-primary/20">
+                <span class="text-white font-extrabold text-lg lg:text-xl">{i + 1}</span>
+              </div>
+              <div class="bg-white rounded-xl p-5 lg:p-6 border border-slate-100 flex-1 shadow-sm">
+                <h3 class="font-bold text-slate-900 mb-2 text-base lg:text-lg">{e.title}</h3>
+                <p class="text-slate-500 text-sm lg:text-base leading-relaxed">{e.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNES DESSERVIES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Zone d'intervention</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Communes desservies</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {communes.map(c => (
+          <a href={c.href} class="card group py-6 px-5 flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+              <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm group-hover:text-primary transition-colors">{c.label}</div>
+              <div class="text-xs text-slate-400">{c.detail}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FaqSection questions={faq} title="Questions sur l'installation de chaudière" />
+
+  <!-- CTA -->
+  <CtaBanner title="Un projet de chauffage ?" subtitle="Visite technique gratuite, devis détaillé avec aides déductibles." />
+
+</Base>

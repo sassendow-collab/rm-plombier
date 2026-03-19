@@ -1,0 +1,208 @@
+---
+import Base from '../../layouts/Base.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/#services' },
+  { name: 'Rénovation salle de bain', url: '/services/renovation-salle-de-bain/' },
+];
+
+const jsonLd = [
+  {
+    '@type': 'Service',
+    '@id': 'https://rm-plombier.fr/services/renovation-salle-de-bain/#service',
+    name: 'Rénovation salle de bain',
+    description: 'Rénovation de salle de bain à Neyron et environs. Douche italienne, baignoire, plomberie complète. Devis gratuit.',
+    provider: { '@type': 'Plumber', '@id': 'https://rm-plombier.fr/#business' },
+    areaServed: [
+      { '@type': 'City', name: 'Neyron' },
+      { '@type': 'City', name: 'Miribel' },
+      { '@type': 'City', name: 'Rillieux-la-Pape' },
+      { '@type': 'City', name: 'Beynost' },
+      { '@type': 'City', name: 'Montluel' },
+      { '@type': 'City', name: 'Caluire-et-Cuire' },
+    ],
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: crumb.name,
+      item: `https://rm-plombier.fr${crumb.url}`,
+    })),
+  },
+];
+
+const prestations = [
+  'Visite technique et conseil d\'agencement gratuit',
+  'Dépose complète de l\'ancienne salle de bain',
+  'Reprise et mise aux normes de la plomberie (alimentation et évacuation)',
+  'Pose de douche italienne (receveur extra-plat ou douche à l\'italienne maçonnée)',
+  'Installation de baignoire (droite, d\'angle, îlot)',
+  'Pose de meuble vasque et double vasque',
+  'Installation de robinetterie (mitigeur, thermostatique, douchette)',
+  'Pose de sèche-serviettes (électrique ou mixte)',
+  'Raccordement machine à laver',
+  'Coordination avec carreleur et peintre (prestation globale sur demande)',
+];
+
+const etapes = [
+  { title: 'Visite et relevé de cotes', desc: 'Nous venons chez vous, prenons les mesures et discutons de vos souhaits (style, équipements, budget).' },
+  { title: 'Proposition d\'agencement et devis', desc: 'Nous vous présentons un plan avec les emplacements des équipements et un devis global détaillé.' },
+  { title: 'Dépose', desc: 'Retrait de l\'ancienne installation (sanitaires, robinetterie, canalisations si nécessaire). Évacuation des gravats incluse.' },
+  { title: 'Plomberie', desc: 'Reprise des arrivées d\'eau et des évacuations selon le nouvel agencement. Test d\'étanchéité.' },
+  { title: 'Pose des équipements', desc: 'Installation de la douche ou baignoire, meuble vasque, robinetterie, sèche-serviettes.' },
+  { title: 'Finitions et réception', desc: 'Vérification du bon fonctionnement de tous les équipements, nettoyage du chantier, remise des clés.' },
+];
+
+const communes = [
+  { label: 'Rénovation salle de bain à Miribel', href: '/plombier-miribel/', detail: 'Maisons individuelles et appartements' },
+  { label: 'Rénovation salle de bain à Rillieux-la-Pape', href: '/plombier-rillieux-la-pape/', detail: 'Logements collectifs et pavillons' },
+  { label: 'Salle de bain neuve à Beynost', href: '/plombier-beynost/', detail: 'Constructions récentes' },
+  { label: 'Rénovation salle de bain à Montluel', href: '/plombier-montluel/', detail: 'Bâti ancien et moderne' },
+  { label: 'Rénovation salle de bain à Caluire-et-Cuire', href: '/plombier-caluire-et-cuire/', detail: 'Immeubles et maisons bourgeoises' },
+];
+
+const faq = [
+  { q: 'Combien coûte une rénovation de salle de bain ?', a: 'Le budget dépend de l\'ampleur des travaux et du niveau de gamme des équipements. Pour une rénovation complète (plomberie + sanitaires), comptez entre 4 000 et 8 000 euros hors carrelage. Nous détaillons tout dans le devis.' },
+  { q: 'Combien de temps durent les travaux ?', a: 'Une rénovation standard prend entre 3 et 5 jours ouvrés pour la partie plomberie et sanitaires. Si le carrelage et la peinture sont inclus, comptez une semaine à 10 jours au total.' },
+  { q: 'Pouvez-vous remplacer une baignoire par une douche ?', a: 'Oui, c\'est l\'une de nos interventions les plus courantes. Nous adaptons les évacuations et l\'alimentation en eau au nouvel agencement. La pose d\'une douche italienne à la place d\'une baignoire est tout à fait réalisable dans la majorité des cas.' },
+  { q: 'Proposez-vous des solutions pour les personnes à mobilité réduite ?', a: 'Oui, nous installons des douches de plain-pied avec barre d\'appui, siège rabattable et robinetterie adaptée. Ces aménagements peuvent bénéficier d\'aides spécifiques (ANAH, crédit d\'impôt).' },
+];
+---
+
+<Base
+  title="Rénovation salle de bain Ain Rhône | RM Plombier SARL"
+  description="Rénovation de salle de bain à Neyron et environs. Douche italienne, baignoire, plomberie complète. Devis gratuit au 06 35 46 49 24."
+  canonical="https://rm-plombier.fr/services/renovation-salle-de-bain/"
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+>
+
+  <!-- HERO COMPACT -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+          <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          <span class="text-sm font-medium text-white/90">Rénovation complète</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">
+          Rénovation de salle de bain à Neyron et dans <span class="text-accent">l'Ain</span>
+        </h1>
+        <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
+          Douche italienne, baignoire, plomberie complète. RM Plombier SARL prend en charge la rénovation de votre salle de bain de A à Z.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Appelez le 06 35 46 49 24
+          </a>
+          <a href="/contact/" class="btn-ghost text-base py-4 px-8">
+            Obtenir un devis
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 60" fill="none"><path d="M0 60H1440V30C1200 0 960 60 720 30C480 0 240 60 0 30V60Z" fill="#F8FAFC"/></svg></div>
+  </section>
+
+  <!-- DESCRIPTION DÉTAILLÉE -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 lg:px-6 reveal">
+      <span class="section-label">Présentation du service</span>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-8">Votre salle de bain repensée par un plombier expert</h2>
+      <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed">
+        <p>Votre salle de bain est datée, mal agencée ou peu fonctionnelle ? RM Plombier SARL prend en charge la rénovation complète de votre pièce d'eau, de la conception à la réalisation. Nous intervenons aussi bien dans les appartements de Caluire-et-Cuire et Rillieux-la-Pape que dans les maisons individuelles de Miribel, Beynost ou Montluel.</p>
+        <p>Notre approche est globale : nous ne faisons pas que remplacer un robinet ou poser un receveur de douche. Nous repensons l'agencement de la pièce pour optimiser l'espace, moderniser l'installation de plomberie et créer un espace agréable à vivre au quotidien. La plomberie est notre coeur de métier, et c'est ce qui fait la différence avec un simple poseur.</p>
+        <p>La douche italienne est aujourd'hui la demande la plus fréquente. Sa pose nécessite une expertise technique particulière : étanchéité du sol, pente d'évacuation, choix du siphon, compatibilité avec la structure du plancher. Mal réalisée, une douche italienne peut provoquer des infiltrations coûteuses. Notre savoir-faire garantit une installation pérenne et conforme aux normes.</p>
+        <p>Nous réalisons également les remplacements de baignoire (y compris par une douche pour les personnes à mobilité réduite), l'installation de doubles vasques, la pose de sèche-serviettes, le remplacement de la robinetterie et la reprise complète des réseaux d'eau chaude et froide. Pour le carrelage et la peinture, nous travaillons avec des artisans partenaires de confiance si vous souhaitez une prestation clé en main.</p>
+        <p>Chaque projet commence par une visite à domicile gratuite. Nous relevons les dimensions, discutons de vos envies et de votre budget, puis nous établissons un devis complet et détaillé. Les travaux sont planifiés pour minimiser la durée d'indisponibilité de votre salle de bain : une rénovation standard dure entre 3 et 5 jours ouvrés.</p>
+        <p class="font-semibold text-slate-900">Vous avez un projet de salle de bain ? Appelez le 06 35 46 49 24 ou envoyez-nous des photos de votre pièce actuelle pour un premier échange.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS INCLUSES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Ce que nous faisons</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Prestations incluses</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {prestations.map(p => (
+          <div class="flex items-start gap-3 bg-surface rounded-xl p-5 border border-slate-100">
+            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span class="text-slate-700 text-sm lg:text-base leading-relaxed">{p}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPES D'INTERVENTION -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Notre méthode</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Étapes d'intervention</h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-6 lg:left-8 top-0 bottom-0 w-0.5 bg-primary/20 hidden sm:block"></div>
+        <div class="space-y-6">
+          {etapes.map((e, i) => (
+            <div class="flex gap-4 lg:gap-6 items-start relative">
+              <div class="w-12 h-12 lg:w-16 lg:h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 relative z-10 shadow-lg shadow-primary/20">
+                <span class="text-white font-extrabold text-lg lg:text-xl">{i + 1}</span>
+              </div>
+              <div class="bg-white rounded-xl p-5 lg:p-6 border border-slate-100 flex-1 shadow-sm">
+                <h3 class="font-bold text-slate-900 mb-2 text-base lg:text-lg">{e.title}</h3>
+                <p class="text-slate-500 text-sm lg:text-base leading-relaxed">{e.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNES DESSERVIES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Zone d'intervention</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Communes desservies</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {communes.map(c => (
+          <a href={c.href} class="card group py-6 px-5 flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+              <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm group-hover:text-primary transition-colors">{c.label}</div>
+              <div class="text-xs text-slate-400">{c.detail}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FaqSection questions={faq} title="Questions sur la rénovation de salle de bain" />
+
+  <!-- CTA -->
+  <CtaBanner title="Un projet de salle de bain ?" subtitle="Visite gratuite, devis détaillé, travaux en 3 à 5 jours." />
+
+</Base>

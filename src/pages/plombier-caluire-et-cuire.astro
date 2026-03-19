@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FaqSection from '../components/FaqSection.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Plombier Caluire-et-Cuire', url: '/plombier-caluire-et-cuire/' },
+];
+
+const jsonLd = [
+  {
+    '@type': 'LocalBusiness',
+    '@id': 'https://rm-plombier.fr/plombier-caluire-et-cuire/#business',
+    name: 'RM Plombier SARL - Plombier Caluire-et-Cuire',
+    url: 'https://rm-plombier.fr/plombier-caluire-et-cuire/',
+    telephone: '+33635464924',
+    description: 'Plombier à Caluire-et-Cuire : dépannage rapide, chauffage, climatisation, salle de bain. 54 avis 5 étoiles. Devis gratuit.',
+    address: { '@type': 'PostalAddress', addressLocality: 'Neyron', postalCode: '01700', addressRegion: 'Ain', addressCountry: 'FR' },
+    areaServed: { '@type': 'City', name: 'Caluire-et-Cuire' },
+    priceRange: '€€',
+  },
+  {
+    '@type': 'Service',
+    '@id': 'https://rm-plombier.fr/plombier-caluire-et-cuire/#service',
+    name: 'Plombier à Caluire-et-Cuire',
+    provider: { '@id': 'https://rm-plombier.fr/plombier-caluire-et-cuire/#business' },
+    areaServed: { '@type': 'City', name: 'Caluire-et-Cuire' },
+    description: 'Rénovation salle de bain, climatisation et détection de fuites à Caluire-et-Cuire (69300).',
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': 'https://rm-plombier.fr/plombier-caluire-et-cuire/#breadcrumb',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://rm-plombier.fr/' },
+      { '@type': 'ListItem', position: 2, name: 'Plombier Caluire-et-Cuire', item: 'https://rm-plombier.fr/plombier-caluire-et-cuire/' },
+    ],
+  },
+];
+
+const services = [
+  { title: 'Rénovation de salle de bain', description: 'Transformation complète, de la dépose à la pose, avec gestion des contraintes des immeubles anciens de Caluire.', href: '/services/renovation-salle-de-bain/', icon: 'home', tags: ['Douche italienne', 'Immeuble ancien'] },
+  { title: 'Climatisation et pompe à chaleur', description: 'Solutions adaptées aux maisons individuelles comme aux appartements en copropriété.', href: '/services/climatisation-pompe-a-chaleur/', icon: 'snowflake', tags: ['Clim réversible', 'Copropriété'] },
+  { title: 'Détection et réparation de fuites', description: 'Localisation précise sans destruction, particulièrement utile dans les copropriétés de Caluire.', href: '/services/detection-reparation-fuites/', icon: 'search', tags: ['Non destructif', 'Copropriété'] },
+];
+
+const faq = [
+  { q: 'Intervenez-vous dans les copropriétés de Caluire ?', a: 'Oui, nous intervenons dans de nombreuses résidences collectives à Caluire-et-Cuire. Nous pouvons travailler en coordination avec votre syndic et fournir les documents nécessaires (assurance, devis détaillés, photos avant/après).' },
+  { q: 'Pouvez-vous rénover une salle de bain dans un immeuble ancien du Vernay ?', a: 'C\'est l\'un de nos domaines d\'expertise. Les immeubles anciens de Caluire présentent des contraintes spécifiques (évacuations existantes, hauteur sous plafond, accès limité). Nous adaptons le projet à ces réalités techniques.' },
+  { q: 'Quel est le coût moyen d\'une installation de climatisation à Caluire ?', a: 'Le prix varie selon le type d\'équipement et la configuration du logement. Pour un mono-split dans un appartement, comptez un budget à partir de 1 500 euros pose comprise. Nous établissons un devis précis après visite.' },
+  { q: 'Êtes-vous qualifiés pour les installations de gaz à Caluire-et-Cuire ?', a: 'Oui, nos techniciens sont habilités pour les installations et la maintenance des équipements gaz. Nous délivrons un certificat de conformité après chaque intervention sur le réseau de gaz.' },
+];
+---
+
+<Base
+  title="Plombier Caluire-et-Cuire (69300) | RM Plombier SARL"
+  description="Plombier à Caluire-et-Cuire : dépannage rapide, chauffage, climatisation, salle de bain. 54 avis 5 étoiles. Devis gratuit au 06 35 46 49 24."
+  canonical="https://rm-plombier.fr/plombier-caluire-et-cuire/"
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+>
+
+  <!-- HERO -->
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-primary-dark to-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+        <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span class="text-sm font-medium text-white/90">Caluire-et-Cuire (69300) . à 8 km de Neyron</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-4 max-w-3xl">
+        Plombier à Caluire-et-Cuire, expertise plomberie et <span class="text-accent">chauffage</span>
+      </h1>
+      <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
+        RM Plombier SARL intervient à Caluire-et-Cuire pour l'ensemble de vos travaux de plomberie, chauffage et climatisation. Depuis Neyron, nous accédons à Caluire en une quinzaine de minutes, ce qui fait de nous un interlocuteur réactif pour cette commune de plus de 43 000 habitants.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Appeler maintenant
+        </a>
+        <a href="/contact/" class="btn-ghost text-base py-4 px-8">
+          Devis gratuit en ligne
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 80" fill="none"><path d="M0 80H1440V40C1200 0 960 80 720 40C480 0 240 80 0 40V80Z" fill="#F8FAFC"/></svg></div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 reveal">
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Caluire-et-Cuire est la deuxième ville la plus peuplée de notre zone d'intervention. Son parc immobilier est extrêmement varié : immeubles haussmanniens du Vernay, résidences des années 60 à Cuire, pavillons bourgeois de Vassieux, programmes neufs vers Montessuy et Saint-Clair. Chaque type de logement présente des problématiques distinctes en plomberie et chauffage.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        Dans les appartements anciens du Vernay, les interventions portent souvent sur la rénovation complète des réseaux, le remplacement de baignoires par des douches italiennes ou la mise aux normes des installations de gaz. Dans les quartiers pavillonnaires, ce sont les projets d'installation de pompes à chaleur et de climatisation qui dominent. Nous adaptons nos recommandations au bâti existant, à la réglementation en vigueur et à vos objectifs de confort. Contactez-nous au 06 35 46 49 24 pour en discuter.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="section-label">Nos interventions</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Services disponibles à Caluire-et-Cuire</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">Nos prestations les plus demandées à Caluire.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+        {services.map(s => <ServiceCard {...s} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROXIMITÉ -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-8">
+        <span class="section-label">Proximité</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900">Votre plombier à 15 minutes de Caluire-et-Cuire</h2>
+      </div>
+      <p class="text-slate-600 leading-relaxed text-center">
+        Neyron est situé à 8 km au nord de Caluire-et-Cuire. Nous empruntons la route de Rillieux ou la montée de la Boucle pour rejoindre rapidement tous les quartiers de la ville : centre Caluire, Cuire, Bissardon, Saint-Clair, Montessuy. Pour les chantiers de rénovation, cette proximité nous permet d'assurer un suivi régulier sans frais de déplacement supplémentaires.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FaqSection questions={faq} title="Questions fréquentes - Caluire-et-Cuire" />
+
+  <!-- CTA -->
+  <CtaBanner title="Besoin d'un plombier à Caluire-et-Cuire ?" subtitle="Devis gratuit, intervention rapide depuis Neyron." />
+
+</Base>

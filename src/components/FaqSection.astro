@@ -1,0 +1,29 @@
+---
+interface Props {
+  questions: { q: string; a: string }[];
+  title?: string;
+}
+const { questions, title = 'Questions fréquentes' } = Astro.props;
+---
+
+<section class="py-16 lg:py-24 bg-surface">
+  <div class="max-w-3xl mx-auto px-4 lg:px-6">
+    <div class="text-center mb-10">
+      <span class="section-label">FAQ</span>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900">{title}</h2>
+    </div>
+    <div class="space-y-3">
+      {questions.map(({ q, a }) => (
+        <div class="bg-white rounded-xl border border-slate-200">
+          <button class="faq-trigger w-full text-left px-5 py-4 flex items-center justify-between gap-4">
+            <span class="font-semibold text-slate-900 text-sm lg:text-base">{q}</span>
+            <svg class="faq-icon w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer px-5">
+            <p class="text-slate-500 text-sm leading-relaxed pb-4">{a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

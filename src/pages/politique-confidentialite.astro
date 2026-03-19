@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Politique de confidentialité', url: '/politique-confidentialite/' },
+];
+---
+
+<Base
+  title="Politique de confidentialité | RM Plombier SARL"
+  description="Politique de confidentialité et protection des données personnelles du site RM Plombier SARL. Conformité RGPD."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-12 lg:py-16">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
+      <h1>Politique de confidentialité</h1>
+      <p class="text-sm text-slate-500"><em>Dernière mise à jour : mars 2026</em></p>
+
+      <p>RM Plombier SARL, dont le siège social est situé à Neyron (01700), est soucieuse de la protection de vos données personnelles. Cette politique de confidentialité décrit les données que nous collectons via ce site et la manière dont nous les utilisons.</p>
+
+      <h2>Responsable du traitement</h2>
+      <p>
+        RM Plombier SARL<br />
+        01700 Neyron<br />
+        Email : [à compléter]<br />
+        Téléphone : <a href="tel:0635464924">06 35 46 49 24</a>
+      </p>
+
+      <h2>Données collectées</h2>
+      <p>Lorsque vous utilisez notre formulaire de contact ou de demande de devis, nous collectons les informations suivantes :</p>
+      <ul>
+        <li>Nom et prénom</li>
+        <li>Adresse email</li>
+        <li>Numéro de téléphone</li>
+        <li>Adresse postale (si renseignée)</li>
+        <li>Description de votre besoin</li>
+      </ul>
+      <p>Ces données sont collectées uniquement lorsque vous les saisissez volontairement dans un formulaire.</p>
+
+      <h2>Finalité du traitement</h2>
+      <p>Vos données sont utilisées exclusivement pour :</p>
+      <ul>
+        <li>Répondre à votre demande de contact ou de devis</li>
+        <li>Vous recontacter dans le cadre d'une intervention</li>
+        <li>Établir un devis ou une facture</li>
+      </ul>
+      <p>Vos données ne sont jamais utilisées à des fins commerciales non sollicitées, ni transmises à des tiers sans votre consentement.</p>
+
+      <h2>Base légale</h2>
+      <p>Le traitement de vos données repose sur votre consentement (envoi du formulaire) et sur l'exécution de mesures précontractuelles (demande de devis).</p>
+
+      <h2>Durée de conservation</h2>
+      <p>Vos données de contact sont conservées pendant 3 ans à compter du dernier échange. Les données liées à une facture sont conservées 10 ans conformément aux obligations comptables.</p>
+
+      <h2>Vos droits</h2>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès</strong> : obtenir une copie des données vous concernant</li>
+        <li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
+        <li><strong>Droit d'effacement</strong> : demander la suppression de vos données</li>
+        <li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
+        <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous par email à [à compléter] ou par courrier à l'adresse du siège social.</p>
+
+      <h2>Cookies</h2>
+      <p>Ce site utilise des cookies techniques nécessaires à son bon fonctionnement. Aucun cookie publicitaire ou de suivi tiers n'est déposé sans votre consentement explicite. Vous pouvez gérer vos préférences de cookies via le bandeau affiché lors de votre première visite.</p>
+
+      <h2>Sécurité</h2>
+      <p>Nous mettons en oeuvre les mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, toute modification ou toute divulgation.</p>
+
+      <h2>Réclamation</h2>
+      <p>Si vous estimez que le traitement de vos données n'est pas conforme, vous pouvez introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.</p>
+    </div>
+  </section>
+</Base>

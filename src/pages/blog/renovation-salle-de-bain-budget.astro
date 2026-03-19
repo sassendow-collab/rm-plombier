@@ -1,0 +1,99 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+  { name: 'Rénovation salle de bain : budget et étapes', url: '/blog/renovation-salle-de-bain-budget/' },
+];
+
+const jsonLd = {
+  '@type': 'Article',
+  headline: 'Rénovation salle de bain : budget, étapes et conseils d\'un pro',
+  description: 'Quel budget pour rénover votre salle de bain ? Étapes, pièges à éviter et conseils d\'un plombier professionnel. Guide complet et concret.',
+  datePublished: '2026-03-01',
+  dateModified: '2026-03-01',
+  author: { '@type': 'Organization', name: 'RM Plombier SARL' },
+  publisher: { '@type': 'Organization', name: 'RM Plombier SARL', url: 'https://rm-plombier.fr/' },
+  mainEntityOfPage: 'https://rm-plombier.fr/blog/renovation-salle-de-bain-budget/',
+};
+---
+
+<Base
+  title="Rénovation salle de bain : budget et étapes | Conseils"
+  description="Quel budget pour rénover votre salle de bain ? Étapes, pièges à éviter et conseils d'un plombier professionnel. Guide complet et concret."
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+  ogType="article"
+>
+  <!-- Hero compact -->
+  <section class="py-10 lg:py-14 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6">
+      <span class="section-label">Rénovation</span>
+      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Rénovation salle de bain : budget, étapes et conseils d'un pro</h1>
+      <div class="flex items-center gap-3 text-sm text-slate-500">
+        <time datetime="2026-03-01">1 mars 2026</time>
+        <span class="text-slate-300">|</span>
+        <span>5 min de lecture</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu -->
+  <section class="py-10 lg:py-14">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
+      <p>Rénover sa salle de bain, c'est souvent le projet que l'on repousse. Trop cher, trop compliqué, trop long. En réalité, avec une bonne préparation et un artisan fiable, une rénovation de salle de bain peut se dérouler en une semaine et transformer votre quotidien. Voici un guide pratique basé sur notre expérience de terrain.</p>
+
+      <h2>Quel budget prévoir ?</h2>
+      <p>Le budget varie énormément selon l'ampleur des travaux et le niveau de gamme des équipements. Voici des fourchettes réalistes pour la région Ain-Rhône :</p>
+
+      <p><strong>Rénovation légère</strong> (remplacement des équipements sans modification de plomberie) : <span class="whitespace-nowrap">2 000</span> à <span class="whitespace-nowrap">4 000</span> euros. Cela inclut le remplacement de la robinetterie, du meuble vasque et de la douchette, sans toucher aux canalisations ni au carrelage.</p>
+
+      <p><strong>Rénovation moyenne</strong> (changement de configuration avec reprise de plomberie) : <span class="whitespace-nowrap">5 000</span> à <span class="whitespace-nowrap">9 000</span> euros. Cela comprend la dépose de la baignoire, la pose d'une douche italienne, un nouveau meuble vasque, la reprise des arrivées d'eau et des évacuations.</p>
+
+      <p><strong>Rénovation complète</strong> (pièce refaite du sol au plafond) : <span class="whitespace-nowrap">8 000</span> à <span class="whitespace-nowrap">15 000</span> euros. Cela englobe la plomberie, les sanitaires, le carrelage, la peinture, l'éclairage et la ventilation.</p>
+
+      <p>Ces prix incluent la fourniture et la pose. Les écarts s'expliquent principalement par le choix des matériaux et des équipements.</p>
+
+      <h2>Les étapes dans le bon ordre</h2>
+      <p>Une rénovation de salle de bain réussie suit un ordre précis. Intervenir dans le désordre, c'est risquer de devoir refaire deux fois le même travail.</p>
+
+      <p><strong>1. Définir le projet.</strong> Avant de chercher un artisan, listez vos besoins : baignoire ou douche, simple ou double vasque, sèche-serviettes, machine à laver dans la pièce ou non. Prenez des photos de salles de bain qui vous plaisent pour donner une direction au professionnel.</p>
+
+      <p><strong>2. Faire réaliser une visite technique.</strong> Un bon plombier viendra chez vous, prendra les mesures et vérifiera l'état de la plomberie existante. C'est indispensable pour établir un devis fiable. Chez RM Plombier SARL, la visite et le devis sont gratuits. Voir notre page <a href="/services/renovation-salle-de-bain/">rénovation salle de bain</a>.</p>
+
+      <p><strong>3. Dépose de l'existant.</strong> Retrait des anciens sanitaires, de la robinetterie, et éventuellement du carrelage. Les gravats doivent être évacués proprement.</p>
+
+      <p><strong>4. Plomberie.</strong> C'est l'étape invisible mais essentielle. Reprise des arrivées d'eau chaude et froide, modification des évacuations selon le nouvel agencement, test d'étanchéité. Une plomberie bien faite, c'est la garantie de ne pas avoir de problème dans les années à venir.</p>
+
+      <p><strong>5. Étanchéité.</strong> Avant la pose du carrelage, les zones humides (douche, autour de la baignoire) doivent recevoir un traitement d'étanchéité spécifique (SPEC). C'est une étape souvent négligée qui peut coûter très cher en cas d'infiltration.</p>
+
+      <p><strong>6. Carrelage et finitions.</strong> Pose du carrelage sol et mural, peinture, joints silicone.</p>
+
+      <p><strong>7. Pose des équipements.</strong> Installation de la douche ou baignoire, meuble vasque, robinetterie, sèche-serviettes, accessoires.</p>
+
+      <h2>Les erreurs à éviter</h2>
+
+      <p><strong>Sous-estimer la plomberie.</strong> Beaucoup de particuliers se focalisent sur l'esthétique (carrelage, meuble) et négligent l'état des canalisations. Si vos tuyaux ont 30 ans, c'est le moment de les remplacer. Ils seront inaccessibles après les travaux.</p>
+
+      <p><strong>Choisir un équipement trop grand.</strong> Une douche italienne de 120 cm dans une pièce de 4 m2, c'est beau sur le plan, mais cela peut poser des problèmes de circulation et d'agencement. Mesurez, testez, faites-vous conseiller.</p>
+
+      <p><strong>Oublier la ventilation.</strong> Une salle de bain sans ventilation correcte, c'est de l'humidité, des moisissures et des dégradations rapides. Vérifiez que votre VMC fonctionne ou prévoyez l'installation d'un extracteur.</p>
+
+      <p><strong>Faire les travaux soi-même pour la plomberie.</strong> Le bricolage est tentant, mais la plomberie exige une expertise technique. Un raccord mal fait, c'est une fuite assurée dans les semaines ou les mois qui suivent. Et une fuite dans une salle de bain neuve, c'est le pire scénario.</p>
+
+      <h2>Quand rénover ?</h2>
+      <p>Le printemps et l'été sont les meilleures périodes : les artisans sont plus disponibles et la période de chauffe est passée (important si les travaux touchent au circuit d'eau chaude). Prévoyez 1 à 2 mois entre la demande de devis et le début du chantier.</p>
+
+      <p>Vous avez un projet ? Contactez RM Plombier SARL pour une visite gratuite. Nous intervenons à <a href="/plombier-caluire-et-cuire/">Caluire-et-Cuire</a>, <a href="/plombier-rillieux-la-pape/">Rillieux-la-Pape</a> et dans tout le secteur Ain-Rhône. Appelez le <a href="tel:0635464924">06 35 46 49 24</a>.</p>
+
+      <!-- CTA final -->
+      <div class="not-prose mt-10 text-center">
+        <a href="/contact/" class="btn-primary">Contactez-nous pour un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Base>

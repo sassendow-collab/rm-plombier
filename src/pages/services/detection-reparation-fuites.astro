@@ -1,0 +1,206 @@
+---
+import Base from '../../layouts/Base.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/#services' },
+  { name: 'Détection de fuites', url: '/services/detection-reparation-fuites/' },
+];
+
+const jsonLd = [
+  {
+    '@type': 'Service',
+    '@id': 'https://rm-plombier.fr/services/detection-reparation-fuites/#service',
+    name: 'Détection et réparation de fuites',
+    description: 'Recherche de fuites non destructive dans l\'Ain et le Rhône. Détection précise, réparation rapide. Devis gratuit.',
+    provider: { '@type': 'Plumber', '@id': 'https://rm-plombier.fr/#business' },
+    areaServed: [
+      { '@type': 'City', name: 'Neyron' },
+      { '@type': 'City', name: 'Miribel' },
+      { '@type': 'City', name: 'Rillieux-la-Pape' },
+      { '@type': 'City', name: 'Beynost' },
+      { '@type': 'City', name: 'Montluel' },
+      { '@type': 'City', name: 'Caluire-et-Cuire' },
+    ],
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: crumb.name,
+      item: `https://rm-plombier.fr${crumb.url}`,
+    })),
+  },
+];
+
+const prestations = [
+  'Détection de fuites par écoute acoustique',
+  'Recherche par caméra thermique',
+  'Détection par gaz traceur',
+  'Inspection vidéo de canalisations',
+  'Réparation de canalisations encastrées',
+  'Remplacement de portions de tuyauterie défectueuses',
+  'Réparation de fuites sur raccords et joints',
+  'Rapport d\'intervention détaillé (pour assurance)',
+  'Conseil de prévention et entretien préventif',
+];
+
+const etapes = [
+  { title: 'Évaluation initiale', desc: 'Nous recueillons les informations visibles (taches, humidité, consommation d\'eau) pour orienter la recherche.' },
+  { title: 'Détection', desc: 'Mise en oeuvre de la méthode de recherche adaptée (acoustique, thermique, gaz traceur) pour localiser précisément la fuite.' },
+  { title: 'Diagnostic', desc: 'Identification de la nature de la fuite (raccord, canalisation percée, joint défaillant) et évaluation de la réparation nécessaire.' },
+  { title: 'Réparation', desc: 'Intervention immédiate si possible, ou devis pour les travaux plus conséquents. Remise en état de la zone concernée.' },
+  { title: 'Rapport', desc: 'Remise d\'un document détaillé avec localisation de la fuite, cause identifiée, travaux réalisés et photos. Utilisable pour l\'assurance.' },
+];
+
+const communes = [
+  { label: 'Détection de fuites à Miribel', href: '/plombier-miribel/', detail: 'Maisons et copropriétés' },
+  { label: 'Recherche de fuites à Rillieux-la-Pape', href: '/plombier-rillieux-la-pape/', detail: 'Résidences collectives' },
+  { label: 'Réparation de fuites à Beynost', href: '/plombier-beynost/', detail: 'Pavillons récents et anciens' },
+  { label: 'Détection de fuites à Montluel', href: '/plombier-montluel/', detail: 'Bâtiments anciens du centre' },
+  { label: 'Recherche de fuites à Caluire-et-Cuire', href: '/plombier-caluire-et-cuire/', detail: 'Immeubles et maisons' },
+];
+
+const faq = [
+  { q: 'Comment savoir si j\'ai une fuite d\'eau cachée ?', a: 'Plusieurs indices : facture d\'eau en hausse sans explication, taches d\'humidité sur les murs ou plafonds, compteur d\'eau qui tourne robinets fermés, odeur de moisi. Si vous observez un de ces signes, contactez-nous pour un diagnostic.' },
+  { q: 'La recherche de fuite abîme-t-elle les murs ?', a: 'Non, nos méthodes de détection sont non destructives. Nous localisons la fuite sans casser. Seule la réparation peut nécessiter une ouverture ciblée, limitée à la zone exacte du problème.' },
+  { q: 'Qui paie la recherche de fuite en copropriété ?', a: 'En général, la recherche de fuite est prise en charge par l\'assurance dans le cadre d\'un dégât des eaux (convention IRSI). Nous fournissons tous les documents nécessaires pour votre dossier.' },
+  { q: 'Intervenez-vous en urgence pour une fuite importante ?', a: 'Oui, les fuites importantes sont traitées en priorité. En cas de fuite visible avec écoulement, appelez immédiatement le 06 35 46 49 24 et coupez l\'arrivée d\'eau principale en attendant notre arrivée.' },
+];
+---
+
+<Base
+  title="Détection et réparation de fuites | RM Plombier SARL"
+  description="Recherche de fuites non destructive dans l'Ain et le Rhône. Détection précise, réparation rapide. Devis gratuit. Appelez le 06 35 46 49 24."
+  canonical="https://rm-plombier.fr/services/detection-reparation-fuites/"
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+>
+
+  <!-- HERO COMPACT -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+          <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <span class="text-sm font-medium text-white/90">Méthodes non destructives</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">
+          Détection et réparation de fuites à Neyron et dans <span class="text-accent">l'Ain</span>
+        </h1>
+        <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
+          Localisation précise des fuites par écoute acoustique, caméra thermique et gaz traceur. Réparation dans la foulée, sans démolir votre intérieur.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Appelez le 06 35 46 49 24
+          </a>
+          <a href="/contact/" class="btn-ghost text-base py-4 px-8">
+            Obtenir un devis
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 60" fill="none"><path d="M0 60H1440V30C1200 0 960 60 720 30C480 0 240 60 0 30V60Z" fill="#F8FAFC"/></svg></div>
+  </section>
+
+  <!-- DESCRIPTION DÉTAILLÉE -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 lg:px-6 reveal">
+      <span class="section-label">Présentation du service</span>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-8">Localiser et réparer vos fuites sans tout casser</h2>
+      <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed">
+        <p>Une facture d'eau anormalement élevée, une tache d'humidité sur un mur, un compteur qui tourne alors que tous les robinets sont fermés. Ces signes indiquent probablement une fuite, et plus elle est détectée tôt, moins les dégâts seront importants. RM Plombier SARL est spécialisé dans la recherche et la réparation de fuites d'eau dans l'Ain et le nord du Rhône.</p>
+        <p>La difficulté d'une fuite, c'est souvent de la localiser. L'eau peut parcourir plusieurs mètres dans un mur, un plancher ou une dalle avant de se manifester. Casser au hasard pour trouver l'origine revient cher et ne garantit aucun résultat. C'est pourquoi nous utilisons des méthodes de détection non destructives qui permettent de localiser la fuite avec précision, sans démolir votre intérieur.</p>
+        <p>Nos techniques comprennent l'écoute acoustique (amplification des sons émis par l'eau sous pression), la caméra thermique (visualisation des différences de température causées par l'humidité) et le gaz traceur (injection d'un gaz inoffensif qui remonte à la surface au point de fuite). Le choix de la méthode dépend du type de fuite et de la configuration du bâtiment.</p>
+        <p>Une fois la fuite localisée, nous procédons à la réparation dans la foulée quand c'est possible. Si la réparation nécessite des travaux plus conséquents (remplacement d'une portion de canalisation, reprise d'un réseau encastré), nous établissons un devis sur place pour que vous puissiez décider rapidement.</p>
+        <p>En copropriété, la recherche de fuites est souvent demandée dans le cadre d'un dégât des eaux. Nous fournissons un rapport détaillé avec photos et schémas, utilisable pour votre déclaration d'assurance et pour déterminer les responsabilités entre parties privatives et communes. Nous intervenons régulièrement dans les résidences de Rillieux-la-Pape, Caluire-et-Cuire et les immeubles du secteur.</p>
+        <p class="font-semibold text-slate-900">Ne laissez pas une fuite s'aggraver. Plus vous attendez, plus les dégâts s'étendent et plus la réparation coûte cher. Appelez le 06 35 46 49 24 dès les premiers signes pour une intervention rapide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS INCLUSES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Ce que nous faisons</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Prestations incluses</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {prestations.map(p => (
+          <div class="flex items-start gap-3 bg-surface rounded-xl p-5 border border-slate-100">
+            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span class="text-slate-700 text-sm lg:text-base leading-relaxed">{p}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPES D'INTERVENTION -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Notre méthode</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Étapes d'intervention</h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-6 lg:left-8 top-0 bottom-0 w-0.5 bg-primary/20 hidden sm:block"></div>
+        <div class="space-y-6">
+          {etapes.map((e, i) => (
+            <div class="flex gap-4 lg:gap-6 items-start relative">
+              <div class="w-12 h-12 lg:w-16 lg:h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 relative z-10 shadow-lg shadow-primary/20">
+                <span class="text-white font-extrabold text-lg lg:text-xl">{i + 1}</span>
+              </div>
+              <div class="bg-white rounded-xl p-5 lg:p-6 border border-slate-100 flex-1 shadow-sm">
+                <h3 class="font-bold text-slate-900 mb-2 text-base lg:text-lg">{e.title}</h3>
+                <p class="text-slate-500 text-sm lg:text-base leading-relaxed">{e.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNES DESSERVIES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-12">
+        <span class="section-label">Zone d'intervention</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Communes desservies</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {communes.map(c => (
+          <a href={c.href} class="card group py-6 px-5 flex items-center gap-4">
+            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+              <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm group-hover:text-primary transition-colors">{c.label}</div>
+              <div class="text-xs text-slate-400">{c.detail}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FaqSection questions={faq} title="Questions sur la détection de fuites" />
+
+  <!-- CTA -->
+  <CtaBanner title="Une fuite suspecte ?" subtitle="Détection non destructive et réparation rapide. Appelez maintenant." />
+
+</Base>

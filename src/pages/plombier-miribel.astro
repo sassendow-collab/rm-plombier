@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FaqSection from '../components/FaqSection.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Plombier Miribel', url: '/plombier-miribel/' },
+];
+
+const jsonLd = [
+  {
+    '@type': 'LocalBusiness',
+    '@id': 'https://rm-plombier.fr/plombier-miribel/#business',
+    name: 'RM Plombier SARL - Plombier Miribel',
+    url: 'https://rm-plombier.fr/plombier-miribel/',
+    telephone: '+33635464924',
+    description: 'Votre plombier à Miribel : dépannage, chauffage, rénovation. Intervention en 30 min depuis Neyron. Devis gratuit.',
+    address: { '@type': 'PostalAddress', addressLocality: 'Neyron', postalCode: '01700', addressRegion: 'Ain', addressCountry: 'FR' },
+    areaServed: { '@type': 'City', name: 'Miribel' },
+    priceRange: '€€',
+  },
+  {
+    '@type': 'Service',
+    '@id': 'https://rm-plombier.fr/plombier-miribel/#service',
+    name: 'Plombier à Miribel',
+    provider: { '@id': 'https://rm-plombier.fr/plombier-miribel/#business' },
+    areaServed: { '@type': 'City', name: 'Miribel' },
+    description: 'Dépannage plomberie, installation chaudière et rénovation salle de bain à Miribel (01700).',
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': 'https://rm-plombier.fr/plombier-miribel/#breadcrumb',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://rm-plombier.fr/' },
+      { '@type': 'ListItem', position: 2, name: 'Plombier Miribel', item: 'https://rm-plombier.fr/plombier-miribel/' },
+    ],
+  },
+];
+
+const services = [
+  { title: 'Dépannage plomberie urgence', description: 'Fuite d\'eau, WC bouché, panne de chauffe-eau. Intervention 7j/7.', href: '/services/depannage-plomberie/', icon: 'wrench', tags: ['Fuite d\'eau', 'WC bouché', 'Chauffe-eau'] },
+  { title: 'Installation et remplacement de chaudière', description: 'Chaudière gaz, condensation. Adapté aux pavillons et appartements de Miribel.', href: '/services/installation-chaudiere/', icon: 'fire', tags: ['Gaz', 'Condensation', 'PAC'] },
+  { title: 'Rénovation de salle de bain', description: 'Remise à neuf complète, pose de douche italienne, accessibilité PMR.', href: '/services/renovation-salle-de-bain/', icon: 'home', tags: ['Douche italienne', 'PMR'] },
+];
+
+const faq = [
+  { q: 'Quel est le délai d\'intervention pour un dépannage à Miribel ?', a: 'Miribel étant à 3 km de notre siège, nous intervenons généralement en moins de 30 minutes en journée. Le soir et le week-end, comptez environ 45 minutes.' },
+  { q: 'Intervenez-vous dans tous les quartiers de Miribel ?', a: 'Oui, nous couvrons l\'ensemble de Miribel : centre-ville, quartier de la gare, secteur du Grand Parc, les Echets et les lotissements périphériques.' },
+  { q: 'Proposez-vous l\'entretien annuel de chaudière à Miribel ?', a: 'Tout à fait. Nous assurons le contrat d\'entretien annuel obligatoire pour les chaudières gaz et fioul. Prise de rendez-vous au 06 35 46 49 24.' },
+  { q: 'Faites-vous des devis gratuits à Miribel ?', a: 'Oui, le déplacement et le devis sont gratuits à Miribel pour tout projet d\'installation ou de rénovation. Pour un dépannage, le diagnostic sur place est inclus dans l\'intervention.' },
+];
+---
+
+<Base
+  title="Plombier Miribel (01700) | RM Plombier SARL - Ain"
+  description="Votre plombier à Miribel : dépannage, chauffage, rénovation. Intervention en 30 min depuis Neyron. Devis gratuit. Appelez le 06 35 46 49 24."
+  canonical="https://rm-plombier.fr/plombier-miribel/"
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+>
+
+  <!-- HERO -->
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-primary-dark to-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+        <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span class="text-sm font-medium text-white/90">Miribel (01700) . à 3 km de Neyron</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-4 max-w-3xl">
+        Plombier à Miribel, intervention rapide depuis <span class="text-accent">Neyron</span>
+      </h1>
+      <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
+        RM Plombier SARL intervient à Miribel et dans tout le secteur du 01700. Située à seulement 3 km de notre siège de Neyron, Miribel fait partie de notre zone d'intervention prioritaire : nous y sommes en moins de 10 minutes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Appeler maintenant
+        </a>
+        <a href="/contact/" class="btn-ghost text-base py-4 px-8">
+          Devis gratuit en ligne
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 80" fill="none"><path d="M0 80H1440V40C1200 0 960 80 720 40C480 0 240 80 0 40V80Z" fill="#F8FAFC"/></svg></div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 reveal">
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Miribel est une commune résidentielle de plus de 10 000 habitants, avec un parc immobilier varié qui mêle pavillons des années 70-80, résidences récentes et quelques immeubles collectifs autour du centre-ville. Cette diversité de logements implique des besoins très différents en plomberie : remplacement de canalisations vétustes dans les maisons anciennes, installation de systèmes de chauffage performants dans les constructions neuves, rénovation de salles de bain pour moderniser les habitations existantes.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        Nos techniciens connaissent bien Miribel et ses quartiers, du centre historique au secteur du Grand Parc. Que vous habitiez près de la mairie ou du côté de la zone commerciale, nous intervenons rapidement pour vos urgences comme pour vos projets planifiés. Un seul appel suffit pour obtenir un diagnostic et un devis gratuit : 06 35 46 49 24.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="section-label">Nos interventions</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Services disponibles à Miribel</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">Nous assurons l'ensemble de nos prestations à Miribel.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+        {services.map(s => <ServiceCard {...s} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROXIMITÉ -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-8">
+        <span class="section-label">Proximité</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900">Votre plombier à 10 minutes de Miribel</h2>
+      </div>
+      <p class="text-slate-600 leading-relaxed text-center">
+        Notre atelier se trouve à Neyron, commune voisine de Miribel. En cas d'urgence, notre temps de trajet est de 10 minutes maximum. Pour les interventions programmées (installation, rénovation), nous fixons un créneau précis pour ne pas mobiliser votre journée. Cette proximité géographique nous permet de revenir facilement en cas de besoin après travaux, pour un suivi de qualité.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FaqSection questions={faq} title="Questions fréquentes - Miribel" />
+
+  <!-- CTA -->
+  <CtaBanner title="Besoin d'un plombier à Miribel ?" subtitle="Devis gratuit, intervention rapide depuis Neyron." />
+
+</Base>

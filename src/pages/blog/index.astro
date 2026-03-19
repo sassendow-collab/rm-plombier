@@ -1,0 +1,88 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const articles = [
+  {
+    title: 'Comment choisir son plombier dans l\'Ain : 7 critères essentiels',
+    description: 'Vous cherchez un plombier fiable dans l\'Ain ? Voici 7 critères concrets pour éviter les arnaques et trouver un artisan de confiance.',
+    href: '/blog/choisir-plombier-ain/',
+    date: '15 mars 2026',
+    readTime: '5 min',
+  },
+  {
+    title: 'Fuite d\'eau : que faire en urgence avant l\'arrivée du plombier',
+    description: 'Fuite d\'eau chez vous ? Voici les gestes essentiels pour limiter les dégâts avant l\'arrivée du plombier. Guide pratique étape par étape.',
+    href: '/blog/fuite-eau-urgence/',
+    date: '10 mars 2026',
+    readTime: '5 min',
+  },
+  {
+    title: 'Chaudière : entretien annuel obligatoire, ce qu\'il faut savoir',
+    description: 'L\'entretien annuel de votre chaudière est obligatoire. Qui doit le faire, quand, combien ça coûte ? Réponses claires d\'un artisan chauffagiste.',
+    href: '/blog/entretien-chaudiere/',
+    date: '5 mars 2026',
+    readTime: '5 min',
+  },
+  {
+    title: 'Rénovation salle de bain : budget, étapes et conseils d\'un pro',
+    description: 'Quel budget pour rénover votre salle de bain ? Étapes, pièges à éviter et conseils d\'un plombier professionnel. Guide complet et concret.',
+    href: '/blog/renovation-salle-de-bain-budget/',
+    date: '1 mars 2026',
+    readTime: '5 min',
+  },
+];
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+];
+
+const jsonLd = {
+  '@type': 'Blog',
+  name: 'Blog RM Plombier SARL',
+  description: 'Conseils plomberie, chauffage et rénovation par un artisan de l\'Ain.',
+  url: 'https://rm-plombier.fr/blog/',
+};
+---
+
+<Base
+  title="Blog plomberie et chauffage | Conseils RM Plombier SARL"
+  description="Conseils pratiques en plomberie, chauffage et rénovation. Guides d'un artisan plombier chauffagiste basé dans l'Ain."
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="py-12 lg:py-16 bg-surface">
+    <div class="max-w-4xl mx-auto px-4 lg:px-6 text-center">
+      <span class="section-label">Blog</span>
+      <h1 class="text-3xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Conseils plomberie et chauffage</h1>
+      <p class="text-slate-600 text-lg max-w-2xl mx-auto">Guides pratiques, astuces et informations utiles par un artisan plombier chauffagiste de l'Ain.</p>
+    </div>
+  </section>
+
+  <!-- Articles grid -->
+  <section class="py-12 lg:py-16">
+    <div class="max-w-5xl mx-auto px-4 lg:px-6">
+      <div class="grid sm:grid-cols-2 gap-6">
+        {articles.map((article) => (
+          <a href={article.href} class="card group flex flex-col">
+            <div class="flex items-center gap-3 text-sm text-slate-500 mb-3">
+              <time>{article.date}</time>
+              <span class="text-slate-300">|</span>
+              <span>{article.readTime} de lecture</span>
+            </div>
+            <h2 class="text-lg font-bold text-primary-dark mb-2 group-hover:text-primary transition-colors">{article.title}</h2>
+            <p class="text-slate-600 text-sm leading-relaxed flex-1">{article.description}</p>
+            <span class="inline-flex items-center gap-1 text-primary font-semibold text-sm mt-4 group-hover:gap-2 transition-all">
+              Lire l'article
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Base>

@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+  { name: 'Fuite d\'eau urgence', url: '/blog/fuite-eau-urgence/' },
+];
+
+const jsonLd = {
+  '@type': 'Article',
+  headline: 'Fuite d\'eau : que faire en urgence avant l\'arrivée du plombier',
+  description: 'Fuite d\'eau chez vous ? Voici les gestes essentiels pour limiter les dégâts avant l\'arrivée du plombier. Guide pratique étape par étape.',
+  datePublished: '2026-03-10',
+  dateModified: '2026-03-10',
+  author: { '@type': 'Organization', name: 'RM Plombier SARL' },
+  publisher: { '@type': 'Organization', name: 'RM Plombier SARL', url: 'https://rm-plombier.fr/' },
+  mainEntityOfPage: 'https://rm-plombier.fr/blog/fuite-eau-urgence/',
+};
+---
+
+<Base
+  title="Fuite d'eau urgence : que faire ? | RM Plombier SARL"
+  description="Fuite d'eau chez vous ? Voici les gestes essentiels pour limiter les dégâts avant l'arrivée du plombier. Guide pratique étape par étape."
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+  ogType="article"
+>
+  <!-- Hero compact -->
+  <section class="py-10 lg:py-14 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6">
+      <span class="section-label">Urgence</span>
+      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Fuite d'eau : que faire en urgence avant l'arrivée du plombier</h1>
+      <div class="flex items-center gap-3 text-sm text-slate-500">
+        <time datetime="2026-03-10">10 mars 2026</time>
+        <span class="text-slate-300">|</span>
+        <span>5 min de lecture</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu -->
+  <section class="py-10 lg:py-14">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
+      <p>Une fuite d'eau peut provoquer des dégâts importants en quelques minutes : parquet gondolé, plafond abîmé, meubles endommagés, court-circuit électrique. Votre réaction dans les premiers instants est déterminante. Voici les gestes à adopter avant l'arrivée du plombier.</p>
+
+      <h2>Étape 1 : coupez l'eau immédiatement</h2>
+      <p>C'est le premier réflexe. Fermez le robinet d'arrêt le plus proche de la fuite. Si vous ne trouvez pas de robinet d'arrêt individuel (sous l'évier, derrière les WC, à côté du chauffe-eau), coupez l'arrivée d'eau générale du logement. Le robinet général se trouve souvent dans le placard technique, au sous-sol ou à l'entrée du logement.</p>
+      <p>Si vous êtes en appartement, le robinet d'arrêt général de votre logement est généralement situé dans les toilettes, sous l'évier de la cuisine ou dans un placard technique de l'entrée. Repérez-le maintenant, avant d'en avoir besoin.</p>
+
+      <h2>Étape 2 : coupez l'électricité si nécessaire</h2>
+      <p>Si l'eau coule à proximité d'une prise électrique, d'un appareil branché ou d'un tableau électrique, coupez le disjoncteur général par sécurité. Le risque de court-circuit ou d'électrocution est réel. Ne touchez jamais un appareil électrique mouillé.</p>
+
+      <h2>Étape 3 : contenez l'écoulement</h2>
+      <p>Placez des serpillières, des serviettes ou des bassines sous la fuite pour limiter la propagation. Si l'eau coule du plafond, percez un petit trou au point le plus bas du bombement pour évacuer l'eau de manière contrôlée plutôt que de risquer un effondrement de la zone imbibée.</p>
+
+      <h2>Étape 4 : protégez vos biens</h2>
+      <p>Déplacez les meubles, les tapis, les appareils électroniques et les documents importants hors de la zone touchée. Si un meuble est trop lourd pour être déplacé, surélevez-le avec des cales pour l'éloigner de l'eau stagnante.</p>
+
+      <h2>Étape 5 : prenez des photos</h2>
+      <p>Avant de nettoyer, photographiez les dégâts sous tous les angles. Ces photos seront indispensables pour votre déclaration de sinistre auprès de votre assurance. Photographiez également l'origine apparente de la fuite si elle est visible.</p>
+
+      <h2>Étape 6 : appelez votre plombier</h2>
+      <p>Contactez un <a href="/services/depannage-plomberie/">plombier d'urgence</a> pour une intervention rapide. Décrivez la situation avec précision : localisation de la fuite, type de canalisation concernée (si visible), ampleur de l'écoulement. Ces informations permettent au technicien de préparer le matériel nécessaire avant de partir.</p>
+      <p>RM Plombier SARL intervient en urgence 7j/7 dans l'Ain et le nord du Rhône, que vous soyez à <a href="/plombier-montluel/">Montluel</a>, <a href="/plombier-caluire-et-cuire/">Caluire-et-Cuire</a> ou dans une autre commune de notre zone. Appelez le <a href="tel:0635464924">06 35 46 49 24</a>.</p>
+
+      <h2>Étape 7 : déclarez le sinistre</h2>
+      <p>En cas de dégât des eaux, vous disposez de 5 jours ouvrés pour déclarer le sinistre à votre assurance. Remplissez le constat amiable de dégât des eaux si un voisin est impliqué (fuite provenant de l'étage supérieur, par exemple). Votre plombier peut fournir un rapport d'intervention qui identifie l'origine de la fuite, un document précieux pour votre dossier.</p>
+
+      <h2>Ce qu'il ne faut pas faire</h2>
+      <ul>
+        <li>Ne tentez pas de réparer vous-même une canalisation sous pression. Un colmatage provisoire peut céder et aggraver la situation.</li>
+        <li>N'utilisez pas d'appareil électrique (aspirateur classique, sèche-cheveux) pour sécher une zone inondée tant que l'installation électrique n'a pas été vérifiée.</li>
+        <li>Ne tardez pas à agir. Une fuite même minime peut causer des dégâts structurels si elle perdure (infiltration dans la dalle, moisissures dans les cloisons).</li>
+      </ul>
+
+      <h2>Prévenir plutôt que subir</h2>
+      <p>La meilleure urgence est celle qui n'arrive pas. Faites vérifier régulièrement vos installations, notamment si votre logement a plus de 20 ans. Un service de <a href="/services/detection-reparation-fuites/">détection de fuites</a> permet d'identifier les points faibles de votre réseau avant qu'ils ne lâchent.</p>
+
+      <!-- CTA final -->
+      <div class="not-prose mt-10 text-center">
+        <a href="/contact/" class="btn-primary">Contactez-nous pour un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Base>

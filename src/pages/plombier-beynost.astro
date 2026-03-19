@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FaqSection from '../components/FaqSection.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Plombier Beynost', url: '/plombier-beynost/' },
+];
+
+const jsonLd = [
+  {
+    '@type': 'LocalBusiness',
+    '@id': 'https://rm-plombier.fr/plombier-beynost/#business',
+    name: 'RM Plombier SARL - Plombier Beynost',
+    url: 'https://rm-plombier.fr/plombier-beynost/',
+    telephone: '+33635464924',
+    description: 'Plombier à Beynost : installation chaudière, dépannage, rénovation salle de bain. Intervention rapide depuis Neyron. Devis gratuit.',
+    address: { '@type': 'PostalAddress', addressLocality: 'Neyron', postalCode: '01700', addressRegion: 'Ain', addressCountry: 'FR' },
+    areaServed: { '@type': 'City', name: 'Beynost' },
+    priceRange: '€€',
+  },
+  {
+    '@type': 'Service',
+    '@id': 'https://rm-plombier.fr/plombier-beynost/#service',
+    name: 'Plombier à Beynost',
+    provider: { '@id': 'https://rm-plombier.fr/plombier-beynost/#business' },
+    areaServed: { '@type': 'City', name: 'Beynost' },
+    description: 'Installation chaudière, climatisation et rénovation salle de bain à Beynost (01700).',
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': 'https://rm-plombier.fr/plombier-beynost/#breadcrumb',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://rm-plombier.fr/' },
+      { '@type': 'ListItem', position: 2, name: 'Plombier Beynost', item: 'https://rm-plombier.fr/plombier-beynost/' },
+    ],
+  },
+];
+
+const services = [
+  { title: 'Installation et remplacement de chaudière', description: 'Chaudière gaz condensation, pompe à chaleur. Conseil personnalisé pour les maisons neuves et les rénovations.', href: '/services/installation-chaudiere/', icon: 'fire', tags: ['Gaz condensation', 'PAC'] },
+  { title: 'Climatisation et pompe à chaleur', description: 'Climatisation réversible pour les pavillons de Beynost, installation et maintenance.', href: '/services/climatisation-pompe-a-chaleur/', icon: 'snowflake', tags: ['Clim réversible', 'Maintenance'] },
+  { title: 'Rénovation de salle de bain', description: 'Conception et réalisation, du sol au plafond, avec plomberie intégrée.', href: '/services/renovation-salle-de-bain/', icon: 'home', tags: ['Douche italienne', 'Plomberie'] },
+];
+
+const faq = [
+  { q: 'Intervenez-vous dans les nouvelles constructions à Beynost ?', a: 'Oui, nous réalisons les installations de plomberie et chauffage dans les maisons neuves : raccordements sanitaires, pose de chaudière, installation de salle de bain complète.' },
+  { q: 'Quel type de chauffage recommandez-vous pour une maison récente à Beynost ?', a: 'Pour les constructions récentes bien isolées, nous recommandons souvent une pompe à chaleur air-eau ou une chaudière gaz à condensation. Le choix dépend de la configuration du terrain et de votre budget. Nous vous guidons gratuitement.' },
+  { q: 'Pouvez-vous rénover une salle de bain dans une maison des années 90 à Beynost ?', a: 'Tout à fait. Nous prenons en charge la dépose de l\'ancienne installation, la reprise de la plomberie et la pose des nouveaux équipements (douche italienne, double vasque, sèche-serviettes).' },
+  { q: 'Travaillez-vous le samedi à Beynost ?', a: 'Oui. Nos interventions d\'urgence sont disponibles 7j/7. Pour les chantiers planifiés, nous proposons des créneaux en semaine et le samedi matin.' },
+];
+---
+
+<Base
+  title="Plombier Beynost (01700) | RM Plombier SARL - Ain"
+  description="Plombier à Beynost : installation chaudière, dépannage, rénovation salle de bain. Intervention rapide depuis Neyron. Devis gratuit au 06 35 46 49 24."
+  canonical="https://rm-plombier.fr/plombier-beynost/"
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+>
+
+  <!-- HERO -->
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-primary-dark to-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+        <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span class="text-sm font-medium text-white/90">Beynost (01700) . à 7 km de Neyron</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-4 max-w-3xl">
+        Plombier à Beynost, votre artisan chauffagiste dans <span class="text-accent">l'Ain</span>
+      </h1>
+      <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
+        RM Plombier SARL intervient à Beynost pour tous vos besoins en plomberie et chauffage. Notre siège de Neyron se situe à 7 km, soit environ 12 minutes de trajet, ce qui nous place parmi les plombiers les plus proches de votre commune.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Appeler maintenant
+        </a>
+        <a href="/contact/" class="btn-ghost text-base py-4 px-8">
+          Devis gratuit en ligne
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0"><svg viewBox="0 0 1440 80" fill="none"><path d="M0 80H1440V40C1200 0 960 80 720 40C480 0 240 80 0 40V80Z" fill="#F8FAFC"/></svg></div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 reveal">
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Beynost est une ville en pleine croissance. Avec plus de 5 000 habitants et de nombreux programmes immobiliers récents, la commune accueille chaque année de nouvelles familles qui s'installent dans des maisons neuves ou des lotissements modernes. Ces constructions récentes nécessitent souvent la finalisation des installations sanitaires, le raccordement de systèmes de chauffage performants ou la pose de climatisation pour les étés de plus en plus chauds.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        En parallèle, le bourg ancien de Beynost et les maisons des années 90-2000 vieillissent. Les besoins portent alors sur le remplacement de chaudières obsolètes, la mise aux normes des installations ou la rénovation de salles de bain. Notre connaissance du secteur nous permet de proposer des solutions adaptées au type de logement, qu'il soit neuf ou à rénover. Contactez-nous au 06 35 46 49 24 pour un diagnostic gratuit.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 lg:px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="section-label">Nos interventions</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Services disponibles à Beynost</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">L'ensemble de nos prestations est disponible à Beynost.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+        {services.map(s => <ServiceCard {...s} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROXIMITÉ -->
+  <section class="py-16 lg:py-24 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 reveal">
+      <div class="text-center mb-8">
+        <span class="section-label">Proximité</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900">Votre plombier à 12 minutes de Beynost</h2>
+      </div>
+      <p class="text-slate-600 leading-relaxed text-center">
+        Depuis Neyron, nous empruntons la D1084 pour rejoindre Beynost en une douzaine de minutes. Ce temps de trajet court nous permet d'intervenir le jour même pour les urgences et de planifier facilement les rendez-vous pour les chantiers plus longs. Les communes voisines de Beynost (Miribel, Thil, La Boisse) font également partie de notre secteur.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FaqSection questions={faq} title="Questions fréquentes - Beynost" />
+
+  <!-- CTA -->
+  <CtaBanner title="Besoin d'un plombier à Beynost ?" subtitle="Devis gratuit, intervention rapide depuis Neyron." />
+
+</Base>

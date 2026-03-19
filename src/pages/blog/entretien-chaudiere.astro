@@ -1,0 +1,97 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+  { name: 'Entretien chaudière obligatoire', url: '/blog/entretien-chaudiere/' },
+];
+
+const jsonLd = {
+  '@type': 'Article',
+  headline: 'Chaudière : entretien annuel obligatoire, ce qu\'il faut savoir',
+  description: 'L\'entretien annuel de votre chaudière est obligatoire. Qui doit le faire, quand, combien ça coûte ? Réponses claires d\'un artisan chauffagiste.',
+  datePublished: '2026-03-05',
+  dateModified: '2026-03-05',
+  author: { '@type': 'Organization', name: 'RM Plombier SARL' },
+  publisher: { '@type': 'Organization', name: 'RM Plombier SARL', url: 'https://rm-plombier.fr/' },
+  mainEntityOfPage: 'https://rm-plombier.fr/blog/entretien-chaudiere/',
+};
+---
+
+<Base
+  title="Entretien chaudière obligatoire | RM Plombier SARL"
+  description="L'entretien annuel de votre chaudière est obligatoire. Qui doit le faire, quand, combien ça coûte ? Réponses claires d'un artisan chauffagiste."
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+  ogType="article"
+>
+  <!-- Hero compact -->
+  <section class="py-10 lg:py-14 bg-surface">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6">
+      <span class="section-label">Chauffage</span>
+      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Chaudière : entretien annuel obligatoire, ce qu'il faut savoir</h1>
+      <div class="flex items-center gap-3 text-sm text-slate-500">
+        <time datetime="2026-03-05">5 mars 2026</time>
+        <span class="text-slate-300">|</span>
+        <span>5 min de lecture</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenu -->
+  <section class="py-10 lg:py-14">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
+      <p>L'entretien annuel de la chaudière est une obligation légale en France depuis 2009. Pourtant, de nombreux foyers négligent cette vérification, par oubli ou par méconnaissance de ses enjeux. Voici ce que vous devez savoir sur l'entretien de votre chaudière, que vous soyez propriétaire ou locataire.</p>
+
+      <h2>Qui est concerné ?</h2>
+      <p>Tous les logements équipés d'une chaudière gaz, fioul, bois, charbon ou multicombustible d'une puissance comprise entre 4 et 400 kW sont concernés. En pratique, cela couvre la quasi-totalité des chaudières résidentielles. Les pompes à chaleur de plus de 4 kW sont également soumises à un contrôle tous les 2 ans depuis le décret de juillet 2020.</p>
+
+      <h2>Propriétaire ou locataire : qui paie ?</h2>
+      <p>L'entretien courant de la chaudière est à la charge de l'occupant du logement. Si vous êtes locataire, c'est à vous de faire réaliser et de payer l'entretien annuel. Votre propriétaire peut vous demander l'attestation d'entretien. En cas de départ, le bailleur peut retenir le coût de l'entretien sur le dépôt de garantie si vous n'avez pas respecté cette obligation.</p>
+      <p>Si vous êtes propriétaire occupant, l'entretien est évidemment à votre charge. En copropriété avec chauffage collectif, c'est le syndic qui organise et finance l'entretien via les charges.</p>
+
+      <h2>Que comprend un entretien de chaudière ?</h2>
+      <p>Un entretien complet réalisé par un professionnel comprend :</p>
+      <ul>
+        <li>Le nettoyage du corps de chauffe et du brûleur</li>
+        <li>La vérification des organes de sécurité (thermocouple, pressostat, soupape)</li>
+        <li>Le contrôle du taux de monoxyde de carbone (CO) dans les produits de combustion</li>
+        <li>La mesure du rendement de la chaudière</li>
+        <li>La vérification de l'étanchéité des raccordements de gaz</li>
+        <li>Le contrôle du conduit d'évacuation des fumées</li>
+        <li>Le réglage de la combustion si nécessaire</li>
+        <li>Le nettoyage du filtre et du circuit de chauffage si besoin</li>
+      </ul>
+      <p>À l'issue de l'intervention, le technicien vous remet une attestation d'entretien, valable un an. Ce document est à conserver : il peut vous être demandé par votre assurance en cas de sinistre.</p>
+
+      <h2>Quand faire l'entretien ?</h2>
+      <p>La réglementation impose un entretien par an, sans imposer de période précise. En pratique, la fin de l'été ou le début de l'automne est le moment idéal : votre chaudière sera prête à fonctionner pour la saison de chauffe et les plombiers chauffagistes sont généralement moins sollicités qu'en plein hiver.</p>
+
+      <h2>Combien ça coûte ?</h2>
+      <p>Le prix d'un entretien de chaudière varie entre 90 et 150 euros selon le type de chaudière et la région. Un contrat d'entretien annuel (avec prise de rendez-vous automatique) peut être plus avantageux si vous souhaitez ne plus y penser. Chez RM Plombier SARL, nous proposons un contrat d'entretien adapté à votre équipement. Renseignements au <a href="tel:0635464924">06 35 46 49 24</a>.</p>
+
+      <h2>Les risques en cas de non-entretien</h2>
+      <p>Au-delà de l'aspect réglementaire, ne pas entretenir sa chaudière présente des risques concrets :</p>
+      <ul>
+        <li><strong>Sécurité</strong> : une chaudière mal entretenue peut produire du monoxyde de carbone, un gaz inodore et mortel. Chaque année, le CO cause environ 4 000 intoxications en France.</li>
+        <li><strong>Performance</strong> : une chaudière encrassée consomme plus de combustible pour le même résultat. L'entretien peut améliorer le rendement de 8 à 12 %.</li>
+        <li><strong>Longévité</strong> : un équipement entretenu régulièrement dure plus longtemps. La durée de vie moyenne d'une chaudière gaz est de 15 à 20 ans avec un entretien régulier, contre 10 ans sans.</li>
+        <li><strong>Assurance</strong> : en cas de sinistre lié à la chaudière (incendie, intoxication), l'assurance peut refuser l'indemnisation si l'entretien n'est pas à jour.</li>
+      </ul>
+
+      <h2>Quand remplacer plutôt qu'entretenir ?</h2>
+      <p>Si votre chaudière a plus de 15 ans, que les pannes se multiplient ou que votre facture de chauffage augmente d'année en année, le remplacement peut être plus judicieux qu'une réparation. Les chaudières modernes à condensation consomment 15 à 30 % de moins que les anciens modèles. Consultez notre page <a href="/services/installation-chaudiere/">installation et remplacement de chaudière</a> pour en savoir plus sur les options disponibles et les aides financières.</p>
+
+      <p>Vous habitez <a href="/plombier-miribel/">Miribel</a>, <a href="/plombier-rillieux-la-pape/">Rillieux-la-Pape</a> ou une autre commune de notre zone ? Appelez le <a href="tel:0635464924">06 35 46 49 24</a> pour planifier votre entretien.</p>
+
+      <!-- CTA final -->
+      <div class="not-prose mt-10 text-center">
+        <a href="/contact/" class="btn-primary">Contactez-nous pour un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Base>
