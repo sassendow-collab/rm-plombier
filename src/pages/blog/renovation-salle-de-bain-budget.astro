@@ -1,12 +1,5 @@
 ---
-import Base from '../../layouts/Base.astro';
-import CtaBanner from '../../components/CtaBanner.astro';
-
-const breadcrumbs = [
-  { name: 'Accueil', url: '/' },
-  { name: 'Blog', url: '/blog/' },
-  { name: 'Rénovation salle de bain : budget et étapes', url: '/blog/renovation-salle-de-bain-budget/' },
-];
+import BlogPost from '../../layouts/BlogPost.astro';
 
 const jsonLd = {
   '@type': 'Article',
@@ -58,37 +51,18 @@ const faqJsonLd = {
 };
 ---
 
-<Base
+<BlogPost
   title="Rénovation salle de bain : budget et étapes | Guide 2026"
   description="Rénovation salle de bain : budget détaillé, étapes, tendances 2026, aides financières, matériaux. Guide complet par un plombier pro."
-  breadcrumbs={breadcrumbs}
+  heroImage="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/douche-italienne-beton-landscape.png"
+  heroImageAlt="Douche italienne en béton ciré"
+  category="Conseils"
+  date="1 mars 2026"
+  dateISO="2026-03-01"
+  readTime="15 min de lecture"
+  breadcrumbLabel="Rénovation salle de bain budget"
   jsonLd={[jsonLd, faqJsonLd]}
-  ogType="article"
 >
-  <!-- Hero article avec image -->
-  <section class="relative">
-    <div class="absolute inset-0">
-      <img
-        src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/douche-italienne-beton-landscape.png"
-        alt="Douche italienne en beton cire, renovation salle de bain"
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/60 to-transparent"></div>
-    </div>
-    <div class="relative max-w-3xl mx-auto px-4 lg:px-6 py-16 lg:py-24 min-h-[40vh] lg:min-h-[50vh] flex flex-col justify-end">
-      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/80 text-white mb-4 w-fit">Renovation</span>
-      <h1 class="text-2xl lg:text-4xl font-extrabold text-white mt-2 mb-4 leading-tight">Renovation salle de bain : budget, etapes et conseils d'un pro</h1>
-      <div class="flex items-center gap-3 text-sm text-white/70">
-        <time datetime="2026-03-01">1 mars 2026</time>
-        <span class="w-1 h-1 rounded-full bg-white/40"></span>
-        <span>14 min de lecture</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contenu -->
-  <section class="py-10 lg:py-14">
-    <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
       <p>Renover sa salle de bain, c'est souvent le projet que l'on repousse. Trop cher, trop complique, trop long. En realite, avec une bonne preparation et un artisan fiable, une renovation de salle de bain peut se derouler en une a deux semaines et transformer votre quotidien. C'est aussi l'un des travaux qui valorisent le plus un bien immobilier : une salle de bain renovee peut augmenter la valeur de votre logement de 5 a 10 %.</p>
 
       <p>Ce guide complet vous donne un budget detaille par poste, les etapes dans le bon ordre, les tendances actuelles, les aides financieres disponibles et les conseils pratiques d'un plombier qui renove des salles de bain depuis plus de 15 ans dans l'Ain et le Rhone.</p>
@@ -124,15 +98,13 @@ const faqJsonLd = {
 
       <p>Ces prix incluent la fourniture et la pose. Les ecarts s'expliquent principalement par le choix des materiaux et des equipements. Un meuble vasque d'entree de gamme coute 200 euros, un modele design peut depasser <span class="whitespace-nowrap">1 000</span> euros.</p>
 
-      <!-- Image illustrative -->
-      <figure class="not-prose my-8">
+      <figure class="article-img">
         <img
           src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/baignoire-ilot-parquet-square.png"
           alt="Baignoire ilot sur parquet, renovation haut de gamme"
           loading="lazy"
-          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
         />
-        <figcaption class="text-xs text-slate-400 italic mt-2">Une baignoire ilot sur parquet, un choix haut de gamme pour une salle de bain spacieuse.</figcaption>
+        <figcaption>Une baignoire ilot sur parquet, un choix haut de gamme pour une salle de bain spacieuse.</figcaption>
       </figure>
 
       <h2>Les etapes d'une renovation reussie</h2>
@@ -179,21 +151,18 @@ const faqJsonLd = {
       <h3>La robinetterie noire ou doree</h3>
       <p>Le chrome reste majoritaire, mais la robinetterie noire mat et doree brossee gagnent du terrain. Attention : ces finitions sont plus sensibles aux traces de calcaire. Dans l'Ain, ou l'eau est assez calcaire, prevoyez un entretien regulier ou un adoucisseur d'eau.</p>
 
-      <!-- Image illustrative -->
-      <figure class="not-prose my-8">
+      <figure class="article-img">
         <img
           src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/double-vasque-zellige-square.png"
           alt="Double vasque avec carrelage zellige, tendance salle de bain"
           loading="lazy"
-          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
         />
-        <figcaption class="text-xs text-slate-400 italic mt-2">La double vasque avec zellige, une tendance forte en renovation de salle de bain.</figcaption>
+        <figcaption>La double vasque avec zellige, une tendance forte en renovation de salle de bain.</figcaption>
       </figure>
 
-      <!-- Encart CTA -->
-      <div class="not-prose bg-surface-alt rounded-xl p-6 my-8 border border-slate-200">
-        <p class="font-bold text-slate-900 mb-2">Besoin d'un plombier dans l'Ain ?</p>
-        <p class="text-sm text-slate-500 mb-4">RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
+      <div class="article-cta">
+        <p>Besoin d'un plombier dans l'Ain ?</p>
+        <p>RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
         <a href="tel:0635464924" class="btn-primary text-sm">Appeler le 06 35 46 49 24</a>
       </div>
 
@@ -230,15 +199,13 @@ const faqJsonLd = {
       <h3>Le meuble vasque : solide et fonctionnel</h3>
       <p>Privilegiez les meubles en bois stratifie hydrofuge ou en MDF laque, concus pour resister a l'humidite. Les meubles en bois massif non traite se degradent rapidement dans une salle de bain. Verifiez que le meuble est livre avec le plan vasque integre : les ensembles complets sont souvent plus economiques que l'achat separe.</p>
 
-      <!-- Image illustrative -->
-      <figure class="not-prose my-8">
+      <figure class="article-img">
         <img
           src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/seche-serviettes-taupe-square.png"
           alt="Seche-serviettes taupe dans une salle de bain renovee"
           loading="lazy"
-          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
         />
-        <figcaption class="text-xs text-slate-400 italic mt-2">Le seche-serviettes, un equipement de confort devenu incontournable en renovation.</figcaption>
+        <figcaption>Le seche-serviettes, un equipement de confort devenu incontournable en renovation.</figcaption>
       </figure>
 
       <h2>Les erreurs a eviter</h2>
@@ -263,26 +230,19 @@ const faqJsonLd = {
 
       <p>Vous avez un projet de renovation de salle de bain ? Contactez RM Plombier SARL pour une visite gratuite et un devis detaille. Nous intervenons a <a href="/plombier-caluire-et-cuire/">Caluire-et-Cuire</a>, <a href="/plombier-rillieux-la-pape/">Rillieux-la-Pape</a>, <a href="/plombier-miribel/">Miribel</a> et dans tout le secteur Ain-Rhone. Appelez le <a href="tel:0635464924">06 35 46 49 24</a>.</p>
 
-      <h2>Questions frequentes</h2>
+      <div class="article-faq">
+        <h2>Questions frequentes</h2>
 
-      <h3>Quel budget pour renover une salle de bain en 2026 ?</h3>
-      <p>Le budget depend de l'ampleur des travaux. Renovation legere (robinetterie, meuble) : <span class="whitespace-nowrap">2 000</span> a <span class="whitespace-nowrap">4 000</span> euros. Renovation moyenne avec reprise de plomberie : <span class="whitespace-nowrap">5 000</span> a <span class="whitespace-nowrap">9 000</span> euros. Renovation complete du sol au plafond : <span class="whitespace-nowrap">8 000</span> a <span class="whitespace-nowrap">15 000</span> euros. Ces prix incluent fourniture et pose dans l'Ain et le Rhone.</p>
+        <h3>Quel budget pour renover une salle de bain en 2026 ?</h3>
+        <p>Le budget depend de l'ampleur des travaux. Renovation legere (robinetterie, meuble) : <span class="whitespace-nowrap">2 000</span> a <span class="whitespace-nowrap">4 000</span> euros. Renovation moyenne avec reprise de plomberie : <span class="whitespace-nowrap">5 000</span> a <span class="whitespace-nowrap">9 000</span> euros. Renovation complete du sol au plafond : <span class="whitespace-nowrap">8 000</span> a <span class="whitespace-nowrap">15 000</span> euros. Ces prix incluent fourniture et pose dans l'Ain et le Rhone.</p>
 
-      <h3>Combien coute une douche italienne ?</h3>
-      <p>La pose d'une douche italienne coute entre <span class="whitespace-nowrap">1 500</span> et <span class="whitespace-nowrap">4 000</span> euros (fourniture et pose), selon la taille, le type de receveur et le carrelage choisi. Ce prix inclut l'etancheite, le receveur extra-plat ou maconne, la robinetterie et le carrelage de la zone douche.</p>
+        <h3>Combien coute une douche italienne ?</h3>
+        <p>La pose d'une douche italienne coute entre <span class="whitespace-nowrap">1 500</span> et <span class="whitespace-nowrap">4 000</span> euros (fourniture et pose), selon la taille, le type de receveur et le carrelage choisi. Ce prix inclut l'etancheite, le receveur extra-plat ou maconne, la robinetterie et le carrelage de la zone douche.</p>
 
-      <h3>Quelles aides financieres pour renover une salle de bain ?</h3>
-      <p>Pour les personnes en perte d'autonomie, l'ANAH propose l'aide "Habiter facile" jusqu'a <span class="whitespace-nowrap">10 000</span> euros. Le credit d'impot PMR couvre 25 % des depenses d'adaptation. La TVA reduite a 10 % s'applique pour tous les logements de plus de 2 ans. L'eco-PTZ peut financer les travaux d'amelioration energetique. Consultez notre page <a href="/services/renovation-salle-de-bain/">renovation salle de bain</a> pour plus de details.</p>
+        <h3>Quelles aides financieres pour renover une salle de bain ?</h3>
+        <p>Pour les personnes en perte d'autonomie, l'ANAH propose l'aide "Habiter facile" jusqu'a <span class="whitespace-nowrap">10 000</span> euros. Le credit d'impot PMR couvre 25 % des depenses d'adaptation. La TVA reduite a 10 % s'applique pour tous les logements de plus de 2 ans. L'eco-PTZ peut financer les travaux d'amelioration energetique. Consultez notre page <a href="/services/renovation-salle-de-bain/">renovation salle de bain</a> pour plus de details.</p>
 
-      <h3>Combien de temps dure une renovation de salle de bain ?</h3>
-      <p>Comptez 3 a 5 jours pour une renovation legere, 1 a 2 semaines pour une renovation moyenne avec reprise de plomberie, et 2 a 3 semaines pour une renovation complete. Ces delais dependent de la complexite du chantier et de la disponibilite des materiaux.</p>
-
-      <!-- CTA final -->
-      <div class="not-prose mt-10 text-center">
-        <a href="/contact/" class="btn-primary">Demander un devis renovation gratuit</a>
+        <h3>Combien de temps dure une renovation de salle de bain ?</h3>
+        <p>Comptez 3 a 5 jours pour une renovation legere, 1 a 2 semaines pour une renovation moyenne avec reprise de plomberie, et 2 a 3 semaines pour une renovation complete. Ces delais dependent de la complexite du chantier et de la disponibilite des materiaux.</p>
       </div>
-    </div>
-  </section>
-
-  <CtaBanner />
-</Base>
+</BlogPost>

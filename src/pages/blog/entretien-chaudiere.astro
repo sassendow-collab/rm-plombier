@@ -1,12 +1,5 @@
 ---
-import Base from '../../layouts/Base.astro';
-import CtaBanner from '../../components/CtaBanner.astro';
-
-const breadcrumbs = [
-  { name: 'Accueil', url: '/' },
-  { name: 'Blog', url: '/blog/' },
-  { name: 'Entretien chaudière obligatoire', url: '/blog/entretien-chaudiere/' },
-];
+import BlogPost from '../../layouts/BlogPost.astro';
 
 const jsonLd = {
   '@type': 'Article',
@@ -58,37 +51,18 @@ const faqJsonLd = {
 };
 ---
 
-<Base
+<BlogPost
   title="Entretien chaudière obligatoire : guide complet 2026"
   description="Entretien chaudière obligatoire : loi, prix, attestation, différences gaz/fioul/bois. Quand remplacer ? Guide complet par un chauffagiste."
-  breadcrumbs={breadcrumbs}
+  heroImage="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/radiateur-salon-landscape.png"
+  heroImageAlt="Radiateur dans un salon moderne"
+  category="Guide pratique"
+  date="5 mars 2026"
+  dateISO="2026-03-05"
+  readTime="14 min de lecture"
+  breadcrumbLabel="Entretien chaudière obligatoire"
   jsonLd={[jsonLd, faqJsonLd]}
-  ogType="article"
 >
-  <!-- Hero article avec image -->
-  <section class="relative">
-    <div class="absolute inset-0">
-      <img
-        src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/radiateur-salon-landscape.png"
-        alt="Radiateur design dans un salon moderne"
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/60 to-transparent"></div>
-    </div>
-    <div class="relative max-w-3xl mx-auto px-4 lg:px-6 py-16 lg:py-24 min-h-[40vh] lg:min-h-[50vh] flex flex-col justify-end">
-      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-orange-500/80 text-white mb-4 w-fit">Chauffage</span>
-      <h1 class="text-2xl lg:text-4xl font-extrabold text-white mt-2 mb-4 leading-tight">Chaudiere : entretien annuel obligatoire, ce qu'il faut savoir</h1>
-      <div class="flex items-center gap-3 text-sm text-white/70">
-        <time datetime="2026-03-05">5 mars 2026</time>
-        <span class="w-1 h-1 rounded-full bg-white/40"></span>
-        <span>12 min de lecture</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contenu -->
-  <section class="py-10 lg:py-14">
-    <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
       <p>L'entretien annuel de la chaudiere est une obligation legale en France depuis 2009. Pourtant, pres d'un foyer sur trois neglige cette verification, par oubli ou par meconnaissance de ses enjeux. Au-dela de l'aspect reglementaire, un entretien regulier est une question de securite (risque de monoxyde de carbone), de performance energetique et de longevite de votre equipement.</p>
 
       <p>Ce guide complet vous explique tout ce qu'il faut savoir sur l'entretien de votre chaudiere : le cadre legal, les differences selon le type de combustible, le contenu precis de l'attestation, le cout, et les criteres pour savoir quand il est temps de remplacer plutot que d'entretenir.</p>
@@ -151,15 +125,13 @@ const faqJsonLd = {
         <li>Le controle de la regulation et de la programmation</li>
       </ul>
 
-      <!-- Image illustrative -->
-      <figure class="not-prose my-8">
+      <figure class="article-img">
         <img
           src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/radiateur-design-salon-landscape.png"
           alt="Radiateur design dans un salon, installation chauffage moderne"
           loading="lazy"
-          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
         />
-        <figcaption class="text-xs text-slate-400 italic mt-2">Un radiateur design bien entretenu assure confort et economies d'energie.</figcaption>
+        <figcaption>Un radiateur design bien entretenu assure confort et economies d'energie.</figcaption>
       </figure>
 
       <h2>L'attestation d'entretien : ce qu'elle doit contenir</h2>
@@ -221,22 +193,19 @@ const faqJsonLd = {
       <h3>Refus d'indemnisation par l'assurance</h3>
       <p>En cas de sinistre lie a la chaudiere (incendie, intoxication, degat des eaux), l'assurance peut refuser l'indemnisation si l'entretien n'est pas a jour. L'attestation d'entretien est le document qui prouve votre diligence.</p>
 
-      <!-- Encart CTA -->
-      <div class="not-prose bg-surface-alt rounded-xl p-6 my-8 border border-slate-200">
-        <p class="font-bold text-slate-900 mb-2">Besoin d'un plombier dans l'Ain ?</p>
-        <p class="text-sm text-slate-500 mb-4">RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
+      <div class="article-cta">
+        <p>Besoin d'un plombier dans l'Ain ?</p>
+        <p>RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
         <a href="tel:0635464924" class="btn-primary text-sm">Appeler le 06 35 46 49 24</a>
       </div>
 
-      <!-- Image illustrative -->
-      <figure class="not-prose my-8">
+      <figure class="article-img">
         <img
           src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/thermodynamique-cellier-square.png"
           alt="Ballon thermodynamique installe dans un cellier"
           loading="lazy"
-          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
         />
-        <figcaption class="text-xs text-slate-400 italic mt-2">Un ballon thermodynamique, alternative moderne et economique au chauffe-eau classique.</figcaption>
+        <figcaption>Un ballon thermodynamique, alternative moderne et economique au chauffe-eau classique.</figcaption>
       </figure>
 
       <h2>Quand remplacer plutot qu'entretenir ?</h2>
@@ -255,26 +224,19 @@ const faqJsonLd = {
 
       <p>Vous habitez <a href="/plombier-miribel/">Miribel</a>, <a href="/plombier-beynost/">Beynost</a>, <a href="/plombier-montluel/">Montluel</a> ou une autre commune de l'Ain et du nord du Rhone ? Appelez le <a href="tel:0635464924">06 35 46 49 24</a> pour planifier votre entretien ou obtenir un devis de remplacement.</p>
 
-      <h2>Questions frequentes</h2>
+      <div class="article-faq">
+        <h2>Questions frequentes</h2>
 
-      <h3>L'entretien de la chaudiere est-il obligatoire ?</h3>
-      <p>Oui, l'entretien annuel est obligatoire pour toutes les chaudieres gaz, fioul, bois et charbon de 4 a 400 kW, selon le decret n°2009-649 du 9 juin 2009. Le non-respect n'entraine pas d'amende directe, mais peut avoir des consequences sur votre assurance en cas de sinistre.</p>
+        <h3>L'entretien de la chaudiere est-il obligatoire ?</h3>
+        <p>Oui, l'entretien annuel est obligatoire pour toutes les chaudieres gaz, fioul, bois et charbon de 4 a 400 kW, selon le decret n°2009-649 du 9 juin 2009. Le non-respect n'entraine pas d'amende directe, mais peut avoir des consequences sur votre assurance en cas de sinistre.</p>
 
-      <h3>Combien coute un entretien de chaudiere dans l'Ain ?</h3>
-      <p>Le prix d'un entretien ponctuel varie entre 90 et 150 euros selon le type de chaudiere. Un contrat d'entretien annuel coute entre 120 et 200 euros et inclut souvent un depannage prioritaire et des pieces d'usure.</p>
+        <h3>Combien coute un entretien de chaudiere dans l'Ain ?</h3>
+        <p>Le prix d'un entretien ponctuel varie entre 90 et 150 euros selon le type de chaudiere. Un contrat d'entretien annuel coute entre 120 et 200 euros et inclut souvent un depannage prioritaire et des pieces d'usure.</p>
 
-      <h3>Qui doit payer l'entretien : proprietaire ou locataire ?</h3>
-      <p>L'entretien courant est a la charge de l'occupant du logement. Si vous etes locataire, vous devez faire realiser et payer l'entretien annuel. Le proprietaire peut demander l'attestation et retenir le cout sur le depot de garantie en fin de bail si l'obligation n'a pas ete respectee.</p>
+        <h3>Qui doit payer l'entretien : proprietaire ou locataire ?</h3>
+        <p>L'entretien courant est a la charge de l'occupant du logement. Si vous etes locataire, vous devez faire realiser et payer l'entretien annuel. Le proprietaire peut demander l'attestation et retenir le cout sur le depot de garantie en fin de bail si l'obligation n'a pas ete respectee.</p>
 
-      <h3>Quand faut-il remplacer sa chaudiere plutot que l'entretenir ?</h3>
-      <p>Envisagez le remplacement si votre chaudiere a plus de 15 a 20 ans, si les pannes se multiplient (plus de 2 par an), si le rendement mesure est inferieur a 80 %, ou si la facture de chauffage augmente sans changement d'habitude. Les chaudieres modernes a condensation consomment 15 a 30 % de moins. Consultez notre page <a href="/services/installation-chaudiere/">installation de chaudiere</a> pour les options et les aides.</p>
-
-      <!-- CTA final -->
-      <div class="not-prose mt-10 text-center">
-        <a href="/contact/" class="btn-primary">Planifier mon entretien de chaudiere</a>
+        <h3>Quand faut-il remplacer sa chaudiere plutot que l'entretenir ?</h3>
+        <p>Envisagez le remplacement si votre chaudiere a plus de 15 a 20 ans, si les pannes se multiplient (plus de 2 par an), si le rendement mesure est inferieur a 80 %, ou si la facture de chauffage augmente sans changement d'habitude. Les chaudieres modernes a condensation consomment 15 a 30 % de moins. Consultez notre page <a href="/services/installation-chaudiere/">installation de chaudiere</a> pour les options et les aides.</p>
       </div>
-    </div>
-  </section>
-
-  <CtaBanner />
-</Base>
+</BlogPost>

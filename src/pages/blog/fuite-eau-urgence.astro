@@ -1,12 +1,5 @@
 ---
-import Base from '../../layouts/Base.astro';
-import CtaBanner from '../../components/CtaBanner.astro';
-
-const breadcrumbs = [
-  { name: 'Accueil', url: '/' },
-  { name: 'Blog', url: '/blog/' },
-  { name: 'Fuite d\'eau urgence', url: '/blog/fuite-eau-urgence/' },
-];
+import BlogPost from '../../layouts/BlogPost.astro';
 
 const jsonLd = {
   '@type': 'Article',
@@ -58,181 +51,150 @@ const faqJsonLd = {
 };
 ---
 
-<Base
+<BlogPost
   title="Fuite d'eau urgence : que faire ? | Guide complet"
   description="Fuite d'eau chez vous ? Guide complet : gestes d'urgence, types de fuites, déclaration assurance dégât des eaux, prévention. Conseils pro."
-  breadcrumbs={breadcrumbs}
+  heroImage="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/plombier-evier-cuisine-square.png"
+  heroImageAlt="Plombier intervenant en urgence sur un évier"
+  category="Guide pratique"
+  date="10 mars 2026"
+  dateISO="2026-03-10"
+  readTime="13 min de lecture"
+  breadcrumbLabel="Fuite d'eau urgence"
   jsonLd={[jsonLd, faqJsonLd]}
-  ogType="article"
 >
-  <!-- Hero article avec image -->
-  <section class="relative">
-    <div class="absolute inset-0">
-      <img
-        src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/plombier-evier-cuisine-square.png"
-        alt="Plombier intervenant sur un evier de cuisine en urgence"
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/60 to-transparent"></div>
-    </div>
-    <div class="relative max-w-3xl mx-auto px-4 lg:px-6 py-16 lg:py-24 min-h-[40vh] lg:min-h-[50vh] flex flex-col justify-end">
-      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-red-500/80 text-white mb-4 w-fit">Urgence</span>
-      <h1 class="text-2xl lg:text-4xl font-extrabold text-white mt-2 mb-4 leading-tight">Fuite d'eau : que faire en urgence avant l'arrivee du plombier</h1>
-      <div class="flex items-center gap-3 text-sm text-white/70">
-        <time datetime="2026-03-10">10 mars 2026</time>
-        <span class="w-1 h-1 rounded-full bg-white/40"></span>
-        <span>12 min de lecture</span>
-      </div>
-    </div>
-  </section>
+  <p>Une fuite d'eau peut provoquer des degats importants en quelques minutes : parquet gondole, plafond abime, meubles endommages, court-circuit electrique. En France, les degats des eaux representent le sinistre le plus frequent en habitation, avec pres de <span class="whitespace-nowrap">2 millions</span> de declarations par an. Votre reaction dans les premiers instants est determinante pour limiter les dommages et faciliter la prise en charge par votre assurance.</p>
 
-  <!-- Contenu -->
-  <section class="py-10 lg:py-14">
-    <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
-      <p>Une fuite d'eau peut provoquer des degats importants en quelques minutes : parquet gondole, plafond abime, meubles endommages, court-circuit electrique. En France, les degats des eaux representent le sinistre le plus frequent en habitation, avec pres de <span class="whitespace-nowrap">2 millions</span> de declarations par an. Votre reaction dans les premiers instants est determinante pour limiter les dommages et faciliter la prise en charge par votre assurance.</p>
+  <p>Ce guide complet detaille les gestes d'urgence a adopter, les differents types de fuites que vous pouvez rencontrer, la procedure de declaration aupres de votre assurance et les mesures de prevention pour eviter que cela ne se reproduise.</p>
 
-      <p>Ce guide complet detaille les gestes d'urgence a adopter, les differents types de fuites que vous pouvez rencontrer, la procedure de declaration aupres de votre assurance et les mesures de prevention pour eviter que cela ne se reproduise.</p>
+  <h2>Les gestes d'urgence : les 7 etapes a suivre</h2>
 
-      <h2>Les gestes d'urgence : les 7 etapes a suivre</h2>
+  <h3>Etape 1 : coupez l'eau immediatement</h3>
+  <p>C'est le premier reflexe, le plus important. Chaque minute qui passe avec l'eau qui coule aggrave les degats. Fermez le robinet d'arret le plus proche de la fuite. Si vous ne trouvez pas de robinet d'arret individuel (sous l'evier, derriere les WC, a cote du chauffe-eau), coupez l'arrivee d'eau generale du logement.</p>
 
-      <h3>Etape 1 : coupez l'eau immediatement</h3>
-      <p>C'est le premier reflexe, le plus important. Chaque minute qui passe avec l'eau qui coule aggrave les degats. Fermez le robinet d'arret le plus proche de la fuite. Si vous ne trouvez pas de robinet d'arret individuel (sous l'evier, derriere les WC, a cote du chauffe-eau), coupez l'arrivee d'eau generale du logement.</p>
+  <p>Le robinet general se trouve souvent dans le placard technique, au sous-sol ou a l'entree du logement. En appartement, il est generalement situe dans les toilettes, sous l'evier de la cuisine ou dans un placard technique de l'entree. Un conseil important : reperez maintenant l'emplacement de votre robinet d'arret general, avant d'en avoir besoin en urgence. Collez une etiquette dessus si necessaire.</p>
 
-      <p>Le robinet general se trouve souvent dans le placard technique, au sous-sol ou a l'entree du logement. En appartement, il est generalement situe dans les toilettes, sous l'evier de la cuisine ou dans un placard technique de l'entree. Un conseil important : reperez maintenant l'emplacement de votre robinet d'arret general, avant d'en avoir besoin en urgence. Collez une etiquette dessus si necessaire.</p>
+  <figure class="article-img">
+    <img
+      src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/evier-inox-cuisine-landscape.png"
+      alt="Evier inox de cuisine avec robinetterie moderne"
+      loading="lazy"
+    />
+    <figcaption>Un evier bien entretenu avec une robinetterie de qualite reduit les risques de fuite.</figcaption>
+  </figure>
 
-      <!-- Image illustrative -->
-      <figure class="not-prose my-8">
-        <img
-          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/evier-inox-cuisine-landscape.png"
-          alt="Evier inox de cuisine avec robinetterie moderne"
-          loading="lazy"
-          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
-        />
-        <figcaption class="text-xs text-slate-400 italic mt-2">Un evier bien entretenu avec une robinetterie de qualite reduit les risques de fuite.</figcaption>
-      </figure>
+  <h3>Etape 2 : coupez l'electricite si necessaire</h3>
+  <p>Si l'eau coule a proximite d'une prise electrique, d'un appareil branche ou d'un tableau electrique, coupez le disjoncteur general par securite. Le risque de court-circuit ou d'electrocution est reel et potentiellement mortel. Ne touchez jamais un appareil electrique mouille, meme s'il semble eteint. Si le tableau electrique est lui-meme touche par l'eau, ne le touchez pas et appelez les pompiers.</p>
 
-      <h3>Etape 2 : coupez l'electricite si necessaire</h3>
-      <p>Si l'eau coule a proximite d'une prise electrique, d'un appareil branche ou d'un tableau electrique, coupez le disjoncteur general par securite. Le risque de court-circuit ou d'electrocution est reel et potentiellement mortel. Ne touchez jamais un appareil electrique mouille, meme s'il semble eteint. Si le tableau electrique est lui-meme touche par l'eau, ne le touchez pas et appelez les pompiers.</p>
+  <h3>Etape 3 : contenez l'ecoulement</h3>
+  <p>Placez des serpillieres, des serviettes ou des bassines sous la fuite pour limiter la propagation de l'eau. Si l'eau coule du plafond, percez un petit trou au point le plus bas du bombement pour evacuer l'eau de maniere controlee. C'est contre-intuitif, mais cela evite un effondrement brutal de la zone imbibee qui causerait des degats bien plus importants.</p>
 
-      <h3>Etape 3 : contenez l'ecoulement</h3>
-      <p>Placez des serpillieres, des serviettes ou des bassines sous la fuite pour limiter la propagation de l'eau. Si l'eau coule du plafond, percez un petit trou au point le plus bas du bombement pour evacuer l'eau de maniere controlee. C'est contre-intuitif, mais cela evite un effondrement brutal de la zone imbibee qui causerait des degats bien plus importants.</p>
+  <h3>Etape 4 : protegez vos biens</h3>
+  <p>Deplacez les meubles, les tapis, les appareils electroniques et les documents importants hors de la zone touchee. Si un meuble est trop lourd pour etre deplace, surelevez-le avec des cales (briques, planches, livres epais) pour l'eloigner de l'eau stagnante. Pensez aussi aux objets de valeur dans les pieces adjacentes si l'eau se propage.</p>
 
-      <h3>Etape 4 : protegez vos biens</h3>
-      <p>Deplacez les meubles, les tapis, les appareils electroniques et les documents importants hors de la zone touchee. Si un meuble est trop lourd pour etre deplace, surelevez-le avec des cales (briques, planches, livres epais) pour l'eloigner de l'eau stagnante. Pensez aussi aux objets de valeur dans les pieces adjacentes si l'eau se propage.</p>
+  <h3>Etape 5 : prenez des photos</h3>
+  <p>Avant de nettoyer, photographiez les degats sous tous les angles. Ces photos seront indispensables pour votre declaration de sinistre. Photographiez egalement l'origine apparente de la fuite si elle est visible, le compteur d'eau (pour attester de la consommation anormale) et chaque bien endommage. Un conseil : filmez aussi en video pour donner une vue d'ensemble. Horodatez vos cliches en activant la date sur votre telephone.</p>
 
-      <h3>Etape 5 : prenez des photos</h3>
-      <p>Avant de nettoyer, photographiez les degats sous tous les angles. Ces photos seront indispensables pour votre declaration de sinistre. Photographiez egalement l'origine apparente de la fuite si elle est visible, le compteur d'eau (pour attester de la consommation anormale) et chaque bien endommage. Un conseil : filmez aussi en video pour donner une vue d'ensemble. Horodatez vos cliches en activant la date sur votre telephone.</p>
+  <h3>Etape 6 : appelez votre plombier</h3>
+  <p>Contactez un <a href="/services/depannage-plomberie/">plombier d'urgence</a> pour une intervention rapide. Decrivez la situation avec precision : localisation de la fuite, type de canalisation concernee (si visible), ampleur de l'ecoulement, etage concerne. Ces informations permettent au technicien de preparer le materiel necessaire avant de partir et d'estimer la duree d'intervention.</p>
 
-      <h3>Etape 6 : appelez votre plombier</h3>
-      <p>Contactez un <a href="/services/depannage-plomberie/">plombier d'urgence</a> pour une intervention rapide. Decrivez la situation avec precision : localisation de la fuite, type de canalisation concernee (si visible), ampleur de l'ecoulement, etage concerne. Ces informations permettent au technicien de preparer le materiel necessaire avant de partir et d'estimer la duree d'intervention.</p>
+  <p>RM Plombier SARL intervient en urgence 7j/7 dans l'Ain et le nord du Rhone, que vous soyez a <a href="/plombier-rillieux-la-pape/">Rillieux-la-Pape</a>, <a href="/plombier-caluire-et-cuire/">Caluire-et-Cuire</a>, <a href="/plombier-montluel/">Montluel</a> ou dans une autre commune de notre zone. Appelez le <a href="tel:0635464924">06 35 46 49 24</a>.</p>
 
-      <p>RM Plombier SARL intervient en urgence 7j/7 dans l'Ain et le nord du Rhone, que vous soyez a <a href="/plombier-rillieux-la-pape/">Rillieux-la-Pape</a>, <a href="/plombier-caluire-et-cuire/">Caluire-et-Cuire</a>, <a href="/plombier-montluel/">Montluel</a> ou dans une autre commune de notre zone. Appelez le <a href="tel:0635464924">06 35 46 49 24</a>.</p>
+  <h3>Etape 7 : declarez le sinistre a votre assurance</h3>
+  <p>En cas de degat des eaux, vous disposez de 5 jours ouvres pour declarer le sinistre a votre assurance habitation. N'attendez pas : plus la declaration est rapide, plus le traitement sera fluide.</p>
 
-      <h3>Etape 7 : declarez le sinistre a votre assurance</h3>
-      <p>En cas de degat des eaux, vous disposez de 5 jours ouvres pour declarer le sinistre a votre assurance habitation. N'attendez pas : plus la declaration est rapide, plus le traitement sera fluide.</p>
+  <h2>Les differents types de fuites d'eau</h2>
 
-      <h2>Les differents types de fuites d'eau</h2>
+  <p>Toutes les fuites ne se ressemblent pas. Identifier le type de fuite vous aidera a reagir de maniere adaptee et a communiquer efficacement avec votre plombier.</p>
 
-      <p>Toutes les fuites ne se ressemblent pas. Identifier le type de fuite vous aidera a reagir de maniere adaptee et a communiquer efficacement avec votre plombier.</p>
+  <h3>La fuite apparente</h3>
+  <p>C'est la plus facile a reperer : l'eau coule visiblement d'un robinet, d'un raccord, d'un joint de siphon ou d'un tuyau apparent. La source est identifiable a l'oeil nu. En general, la reparation est rapide et le cout modere (remplacement de joint, resserrage de raccord, changement de piece defectueuse).</p>
 
-      <h3>La fuite apparente</h3>
-      <p>C'est la plus facile a reperer : l'eau coule visiblement d'un robinet, d'un raccord, d'un joint de siphon ou d'un tuyau apparent. La source est identifiable a l'oeil nu. En general, la reparation est rapide et le cout modere (remplacement de joint, resserrage de raccord, changement de piece defectueuse).</p>
+  <h3>La fuite encastree</h3>
+  <p>La canalisation qui fuit est dans le mur ou dans le sol, sous le carrelage. L'eau apparait sous forme de taches d'humidite, de cloques dans la peinture, de moisissures ou de zones plus froides au toucher. Ce type de fuite est plus complexe a localiser et a reparer. Un service de <a href="/services/detection-reparation-fuites/">detection de fuite</a> par camera thermique ou acoustique permet de localiser precisement le point de fuite sans tout casser.</p>
 
-      <h3>La fuite encastree</h3>
-      <p>La canalisation qui fuit est dans le mur ou dans le sol, sous le carrelage. L'eau apparait sous forme de taches d'humidite, de cloques dans la peinture, de moisissures ou de zones plus froides au toucher. Ce type de fuite est plus complexe a localiser et a reparer. Un service de <a href="/services/detection-reparation-fuites/">detection de fuite</a> par camera thermique ou acoustique permet de localiser precisement le point de fuite sans tout casser.</p>
+  <h3>La fuite sous dalle</h3>
+  <p>La plus insidieuse. La canalisation encastree dans la dalle beton du sol fuit lentement, sans signe visible pendant des semaines, voire des mois. Les indices : une zone anormalement chaude au sol (fuite sur le circuit d'eau chaude), une augmentation inexpliquee de la facture d'eau, ou des remontees d'humidite. La reparation necessite soit un passage en apparent des canalisations, soit un travail de terrassement localise apres detection precise.</p>
 
-      <h3>La fuite sous dalle</h3>
-      <p>La plus insidieuse. La canalisation encastree dans la dalle beton du sol fuit lentement, sans signe visible pendant des semaines, voire des mois. Les indices : une zone anormalement chaude au sol (fuite sur le circuit d'eau chaude), une augmentation inexpliquee de la facture d'eau, ou des remontees d'humidite. La reparation necessite soit un passage en apparent des canalisations, soit un travail de terrassement localise apres detection precise.</p>
+  <h3>La fuite sur le reseau exterieur</h3>
+  <p>La canalisation d'arrivee d'eau entre le compteur et la maison peut aussi fuir, souvent a cause du gel, de mouvements de terrain ou du vieillissement des materiaux. Indice principal : le compteur d'eau tourne en continu meme quand aucun robinet n'est ouvert. Notez que depuis la loi Warsmann de 2012, votre facture d'eau peut etre plafonnee en cas de fuite apres compteur sur canalisation non visible, sous certaines conditions.</p>
 
-      <h3>La fuite sur le reseau exterieur</h3>
-      <p>La canalisation d'arrivee d'eau entre le compteur et la maison peut aussi fuir, souvent a cause du gel, de mouvements de terrain ou du vieillissement des materiaux. Indice principal : le compteur d'eau tourne en continu meme quand aucun robinet n'est ouvert. Notez que depuis la loi Warsmann de 2012, votre facture d'eau peut etre plafonnee en cas de fuite apres compteur sur canalisation non visible, sous certaines conditions.</p>
+  <h2>La declaration d'assurance degat des eaux : mode d'emploi</h2>
 
-      <h2>La declaration d'assurance degat des eaux : mode d'emploi</h2>
+  <p>La gestion administrative d'un degat des eaux peut paraitre complexe. Voici la procedure detaillee pour ne rien oublier.</p>
 
-      <p>La gestion administrative d'un degat des eaux peut paraitre complexe. Voici la procedure detaillee pour ne rien oublier.</p>
+  <h3>Le delai legal : 5 jours ouvres</h3>
+  <p>A compter de la decouverte du sinistre (pas de la date de la fuite), vous avez 5 jours ouvres pour declarer le degat des eaux a votre assurance habitation. Vous pouvez le faire par telephone, courrier recommande ou via l'espace client en ligne de votre assureur. Un courrier recommande est toujours preferable pour avoir une preuve de la date de declaration.</p>
 
-      <h3>Le delai legal : 5 jours ouvres</h3>
-      <p>A compter de la decouverte du sinistre (pas de la date de la fuite), vous avez 5 jours ouvres pour declarer le degat des eaux a votre assurance habitation. Vous pouvez le faire par telephone, courrier recommande ou via l'espace client en ligne de votre assureur. Un courrier recommande est toujours preferable pour avoir une preuve de la date de declaration.</p>
+  <h3>Le constat amiable de degat des eaux</h3>
+  <p>Si un voisin est implique (fuite provenant de l'etage superieur, fuite de votre logement endommageant l'etage inferieur), un constat amiable de degat des eaux doit etre rempli par les deux parties. Ce document standardise (disponible aupres de votre assureur) decrit l'origine de la fuite, les degats constates et les coordonnees des assurances respectives. Chaque partie envoie un exemplaire a son propre assureur.</p>
 
-      <h3>Le constat amiable de degat des eaux</h3>
-      <p>Si un voisin est implique (fuite provenant de l'etage superieur, fuite de votre logement endommageant l'etage inferieur), un constat amiable de degat des eaux doit etre rempli par les deux parties. Ce document standardise (disponible aupres de votre assureur) decrit l'origine de la fuite, les degats constates et les coordonnees des assurances respectives. Chaque partie envoie un exemplaire a son propre assureur.</p>
+  <h3>Les documents a fournir</h3>
+  <ul>
+    <li>Le constat amiable signe (si voisin implique)</li>
+    <li>Les photos des degats (avant et apres nettoyage)</li>
+    <li>Le rapport d'intervention du plombier identifiant l'origine de la fuite</li>
+    <li>Les factures de reparation</li>
+    <li>La liste des biens endommages avec valeur estimee ou factures d'achat</li>
+    <li>Les devis de remise en etat (peinture, carrelage, parquet)</li>
+  </ul>
 
-      <h3>Les documents a fournir</h3>
-      <ul>
-        <li>Le constat amiable signe (si voisin implique)</li>
-        <li>Les photos des degats (avant et apres nettoyage)</li>
-        <li>Le rapport d'intervention du plombier identifiant l'origine de la fuite</li>
-        <li>Les factures de reparation</li>
-        <li>La liste des biens endommages avec valeur estimee ou factures d'achat</li>
-        <li>Les devis de remise en etat (peinture, carrelage, parquet)</li>
-      </ul>
+  <h3>L'expertise et l'indemnisation</h3>
+  <p>Pour les sinistres depassant un certain montant (generalement <span class="whitespace-nowrap">1 600</span> euros), l'assureur mandate un expert qui vient constater les degats. Conservez les elements endommages jusqu'a son passage. L'indemnisation tient compte de la vetuste des biens (un parquet de 15 ans ne sera pas indemnise au prix du neuf). Le delai moyen d'indemnisation est de 1 a 3 mois apres l'expertise.</p>
 
-      <h3>L'expertise et l'indemnisation</h3>
-      <p>Pour les sinistres depassant un certain montant (generalement <span class="whitespace-nowrap">1 600</span> euros), l'assureur mandate un expert qui vient constater les degats. Conservez les elements endommages jusqu'a son passage. L'indemnisation tient compte de la vetuste des biens (un parquet de 15 ans ne sera pas indemnise au prix du neuf). Le delai moyen d'indemnisation est de 1 a 3 mois apres l'expertise.</p>
+  <div class="article-cta">
+    <p>Besoin d'un plombier dans l'Ain ?</p>
+    <p>RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
+    <a href="tel:0635464924" class="btn-primary text-sm">Appeler le 06 35 46 49 24</a>
+  </div>
 
-      <!-- Encart CTA -->
-      <div class="not-prose bg-surface-alt rounded-xl p-6 my-8 border border-slate-200">
-        <p class="font-bold text-slate-900 mb-2">Besoin d'un plombier dans l'Ain ?</p>
-        <p class="text-sm text-slate-500 mb-4">RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
-        <a href="tel:0635464924" class="btn-primary text-sm">Appeler le 06 35 46 49 24</a>
-      </div>
+  <h2>Ce qu'il ne faut surtout pas faire</h2>
 
-      <h2>Ce qu'il ne faut surtout pas faire</h2>
+  <ul>
+    <li><strong>Ne tentez pas de reparer vous-meme une canalisation sous pression.</strong> Un colmatage provisoire (ruban, pate, chiffon) peut ceder a tout moment et aggraver la situation. Ces solutions sont temporaires : elles ne dispensent pas d'appeler un professionnel</li>
+    <li><strong>N'utilisez pas d'appareil electrique en zone inondee.</strong> Pas d'aspirateur classique, pas de seche-cheveux tant que l'installation electrique n'a pas ete verifiee. Utilisez uniquement un aspirateur a eau (type eau et poussiere) prevu a cet effet</li>
+    <li><strong>Ne tardez pas a agir.</strong> Une fuite meme minime peut causer des degats structurels si elle perdure : infiltration dans la dalle, moisissures dans les cloisons, affaiblissement des structures en bois, proliferation de champignons</li>
+    <li><strong>Ne jetez pas les elements endommages avant le passage de l'expert.</strong> Conservez tout, meme les objets irrecuperables, jusqu'a ce que l'expert ait constate les degats</li>
+  </ul>
 
-      <ul>
-        <li><strong>Ne tentez pas de reparer vous-meme une canalisation sous pression.</strong> Un colmatage provisoire (ruban, pate, chiffon) peut ceder a tout moment et aggraver la situation. Ces solutions sont temporaires : elles ne dispensent pas d'appeler un professionnel</li>
-        <li><strong>N'utilisez pas d'appareil electrique en zone inondee.</strong> Pas d'aspirateur classique, pas de seche-cheveux tant que l'installation electrique n'a pas ete verifiee. Utilisez uniquement un aspirateur a eau (type eau et poussiere) prevu a cet effet</li>
-        <li><strong>Ne tardez pas a agir.</strong> Une fuite meme minime peut causer des degats structurels si elle perdure : infiltration dans la dalle, moisissures dans les cloisons, affaiblissement des structures en bois, proliferation de champignons</li>
-        <li><strong>Ne jetez pas les elements endommages avant le passage de l'expert.</strong> Conservez tout, meme les objets irrecuperables, jusqu'a ce que l'expert ait constate les degats</li>
-      </ul>
+  <h2>Prevenir les fuites : les bons reflexes</h2>
 
-      <h2>Prevenir les fuites : les bons reflexes</h2>
+  <p>La meilleure urgence est celle qui n'arrive pas. Quelques habitudes simples permettent de reduire considerablement le risque de fuite.</p>
 
-      <p>La meilleure urgence est celle qui n'arrive pas. Quelques habitudes simples permettent de reduire considerablement le risque de fuite.</p>
+  <h3>Inspection reguliere des installations</h3>
+  <p>Verifiez visuellement vos installations tous les 6 mois : joints des robinets, raccords sous les eviers, flexibles des machines a laver et du lave-vaisselle, etat du chauffe-eau. Un flexible de machine a laver a une duree de vie de 5 a 8 ans. Remplacez-le preventiment plutot que d'attendre qu'il lache.</p>
 
-      <h3>Inspection reguliere des installations</h3>
-      <p>Verifiez visuellement vos installations tous les 6 mois : joints des robinets, raccords sous les eviers, flexibles des machines a laver et du lave-vaisselle, etat du chauffe-eau. Un flexible de machine a laver a une duree de vie de 5 a 8 ans. Remplacez-le preventiment plutot que d'attendre qu'il lache.</p>
+  <h3>Surveillance de la consommation d'eau</h3>
+  <p>Relevez votre compteur d'eau une fois par mois et notez la consommation. Une augmentation anormale sans changement d'habitude est un indice de fuite. Le test de la nuit : relevez le compteur avant de vous coucher, n'utilisez pas d'eau pendant la nuit, relevez a nouveau au matin. Si le compteur a tourne, il y a une fuite quelque part.</p>
 
-      <h3>Surveillance de la consommation d'eau</h3>
-      <p>Relevez votre compteur d'eau une fois par mois et notez la consommation. Une augmentation anormale sans changement d'habitude est un indice de fuite. Le test de la nuit : relevez le compteur avant de vous coucher, n'utilisez pas d'eau pendant la nuit, relevez a nouveau au matin. Si le compteur a tourne, il y a une fuite quelque part.</p>
+  <h3>Protection contre le gel</h3>
+  <p>Dans l'Ain, les hivers peuvent etre rigoureux. Avant chaque hiver, isolez les canalisations exterieures et celles situees dans des locaux non chauffes (garage, cave, vide sanitaire). Purgez les robinets exterieurs. Un tuyau qui gele peut eclater et provoquer une inondation au degel.</p>
 
-      <h3>Protection contre le gel</h3>
-      <p>Dans l'Ain, les hivers peuvent etre rigoureux. Avant chaque hiver, isolez les canalisations exterieures et celles situees dans des locaux non chauffes (garage, cave, vide sanitaire). Purgez les robinets exterieurs. Un tuyau qui gele peut eclater et provoquer une inondation au degel.</p>
+  <figure class="article-img">
+    <img
+      src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/robinet-noir-inox-square.png"
+      alt="Robinet noir inox, equipement de qualite pour prevenir les fuites"
+      loading="lazy"
+    />
+    <figcaption>Une robinetterie de qualite et bien entretenue est la meilleure prevention contre les fuites.</figcaption>
+  </figure>
 
-      <!-- Image illustrative -->
-      <figure class="not-prose my-8">
-        <img
-          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/robinet-noir-inox-square.png"
-          alt="Robinet noir inox, equipement de qualite pour prevenir les fuites"
-          loading="lazy"
-          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
-        />
-        <figcaption class="text-xs text-slate-400 italic mt-2">Une robinetterie de qualite et bien entretenue est la meilleure prevention contre les fuites.</figcaption>
-      </figure>
+  <h3>Faire appel a un professionnel pour un diagnostic</h3>
+  <p>Si votre logement a plus de 20 ans, faites realiser un diagnostic complet de vos installations. Un service de <a href="/services/detection-reparation-fuites/">detection de fuites</a> permet d'identifier les points faibles de votre reseau avant qu'ils ne lachent. C'est un investissement modeste compare au cout d'un degat des eaux.</p>
 
-      <h3>Faire appel a un professionnel pour un diagnostic</h3>
-      <p>Si votre logement a plus de 20 ans, faites realiser un diagnostic complet de vos installations. Un service de <a href="/services/detection-reparation-fuites/">detection de fuites</a> permet d'identifier les points faibles de votre reseau avant qu'ils ne lachent. C'est un investissement modeste compare au cout d'un degat des eaux.</p>
+  <div class="article-faq">
+    <h2>Questions frequentes</h2>
 
-      <h2>Questions frequentes</h2>
+    <h3>Que faire en premier en cas de fuite d'eau ?</h3>
+    <p>Coupez immediatement l'arrivee d'eau au robinet d'arret le plus proche de la fuite. Si vous ne le trouvez pas, fermez le robinet d'arret general du logement. Si l'eau est proche d'installations electriques, coupez le disjoncteur general par securite.</p>
 
-      <h3>Que faire en premier en cas de fuite d'eau ?</h3>
-      <p>Coupez immediatement l'arrivee d'eau au robinet d'arret le plus proche de la fuite. Si vous ne le trouvez pas, fermez le robinet d'arret general du logement. Si l'eau est proche d'installations electriques, coupez le disjoncteur general par securite.</p>
+    <h3>Quel delai pour declarer un degat des eaux a l'assurance ?</h3>
+    <p>Vous disposez de 5 jours ouvres a compter de la decouverte du sinistre pour declarer le degat des eaux a votre assurance. Si un voisin est implique, un constat amiable doit etre rempli par les deux parties.</p>
 
-      <h3>Quel delai pour declarer un degat des eaux a l'assurance ?</h3>
-      <p>Vous disposez de 5 jours ouvres a compter de la decouverte du sinistre pour declarer le degat des eaux a votre assurance. Si un voisin est implique, un constat amiable doit etre rempli par les deux parties.</p>
+    <h3>Comment detecter une fuite d'eau non visible ?</h3>
+    <p>Relevez votre compteur d'eau le soir, n'utilisez pas d'eau pendant la nuit, puis relevez a nouveau le matin. Si le compteur a tourne, il y a une fuite. Un plombier equipe peut localiser precisement la fuite par <a href="/services/detection-reparation-fuites/">detection acoustique, gaz traceur ou camera thermique</a> sans casser.</p>
 
-      <h3>Comment detecter une fuite d'eau non visible ?</h3>
-      <p>Relevez votre compteur d'eau le soir, n'utilisez pas d'eau pendant la nuit, puis relevez a nouveau le matin. Si le compteur a tourne, il y a une fuite. Un plombier equipe peut localiser precisement la fuite par <a href="/services/detection-reparation-fuites/">detection acoustique, gaz traceur ou camera thermique</a> sans casser.</p>
-
-      <h3>Combien coute une reparation de fuite d'eau en urgence ?</h3>
-      <p>Le cout depend du type de fuite. Une reparation de fuite apparente coute entre 100 et 250 euros. Pour une fuite encastree necessitant une recherche, comptez 200 a 500 euros (recherche + reparation). Un <a href="/services/depannage-plomberie/">plombier serieux</a> vous donne un devis avant intervention.</p>
-
-      <!-- CTA final -->
-      <div class="not-prose mt-10 text-center">
-        <a href="/contact/" class="btn-primary">Contactez-nous pour un depannage urgent</a>
-      </div>
-    </div>
-  </section>
-
-  <CtaBanner />
-</Base>
+    <h3>Combien coute une reparation de fuite d'eau en urgence ?</h3>
+    <p>Le cout depend du type de fuite. Une reparation de fuite apparente coute entre 100 et 250 euros. Pour une fuite encastree necessitant une recherche, comptez 200 a 500 euros (recherche + reparation). Un <a href="/services/depannage-plomberie/">plombier serieux</a> vous donne un devis avant intervention.</p>
+  </div>
+</BlogPost>
