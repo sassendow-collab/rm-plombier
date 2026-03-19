@@ -9,6 +9,10 @@ const articles = [
     href: '/blog/choisir-plombier-ain/',
     date: '15 mars 2026',
     readTime: '12 min',
+    category: 'Conseils',
+    categoryColor: 'bg-primary/10 text-primary',
+    image: 'https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/plombier-wc-suspendu-square.png',
+    imageAlt: 'Artisan plombier au travail sur un WC suspendu',
   },
   {
     title: 'Fuite d\'eau : que faire en urgence avant l\'arrivée du plombier',
@@ -16,6 +20,10 @@ const articles = [
     href: '/blog/fuite-eau-urgence/',
     date: '10 mars 2026',
     readTime: '12 min',
+    category: 'Urgence',
+    categoryColor: 'bg-red-50 text-red-600',
+    image: 'https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/evier-inox-cuisine-landscape.png',
+    imageAlt: 'Evier inox de cuisine avec robinetterie',
   },
   {
     title: 'Chaudière : entretien annuel obligatoire, ce qu\'il faut savoir',
@@ -23,6 +31,10 @@ const articles = [
     href: '/blog/entretien-chaudiere/',
     date: '5 mars 2026',
     readTime: '12 min',
+    category: 'Chauffage',
+    categoryColor: 'bg-orange-50 text-orange-600',
+    image: 'https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/radiateur-salon-landscape.png',
+    imageAlt: 'Radiateur design dans un salon moderne',
   },
   {
     title: 'Rénovation salle de bain : budget, étapes et conseils d\'un pro',
@@ -30,6 +42,10 @@ const articles = [
     href: '/blog/renovation-salle-de-bain-budget/',
     date: '1 mars 2026',
     readTime: '14 min',
+    category: 'Rénovation',
+    categoryColor: 'bg-emerald-50 text-emerald-600',
+    image: 'https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/douche-italienne-beton-landscape.png',
+    imageAlt: 'Douche italienne en béton ciré, réalisation salle de bain',
   },
 ];
 
@@ -53,31 +69,45 @@ const jsonLd = {
   jsonLd={jsonLd}
 >
   <!-- Hero -->
-  <section class="py-12 lg:py-16 bg-surface">
+  <section class="bg-gradient-to-br from-primary-dark to-primary py-14 lg:py-20">
     <div class="max-w-4xl mx-auto px-4 lg:px-6 text-center">
-      <span class="section-label">Blog</span>
-      <h1 class="text-3xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Conseils plomberie et chauffage</h1>
-      <p class="text-slate-600 text-lg max-w-2xl mx-auto">Guides pratiques, astuces et informations utiles par un artisan plombier chauffagiste de l'Ain.</p>
+      <h1 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Blog RM Plombier</h1>
+      <p class="text-white/70 text-lg max-w-2xl mx-auto">Conseils, guides et actualites plomberie. Des articles pratiques par un artisan plombier chauffagiste de l'Ain.</p>
     </div>
   </section>
 
   <!-- Articles grid -->
   <section class="py-12 lg:py-16">
     <div class="max-w-5xl mx-auto px-4 lg:px-6">
-      <div class="grid sm:grid-cols-2 gap-6">
+      <div class="grid sm:grid-cols-2 gap-8">
         {articles.map((article) => (
-          <a href={article.href} class="card group flex flex-col">
-            <div class="flex items-center gap-3 text-sm text-slate-500 mb-3">
-              <time>{article.date}</time>
-              <span class="text-slate-300">|</span>
-              <span>{article.readTime} de lecture</span>
+          <a href={article.href} class="group flex flex-col bg-white rounded-2xl border border-slate-200 hover:border-primary/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <!-- Image -->
+            <div class="relative overflow-hidden aspect-[16/10]">
+              <img
+                src={article.image}
+                alt={article.imageAlt}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span class={`absolute top-3 left-3 ${article.categoryColor} bg-primary/10 text-primary text-xs font-semibold px-2.5 py-1 rounded-full`}>
+                {article.category}
+              </span>
             </div>
-            <h2 class="text-lg font-bold text-primary-dark mb-2 group-hover:text-primary transition-colors">{article.title}</h2>
-            <p class="text-slate-600 text-sm leading-relaxed flex-1">{article.description}</p>
-            <span class="inline-flex items-center gap-1 text-primary font-semibold text-sm mt-4 group-hover:gap-2 transition-all">
-              Lire l'article
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </span>
+            <!-- Content -->
+            <div class="flex flex-col flex-1 p-5 lg:p-6">
+              <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                <time>{article.date}</time>
+                <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                <span>{article.readTime} de lecture</span>
+              </div>
+              <h2 class="text-lg font-bold text-primary-dark mb-2 group-hover:text-primary transition-colors leading-snug">{article.title}</h2>
+              <p class="text-slate-600 text-sm leading-relaxed flex-1 line-clamp-3">{article.description}</p>
+              <span class="inline-flex items-center gap-1.5 text-primary font-semibold text-sm mt-4 group-hover:gap-2.5 transition-all">
+                Lire l'article
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </span>
+            </div>
           </a>
         ))}
       </div>

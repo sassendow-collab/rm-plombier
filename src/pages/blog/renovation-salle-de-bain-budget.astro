@@ -65,14 +65,22 @@ const faqJsonLd = {
   jsonLd={[jsonLd, faqJsonLd]}
   ogType="article"
 >
-  <!-- Hero compact -->
-  <section class="py-10 lg:py-14 bg-surface">
-    <div class="max-w-3xl mx-auto px-4 lg:px-6">
-      <span class="section-label">Renovation</span>
-      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Renovation salle de bain : budget, etapes et conseils d'un pro</h1>
-      <div class="flex items-center gap-3 text-sm text-slate-500">
+  <!-- Hero article avec image -->
+  <section class="relative">
+    <div class="absolute inset-0">
+      <img
+        src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/douche-italienne-beton-landscape.png"
+        alt="Douche italienne en beton cire, renovation salle de bain"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/60 to-transparent"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-4 lg:px-6 py-16 lg:py-24 min-h-[40vh] lg:min-h-[50vh] flex flex-col justify-end">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/80 text-white mb-4 w-fit">Renovation</span>
+      <h1 class="text-2xl lg:text-4xl font-extrabold text-white mt-2 mb-4 leading-tight">Renovation salle de bain : budget, etapes et conseils d'un pro</h1>
+      <div class="flex items-center gap-3 text-sm text-white/70">
         <time datetime="2026-03-01">1 mars 2026</time>
-        <span class="text-slate-300">|</span>
+        <span class="w-1 h-1 rounded-full bg-white/40"></span>
         <span>14 min de lecture</span>
       </div>
     </div>
@@ -115,6 +123,17 @@ const faqJsonLd = {
       </ul>
 
       <p>Ces prix incluent la fourniture et la pose. Les ecarts s'expliquent principalement par le choix des materiaux et des equipements. Un meuble vasque d'entree de gamme coute 200 euros, un modele design peut depasser <span class="whitespace-nowrap">1 000</span> euros.</p>
+
+      <!-- Image illustrative -->
+      <figure class="not-prose my-8">
+        <img
+          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/baignoire-ilot-parquet-square.png"
+          alt="Baignoire ilot sur parquet, renovation haut de gamme"
+          loading="lazy"
+          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
+        />
+        <figcaption class="text-xs text-slate-400 italic mt-2">Une baignoire ilot sur parquet, un choix haut de gamme pour une salle de bain spacieuse.</figcaption>
+      </figure>
 
       <h2>Les etapes d'une renovation reussie</h2>
 
@@ -160,6 +179,24 @@ const faqJsonLd = {
       <h3>La robinetterie noire ou doree</h3>
       <p>Le chrome reste majoritaire, mais la robinetterie noire mat et doree brossee gagnent du terrain. Attention : ces finitions sont plus sensibles aux traces de calcaire. Dans l'Ain, ou l'eau est assez calcaire, prevoyez un entretien regulier ou un adoucisseur d'eau.</p>
 
+      <!-- Image illustrative -->
+      <figure class="not-prose my-8">
+        <img
+          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/double-vasque-zellige-square.png"
+          alt="Double vasque avec carrelage zellige, tendance salle de bain"
+          loading="lazy"
+          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
+        />
+        <figcaption class="text-xs text-slate-400 italic mt-2">La double vasque avec zellige, une tendance forte en renovation de salle de bain.</figcaption>
+      </figure>
+
+      <!-- Encart CTA -->
+      <div class="not-prose bg-surface-alt rounded-xl p-6 my-8 border border-slate-200">
+        <p class="font-bold text-slate-900 mb-2">Besoin d'un plombier dans l'Ain ?</p>
+        <p class="text-sm text-slate-500 mb-4">RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
+        <a href="tel:0635464924" class="btn-primary text-sm">Appeler le 06 35 46 49 24</a>
+      </div>
+
       <h2>Les aides financieres pour renover sa salle de bain</h2>
 
       <p>Plusieurs dispositifs peuvent reduire le cout de votre renovation, selon votre situation :</p>
@@ -192,6 +229,17 @@ const faqJsonLd = {
 
       <h3>Le meuble vasque : solide et fonctionnel</h3>
       <p>Privilegiez les meubles en bois stratifie hydrofuge ou en MDF laque, concus pour resister a l'humidite. Les meubles en bois massif non traite se degradent rapidement dans une salle de bain. Verifiez que le meuble est livre avec le plan vasque integre : les ensembles complets sont souvent plus economiques que l'achat separe.</p>
+
+      <!-- Image illustrative -->
+      <figure class="not-prose my-8">
+        <img
+          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/seche-serviettes-taupe-square.png"
+          alt="Seche-serviettes taupe dans une salle de bain renovee"
+          loading="lazy"
+          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
+        />
+        <figcaption class="text-xs text-slate-400 italic mt-2">Le seche-serviettes, un equipement de confort devenu incontournable en renovation.</figcaption>
+      </figure>
 
       <h2>Les erreurs a eviter</h2>
 

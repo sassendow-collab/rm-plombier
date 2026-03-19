@@ -1,0 +1,200 @@
+---
+import Base from './Base.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heroImage: string;
+  heroImageAlt: string;
+  category: string;
+  date: string;
+  dateISO: string;
+  readTime: string;
+  breadcrumbLabel: string;
+  jsonLd: object | object[];
+}
+
+const {
+  title,
+  description,
+  heroImage,
+  heroImageAlt,
+  category,
+  date,
+  dateISO,
+  readTime,
+  breadcrumbLabel,
+  jsonLd,
+} = Astro.props;
+
+const breadcrumbs = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+  { name: breadcrumbLabel, url: Astro.url.pathname },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  jsonLd={jsonLd}
+  ogType="article"
+>
+  <!-- HERO ARTICLE -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img src={heroImage} alt={heroImageAlt} class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-primary-dark/40"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 lg:px-6 pt-20 pb-16 lg:pt-28 lg:pb-20 min-h-[35vh] lg:min-h-[45vh] flex flex-col justify-end">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-accent text-primary-dark uppercase tracking-wide">{category}</span>
+        <span class="text-xs text-white/50">{readTime}</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4 max-w-3xl">{title}</h1>
+      <div class="flex items-center gap-3 text-sm text-white/60">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <span>RM Plombier SARL</span>
+        </div>
+        <span class="w-1 h-1 rounded-full bg-white/30"></span>
+        <time datetime={dateISO}>{date}</time>
+      </div>
+    </div>
+    <!-- Diagonale -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden -mb-px" style="line-height:0">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" class="w-full h-[30px] sm:h-[40px] lg:h-[50px]"><polygon points="0,60 1440,20 1440,60" fill="#ffffff"/></svg>
+    </div>
+  </section>
+
+  <!-- CONTENU ARTICLE -->
+  <article class="py-10 lg:py-16">
+    <div class="max-w-3xl mx-auto px-4 lg:px-6">
+      <div class="article-content">
+        <slot />
+      </div>
+    </div>
+  </article>
+
+  <CtaBanner title="Un projet de plomberie ?" subtitle="Devis gratuit, intervention rapide dans l'Ain et le Rhône." />
+</Base>
+
+<style is:global>
+  /* Article prose styles */
+  .article-content {
+    @apply text-slate-700 leading-relaxed;
+    font-size: 1.0625rem;
+  }
+
+  .article-content > p {
+    @apply mb-6;
+  }
+
+  .article-content > h2 {
+    @apply text-xl lg:text-2xl font-bold text-slate-900 mt-12 mb-4 pb-3 border-b border-slate-100;
+  }
+
+  .article-content > h3 {
+    @apply text-lg font-semibold text-slate-800 mt-8 mb-3;
+  }
+
+  .article-content > ul, .article-content > ol {
+    @apply mb-6 space-y-2;
+  }
+
+  .article-content > ul {
+    @apply list-none pl-0;
+  }
+
+  .article-content > ul > li {
+    @apply relative pl-6 text-slate-600;
+  }
+
+  .article-content > ul > li::before {
+    content: '';
+    @apply absolute left-0 top-[10px] w-2 h-2 rounded-full bg-accent;
+  }
+
+  .article-content > ol {
+    @apply list-none pl-0;
+    counter-reset: article-counter;
+  }
+
+  .article-content > ol > li {
+    @apply relative pl-10 text-slate-600;
+    counter-increment: article-counter;
+  }
+
+  .article-content > ol > li::before {
+    content: counter(article-counter);
+    @apply absolute left-0 top-0 w-7 h-7 rounded-lg bg-primary text-white text-xs font-bold flex items-center justify-center;
+  }
+
+  .article-content a {
+    @apply text-primary font-medium underline decoration-primary/30 underline-offset-2 hover:decoration-primary transition-colors;
+  }
+
+  .article-content strong {
+    @apply text-slate-900 font-semibold;
+  }
+
+  /* Image figure */
+  .article-img {
+    @apply my-10 rounded-2xl overflow-hidden shadow-md;
+  }
+
+  .article-img img {
+    @apply w-full aspect-[16/9] object-cover;
+  }
+
+  .article-img figcaption {
+    @apply bg-slate-50 px-4 py-2.5 text-xs text-slate-400 italic border-t border-slate-100;
+  }
+
+  /* CTA encart */
+  .article-cta {
+    @apply my-10 bg-gradient-to-br from-primary-dark to-primary rounded-2xl p-6 lg:p-8 text-center;
+  }
+
+  .article-cta p:first-child {
+    @apply font-bold text-white text-lg mb-1;
+  }
+
+  .article-cta p:nth-child(2) {
+    @apply text-white/60 text-sm mb-5;
+  }
+
+  /* FAQ section */
+  .article-faq {
+    @apply mt-12 bg-slate-50 rounded-2xl p-6 lg:p-8 border border-slate-100;
+  }
+
+  .article-faq h2 {
+    @apply text-xl font-bold text-slate-900 mb-6 pb-0 border-0 mt-0;
+  }
+
+  .article-faq h3 {
+    @apply text-base font-semibold text-slate-900 mt-5 mb-2;
+  }
+
+  .article-faq p {
+    @apply text-sm text-slate-600 mb-0;
+  }
+
+  /* Checklist */
+  .article-checklist {
+    @apply my-8 bg-surface-alt rounded-2xl p-6 border border-slate-100;
+  }
+
+  .article-checklist li {
+    @apply flex items-start gap-3 py-2;
+  }
+
+  .article-checklist li::before {
+    content: none !important;
+  }
+</style>

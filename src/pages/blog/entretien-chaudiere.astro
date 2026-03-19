@@ -65,14 +65,22 @@ const faqJsonLd = {
   jsonLd={[jsonLd, faqJsonLd]}
   ogType="article"
 >
-  <!-- Hero compact -->
-  <section class="py-10 lg:py-14 bg-surface">
-    <div class="max-w-3xl mx-auto px-4 lg:px-6">
-      <span class="section-label">Chauffage</span>
-      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Chaudiere : entretien annuel obligatoire, ce qu'il faut savoir</h1>
-      <div class="flex items-center gap-3 text-sm text-slate-500">
+  <!-- Hero article avec image -->
+  <section class="relative">
+    <div class="absolute inset-0">
+      <img
+        src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/radiateur-salon-landscape.png"
+        alt="Radiateur design dans un salon moderne"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/60 to-transparent"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-4 lg:px-6 py-16 lg:py-24 min-h-[40vh] lg:min-h-[50vh] flex flex-col justify-end">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-orange-500/80 text-white mb-4 w-fit">Chauffage</span>
+      <h1 class="text-2xl lg:text-4xl font-extrabold text-white mt-2 mb-4 leading-tight">Chaudiere : entretien annuel obligatoire, ce qu'il faut savoir</h1>
+      <div class="flex items-center gap-3 text-sm text-white/70">
         <time datetime="2026-03-05">5 mars 2026</time>
-        <span class="text-slate-300">|</span>
+        <span class="w-1 h-1 rounded-full bg-white/40"></span>
         <span>12 min de lecture</span>
       </div>
     </div>
@@ -143,6 +151,17 @@ const faqJsonLd = {
         <li>Le controle de la regulation et de la programmation</li>
       </ul>
 
+      <!-- Image illustrative -->
+      <figure class="not-prose my-8">
+        <img
+          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/radiateur-design-salon-landscape.png"
+          alt="Radiateur design dans un salon, installation chauffage moderne"
+          loading="lazy"
+          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
+        />
+        <figcaption class="text-xs text-slate-400 italic mt-2">Un radiateur design bien entretenu assure confort et economies d'energie.</figcaption>
+      </figure>
+
       <h2>L'attestation d'entretien : ce qu'elle doit contenir</h2>
 
       <p>A l'issue de l'intervention, le technicien vous remet une attestation d'entretien. Ce document officiel doit etre conserve pendant au moins 2 ans (nous recommandons de garder les 5 dernieres attestations). Voici ce qu'elle doit obligatoirement mentionner :</p>
@@ -201,6 +220,24 @@ const faqJsonLd = {
 
       <h3>Refus d'indemnisation par l'assurance</h3>
       <p>En cas de sinistre lie a la chaudiere (incendie, intoxication, degat des eaux), l'assurance peut refuser l'indemnisation si l'entretien n'est pas a jour. L'attestation d'entretien est le document qui prouve votre diligence.</p>
+
+      <!-- Encart CTA -->
+      <div class="not-prose bg-surface-alt rounded-xl p-6 my-8 border border-slate-200">
+        <p class="font-bold text-slate-900 mb-2">Besoin d'un plombier dans l'Ain ?</p>
+        <p class="text-sm text-slate-500 mb-4">RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
+        <a href="tel:0635464924" class="btn-primary text-sm">Appeler le 06 35 46 49 24</a>
+      </div>
+
+      <!-- Image illustrative -->
+      <figure class="not-prose my-8">
+        <img
+          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/thermodynamique-cellier-square.png"
+          alt="Ballon thermodynamique installe dans un cellier"
+          loading="lazy"
+          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
+        />
+        <figcaption class="text-xs text-slate-400 italic mt-2">Un ballon thermodynamique, alternative moderne et economique au chauffe-eau classique.</figcaption>
+      </figure>
 
       <h2>Quand remplacer plutot qu'entretenir ?</h2>
 

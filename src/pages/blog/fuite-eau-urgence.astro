@@ -65,14 +65,22 @@ const faqJsonLd = {
   jsonLd={[jsonLd, faqJsonLd]}
   ogType="article"
 >
-  <!-- Hero compact -->
-  <section class="py-10 lg:py-14 bg-surface">
-    <div class="max-w-3xl mx-auto px-4 lg:px-6">
-      <span class="section-label">Urgence</span>
-      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Fuite d'eau : que faire en urgence avant l'arrivee du plombier</h1>
-      <div class="flex items-center gap-3 text-sm text-slate-500">
+  <!-- Hero article avec image -->
+  <section class="relative">
+    <div class="absolute inset-0">
+      <img
+        src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/plombier-evier-cuisine-square.png"
+        alt="Plombier intervenant sur un evier de cuisine en urgence"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/60 to-transparent"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-4 lg:px-6 py-16 lg:py-24 min-h-[40vh] lg:min-h-[50vh] flex flex-col justify-end">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-red-500/80 text-white mb-4 w-fit">Urgence</span>
+      <h1 class="text-2xl lg:text-4xl font-extrabold text-white mt-2 mb-4 leading-tight">Fuite d'eau : que faire en urgence avant l'arrivee du plombier</h1>
+      <div class="flex items-center gap-3 text-sm text-white/70">
         <time datetime="2026-03-10">10 mars 2026</time>
-        <span class="text-slate-300">|</span>
+        <span class="w-1 h-1 rounded-full bg-white/40"></span>
         <span>12 min de lecture</span>
       </div>
     </div>
@@ -91,6 +99,17 @@ const faqJsonLd = {
       <p>C'est le premier reflexe, le plus important. Chaque minute qui passe avec l'eau qui coule aggrave les degats. Fermez le robinet d'arret le plus proche de la fuite. Si vous ne trouvez pas de robinet d'arret individuel (sous l'evier, derriere les WC, a cote du chauffe-eau), coupez l'arrivee d'eau generale du logement.</p>
 
       <p>Le robinet general se trouve souvent dans le placard technique, au sous-sol ou a l'entree du logement. En appartement, il est generalement situe dans les toilettes, sous l'evier de la cuisine ou dans un placard technique de l'entree. Un conseil important : reperez maintenant l'emplacement de votre robinet d'arret general, avant d'en avoir besoin en urgence. Collez une etiquette dessus si necessaire.</p>
+
+      <!-- Image illustrative -->
+      <figure class="not-prose my-8">
+        <img
+          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/evier-inox-cuisine-landscape.png"
+          alt="Evier inox de cuisine avec robinetterie moderne"
+          loading="lazy"
+          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
+        />
+        <figcaption class="text-xs text-slate-400 italic mt-2">Un evier bien entretenu avec une robinetterie de qualite reduit les risques de fuite.</figcaption>
+      </figure>
 
       <h3>Etape 2 : coupez l'electricite si necessaire</h3>
       <p>Si l'eau coule a proximite d'une prise electrique, d'un appareil branche ou d'un tableau electrique, coupez le disjoncteur general par securite. Le risque de court-circuit ou d'electrocution est reel et potentiellement mortel. Ne touchez jamais un appareil electrique mouille, meme s'il semble eteint. Si le tableau electrique est lui-meme touche par l'eau, ne le touchez pas et appelez les pompiers.</p>
@@ -151,6 +170,13 @@ const faqJsonLd = {
       <h3>L'expertise et l'indemnisation</h3>
       <p>Pour les sinistres depassant un certain montant (generalement <span class="whitespace-nowrap">1 600</span> euros), l'assureur mandate un expert qui vient constater les degats. Conservez les elements endommages jusqu'a son passage. L'indemnisation tient compte de la vetuste des biens (un parquet de 15 ans ne sera pas indemnise au prix du neuf). Le delai moyen d'indemnisation est de 1 a 3 mois apres l'expertise.</p>
 
+      <!-- Encart CTA -->
+      <div class="not-prose bg-surface-alt rounded-xl p-6 my-8 border border-slate-200">
+        <p class="font-bold text-slate-900 mb-2">Besoin d'un plombier dans l'Ain ?</p>
+        <p class="text-sm text-slate-500 mb-4">RM Plombier intervient 7j/7 a Neyron et alentours. Devis gratuit.</p>
+        <a href="tel:0635464924" class="btn-primary text-sm">Appeler le 06 35 46 49 24</a>
+      </div>
+
       <h2>Ce qu'il ne faut surtout pas faire</h2>
 
       <ul>
@@ -172,6 +198,17 @@ const faqJsonLd = {
 
       <h3>Protection contre le gel</h3>
       <p>Dans l'Ain, les hivers peuvent etre rigoureux. Avant chaque hiver, isolez les canalisations exterieures et celles situees dans des locaux non chauffes (garage, cave, vide sanitaire). Purgez les robinets exterieurs. Un tuyau qui gele peut eclater et provoquer une inondation au degel.</p>
+
+      <!-- Image illustrative -->
+      <figure class="not-prose my-8">
+        <img
+          src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/robinet-noir-inox-square.png"
+          alt="Robinet noir inox, equipement de qualite pour prevenir les fuites"
+          loading="lazy"
+          class="w-full rounded-xl shadow-sm aspect-[16/9] object-cover"
+        />
+        <figcaption class="text-xs text-slate-400 italic mt-2">Une robinetterie de qualite et bien entretenue est la meilleure prevention contre les fuites.</figcaption>
+      </figure>
 
       <h3>Faire appel a un professionnel pour un diagnostic</h3>
       <p>Si votre logement a plus de 20 ans, faites realiser un diagnostic complet de vos installations. Un service de <a href="/services/detection-reparation-fuites/">detection de fuites</a> permet d'identifier les points faibles de votre reseau avant qu'ils ne lachent. C'est un investissement modeste compare au cout d'un degat des eaux.</p>
