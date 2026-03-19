@@ -88,26 +88,36 @@ const faq = [
       <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
     </div>
     <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
-          <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-          <span class="text-sm font-medium text-white/90">Rénovation complète</span>
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+            <svg class="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span class="text-sm font-medium text-white/90">Rénovation complète</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">
+            Rénovation de salle de bain à Neyron et dans <span class="text-accent">l'Ain</span>
+          </h1>
+          <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
+            Douche italienne, baignoire, plomberie complète. RM Plombier SARL prend en charge la rénovation de votre salle de bain de A à Z.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              Appelez le 06 35 46 49 24
+            </a>
+            <a href="/contact/" class="btn-ghost text-base py-4 px-8">
+              Obtenir un devis
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">
-          Rénovation de salle de bain à Neyron et dans <span class="text-accent">l'Ain</span>
-        </h1>
-        <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
-          Douche italienne, baignoire, plomberie complète. RM Plombier SARL prend en charge la rénovation de votre salle de bain de A à Z.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            Appelez le 06 35 46 49 24
-          </a>
-          <a href="/contact/" class="btn-ghost text-base py-4 px-8">
-            Obtenir un devis
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </a>
+        <div class="hidden lg:block">
+          <img
+            src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/douche-italienne-beton-landscape.png"
+            alt="Douche italienne en béton ciré avec paroi vitrée"
+            class="rounded-2xl shadow-2xl w-full aspect-[4/3] object-cover"
+            loading="eager"
+          />
         </div>
       </div>
     </div>
@@ -119,6 +129,9 @@ const faq = [
     <div class="max-w-4xl mx-auto px-4 lg:px-6 reveal">
       <span class="section-label">Présentation du service</span>
       <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-8">Votre salle de bain repensée par un plombier expert</h2>
+      <div class="mb-8 rounded-2xl overflow-hidden shadow-md">
+        <img src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/baignoire-ilot-parquet-square.png" alt="Baignoire îlot posée sur parquet dans une salle de bain rénovée" class="w-full aspect-[21/9] object-cover" loading="lazy" />
+      </div>
       <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed">
         <p>Votre salle de bain est datée, mal agencée ou peu fonctionnelle ? RM Plombier SARL prend en charge la rénovation complète de votre pièce d'eau, de la conception à la réalisation. Nous intervenons aussi bien dans les appartements de Caluire-et-Cuire et Rillieux-la-Pape que dans les maisons individuelles de Miribel, Beynost ou Montluel.</p>
         <p>Notre approche est globale : nous ne faisons pas que remplacer un robinet ou poser un receveur de douche. Nous repensons l'agencement de la pièce pour optimiser l'espace, moderniser l'installation de plomberie et créer un espace agréable à vivre au quotidien. La plomberie est notre coeur de métier, et c'est ce qui fait la différence avec un simple poseur.</p>

@@ -11,31 +11,69 @@ const breadcrumbs = [
 const jsonLd = {
   '@type': 'Article',
   headline: 'Chaudière : entretien annuel obligatoire, ce qu\'il faut savoir',
-  description: 'L\'entretien annuel de votre chaudière est obligatoire. Qui doit le faire, quand, combien ça coûte ? Réponses claires d\'un artisan chauffagiste.',
+  description: 'Guide complet entretien chaudière : obligation légale, prix, contenu de l\'attestation, différences gaz/fioul/bois, quand remplacer. Conseils d\'un chauffagiste.',
   datePublished: '2026-03-05',
-  dateModified: '2026-03-05',
+  dateModified: '2026-03-19',
   author: { '@type': 'Organization', name: 'RM Plombier SARL' },
   publisher: { '@type': 'Organization', name: 'RM Plombier SARL', url: 'https://rm-plombier.fr/' },
   mainEntityOfPage: 'https://rm-plombier.fr/blog/entretien-chaudiere/',
 };
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'L\'entretien de la chaudière est-il obligatoire ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Oui, l\'entretien annuel est obligatoire pour toutes les chaudières gaz, fioul, bois et charbon de 4 à 400 kW, selon le décret n°2009-649 du 9 juin 2009. Le non-respect n\'entraîne pas d\'amende directe, mais peut avoir des conséquences sur votre assurance en cas de sinistre.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Combien coûte un entretien de chaudière dans l\'Ain ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Le prix d\'un entretien ponctuel varie entre 90 et 150 euros selon le type de chaudière. Un contrat d\'entretien annuel coûte entre 120 et 200 euros et inclut souvent un dépannage prioritaire et des pièces d\'usure.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Qui doit payer l\'entretien : propriétaire ou locataire ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'L\'entretien courant est à la charge de l\'occupant du logement. Si vous êtes locataire, vous devez faire réaliser et payer l\'entretien annuel. Le propriétaire peut demander l\'attestation d\'entretien et retenir le coût sur le dépôt de garantie en fin de bail si l\'obligation n\'a pas été respectée.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quand faut-il remplacer sa chaudière plutôt que l\'entretenir ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Envisagez le remplacement si votre chaudière a plus de 15-20 ans, si les pannes se multiplient (plus de 2 par an), si le rendement mesuré est inférieur à 80 %, ou si la facture de chauffage augmente de plus de 15 % sans changement d\'habitude. Les chaudières modernes à condensation consomment 15 à 30 % de moins.',
+      },
+    },
+  ],
+};
 ---
 
 <Base
-  title="Entretien chaudière obligatoire | RM Plombier SARL"
-  description="L'entretien annuel de votre chaudière est obligatoire. Qui doit le faire, quand, combien ça coûte ? Réponses claires d'un artisan chauffagiste."
+  title="Entretien chaudière obligatoire : guide complet 2026"
+  description="Entretien chaudière obligatoire : loi, prix, attestation, différences gaz/fioul/bois. Quand remplacer ? Guide complet par un chauffagiste."
   breadcrumbs={breadcrumbs}
-  jsonLd={jsonLd}
+  jsonLd={[jsonLd, faqJsonLd]}
   ogType="article"
 >
   <!-- Hero compact -->
   <section class="py-10 lg:py-14 bg-surface">
     <div class="max-w-3xl mx-auto px-4 lg:px-6">
       <span class="section-label">Chauffage</span>
-      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Chaudière : entretien annuel obligatoire, ce qu'il faut savoir</h1>
+      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Chaudiere : entretien annuel obligatoire, ce qu'il faut savoir</h1>
       <div class="flex items-center gap-3 text-sm text-slate-500">
         <time datetime="2026-03-05">5 mars 2026</time>
         <span class="text-slate-300">|</span>
-        <span>5 min de lecture</span>
+        <span>12 min de lecture</span>
       </div>
     </div>
   </section>
@@ -43,52 +81,160 @@ const jsonLd = {
   <!-- Contenu -->
   <section class="py-10 lg:py-14">
     <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
-      <p>L'entretien annuel de la chaudière est une obligation légale en France depuis 2009. Pourtant, de nombreux foyers négligent cette vérification, par oubli ou par méconnaissance de ses enjeux. Voici ce que vous devez savoir sur l'entretien de votre chaudière, que vous soyez propriétaire ou locataire.</p>
+      <p>L'entretien annuel de la chaudiere est une obligation legale en France depuis 2009. Pourtant, pres d'un foyer sur trois neglige cette verification, par oubli ou par meconnaissance de ses enjeux. Au-dela de l'aspect reglementaire, un entretien regulier est une question de securite (risque de monoxyde de carbone), de performance energetique et de longevite de votre equipement.</p>
 
-      <h2>Qui est concerné ?</h2>
-      <p>Tous les logements équipés d'une chaudière gaz, fioul, bois, charbon ou multicombustible d'une puissance comprise entre 4 et 400 kW sont concernés. En pratique, cela couvre la quasi-totalité des chaudières résidentielles. Les pompes à chaleur de plus de 4 kW sont également soumises à un contrôle tous les 2 ans depuis le décret de juillet 2020.</p>
+      <p>Ce guide complet vous explique tout ce qu'il faut savoir sur l'entretien de votre chaudiere : le cadre legal, les differences selon le type de combustible, le contenu precis de l'attestation, le cout, et les criteres pour savoir quand il est temps de remplacer plutot que d'entretenir.</p>
 
-      <h2>Propriétaire ou locataire : qui paie ?</h2>
-      <p>L'entretien courant de la chaudière est à la charge de l'occupant du logement. Si vous êtes locataire, c'est à vous de faire réaliser et de payer l'entretien annuel. Votre propriétaire peut vous demander l'attestation d'entretien. En cas de départ, le bailleur peut retenir le coût de l'entretien sur le dépôt de garantie si vous n'avez pas respecté cette obligation.</p>
-      <p>Si vous êtes propriétaire occupant, l'entretien est évidemment à votre charge. En copropriété avec chauffage collectif, c'est le syndic qui organise et finance l'entretien via les charges.</p>
+      <h2>Le cadre legal : ce que dit la loi</h2>
 
-      <h2>Que comprend un entretien de chaudière ?</h2>
-      <p>Un entretien complet réalisé par un professionnel comprend :</p>
+      <h3>Le decret de 2009</h3>
+      <p>Le decret n°2009-649 du 9 juin 2009 rend obligatoire l'entretien annuel de toutes les chaudieres dont la puissance est comprise entre 4 et 400 kW, quel que soit le combustible : gaz naturel, gaz propane, fioul, bois, charbon ou multicombustible. Ce decret a ete pris en application de la loi Grenelle de l'environnement.</p>
+
+      <h3>Les pompes a chaleur egalement concernees</h3>
+      <p>Depuis le decret du 28 juillet 2020, les <a href="/services/climatisation-pompe-a-chaleur/">pompes a chaleur</a> (PAC) d'une puissance superieure a 4 kW sont soumises a un controle obligatoire tous les 2 ans. Cela concerne la majorite des PAC air-eau et air-air installees en habitation. Le controle doit etre realise par un professionnel disposant de l'attestation de capacite pour les fluides frigorigenes.</p>
+
+      <h3>Les sanctions en cas de non-respect</h3>
+      <p>La loi ne prevoit pas d'amende directe pour defaut d'entretien. Cependant, les consequences indirectes sont reelles :</p>
       <ul>
-        <li>Le nettoyage du corps de chauffe et du brûleur</li>
-        <li>La vérification des organes de sécurité (thermocouple, pressostat, soupape)</li>
-        <li>Le contrôle du taux de monoxyde de carbone (CO) dans les produits de combustion</li>
-        <li>La mesure du rendement de la chaudière</li>
-        <li>La vérification de l'étanchéité des raccordements de gaz</li>
-        <li>Le contrôle du conduit d'évacuation des fumées</li>
-        <li>Le réglage de la combustion si nécessaire</li>
-        <li>Le nettoyage du filtre et du circuit de chauffage si besoin</li>
+        <li>Votre assurance peut refuser l'indemnisation en cas de sinistre lie a la chaudiere (incendie, intoxication au CO, degat des eaux) si vous ne pouvez pas fournir l'attestation d'entretien</li>
+        <li>Votre proprietaire (si vous etes locataire) peut retenir le cout de l'entretien sur votre depot de garantie en fin de bail</li>
+        <li>En copropriete, le reglement peut prevoir des penalites pour defaut d'entretien</li>
       </ul>
-      <p>À l'issue de l'intervention, le technicien vous remet une attestation d'entretien, valable un an. Ce document est à conserver : il peut vous être demandé par votre assurance en cas de sinistre.</p>
+
+      <h2>Qui est concerne ?</h2>
+
+      <p>Tous les logements equipes d'une chaudiere gaz, fioul, bois, charbon ou multicombustible d'une puissance comprise entre 4 et 400 kW sont concernes. En pratique, cela couvre la quasi-totalite des chaudieres residentielles.</p>
+
+      <h3>Proprietaire ou locataire : qui paie ?</h3>
+      <p>L'entretien courant de la chaudiere est a la charge de l'occupant du logement, conformement au decret n°87-712 du 26 aout 1987 relatif aux reparations locatives.</p>
+
+      <ul>
+        <li><strong>Locataire</strong> : c'est a vous de faire realiser et de payer l'entretien annuel. Votre proprietaire peut vous demander l'attestation a tout moment. En cas de depart, le bailleur peut retenir le cout de l'entretien sur le depot de garantie si vous n'avez pas respecte cette obligation</li>
+        <li><strong>Proprietaire occupant</strong> : l'entretien est a votre charge. C'est aussi dans votre interet direct : un equipement entretenu consomme moins et dure plus longtemps</li>
+        <li><strong>Copropriete avec chauffage collectif</strong> : c'est le syndic qui organise et finance l'entretien via les charges de copropriete. Verifiez que le contrat d'entretien est bien en place et a jour</li>
+      </ul>
+
+      <h2>L'entretien selon le type de chaudiere</h2>
+
+      <p>Le contenu de l'entretien varie selon le combustible utilise. Voici les specificites de chaque type.</p>
+
+      <h3>Chaudiere gaz (naturel ou propane)</h3>
+      <p>C'est le type le plus courant dans l'Ain et le Rhone. L'entretien comprend le nettoyage du bruleur, la verification du circuit de gaz (etancheite des raccords), la mesure du taux de monoxyde de carbone (CO), le controle du tirage du conduit de fumee, la verification des organes de securite et le reglage de la combustion. Duree moyenne : 45 minutes a 1 heure.</p>
+
+      <h3>Chaudiere fioul</h3>
+      <p>L'entretien d'une chaudiere fioul est plus complet et plus long. En plus des operations standard, il inclut le nettoyage du gicleur, le remplacement du filtre a fioul, le ramonage du conduit (obligatoire une fois par an en plus de l'entretien) et le controle de la cuve (niveau, etat, absence de fuite). La mesure de l'indice de fumee (Bacharach) est specifique aux chaudieres fioul. Duree : 1h a 1h30.</p>
+
+      <h3>Chaudiere bois (buches ou granules)</h3>
+      <p>L'entretien d'une chaudiere bois est le plus lourd. Il comprend le nettoyage complet du foyer, de l'echangeur et du cendrier, la verification du systeme d'alimentation automatique (pour les chaudieres a granules), le controle du tirage et de la ventilation. Le ramonage est obligatoire deux fois par an pour le bois, dont une fois pendant la periode de chauffe. Duree : 1h a 2h selon le modele.</p>
+
+      <h2>Que comprend un entretien complet ?</h2>
+
+      <p>Quel que soit le type de chaudiere, un entretien complet realise par un professionnel comprend :</p>
+      <ul>
+        <li>Le nettoyage du corps de chauffe et du bruleur</li>
+        <li>La verification des organes de securite (thermocouple, pressostat, soupape de securite, vase d'expansion)</li>
+        <li>Le controle du taux de monoxyde de carbone (CO) dans les produits de combustion</li>
+        <li>La mesure du rendement de la chaudiere</li>
+        <li>La verification de l'etancheite des raccordements de gaz (pour les chaudieres gaz)</li>
+        <li>Le controle du conduit d'evacuation des fumees</li>
+        <li>Le reglage de la combustion si necessaire</li>
+        <li>Le nettoyage du filtre et du circuit de chauffage si besoin</li>
+        <li>La verification de la pression du circuit (entre 1 et 1,5 bar a froid)</li>
+        <li>Le controle de la regulation et de la programmation</li>
+      </ul>
+
+      <h2>L'attestation d'entretien : ce qu'elle doit contenir</h2>
+
+      <p>A l'issue de l'intervention, le technicien vous remet une attestation d'entretien. Ce document officiel doit etre conserve pendant au moins 2 ans (nous recommandons de garder les 5 dernieres attestations). Voici ce qu'elle doit obligatoirement mentionner :</p>
+
+      <ul>
+        <li>Les coordonnees de l'entreprise ayant realise l'entretien (nom, SIRET, adresse)</li>
+        <li>L'identification de la chaudiere (marque, modele, puissance, numero de serie)</li>
+        <li>L'adresse du lieu d'installation</li>
+        <li>La date de l'intervention</li>
+        <li>La liste des operations effectuees</li>
+        <li>Le taux de CO mesure dans l'air ambiant</li>
+        <li>Le rendement de la chaudiere</li>
+        <li>Les eventuelles anomalies constatees et les recommandations</li>
+        <li>La signature du technicien</li>
+      </ul>
+
+      <p>Si votre attestation ne contient pas ces elements, demandez un document complet. Une attestation incomplete n'a pas de valeur en cas de litige avec votre assurance.</p>
 
       <h2>Quand faire l'entretien ?</h2>
-      <p>La réglementation impose un entretien par an, sans imposer de période précise. En pratique, la fin de l'été ou le début de l'automne est le moment idéal : votre chaudière sera prête à fonctionner pour la saison de chauffe et les plombiers chauffagistes sont généralement moins sollicités qu'en plein hiver.</p>
 
-      <h2>Combien ça coûte ?</h2>
-      <p>Le prix d'un entretien de chaudière varie entre 90 et 150 euros selon le type de chaudière et la région. Un contrat d'entretien annuel (avec prise de rendez-vous automatique) peut être plus avantageux si vous souhaitez ne plus y penser. Chez RM Plombier SARL, nous proposons un contrat d'entretien adapté à votre équipement. Renseignements au <a href="tel:0635464924">06 35 46 49 24</a>.</p>
+      <p>La reglementation impose un entretien par an, sans imposer de periode precise. En pratique, deux periodes sont ideales :</p>
 
-      <h2>Les risques en cas de non-entretien</h2>
-      <p>Au-delà de l'aspect réglementaire, ne pas entretenir sa chaudière présente des risques concrets :</p>
       <ul>
-        <li><strong>Sécurité</strong> : une chaudière mal entretenue peut produire du monoxyde de carbone, un gaz inodore et mortel. Chaque année, le CO cause environ 4 000 intoxications en France.</li>
-        <li><strong>Performance</strong> : une chaudière encrassée consomme plus de combustible pour le même résultat. L'entretien peut améliorer le rendement de 8 à 12 %.</li>
-        <li><strong>Longévité</strong> : un équipement entretenu régulièrement dure plus longtemps. La durée de vie moyenne d'une chaudière gaz est de 15 à 20 ans avec un entretien régulier, contre 10 ans sans.</li>
-        <li><strong>Assurance</strong> : en cas de sinistre lié à la chaudière (incendie, intoxication), l'assurance peut refuser l'indemnisation si l'entretien n'est pas à jour.</li>
+        <li><strong>Fin d'ete, debut d'automne (septembre-octobre)</strong> : votre chaudiere sera prete a fonctionner pour la saison de chauffe et les plombiers chauffagistes sont generalement moins sollicites qu'en plein hiver. C'est la periode que nous recommandons</li>
+        <li><strong>Printemps (avril-mai)</strong> : l'entretien de fin de saison permet de detecter les problemes causes par l'usage intensif de l'hiver et de les reparer avant la saison suivante</li>
       </ul>
 
-      <h2>Quand remplacer plutôt qu'entretenir ?</h2>
-      <p>Si votre chaudière a plus de 15 ans, que les pannes se multiplient ou que votre facture de chauffage augmente d'année en année, le remplacement peut être plus judicieux qu'une réparation. Les chaudières modernes à condensation consomment 15 à 30 % de moins que les anciens modèles. Consultez notre page <a href="/services/installation-chaudiere/">installation et remplacement de chaudière</a> pour en savoir plus sur les options disponibles et les aides financières.</p>
+      <p>Evitez l'hiver (novembre a fevrier) : les chauffagistes sont tres sollicites pour les pannes et les delais d'attente peuvent atteindre 2 a 3 semaines. De plus, si un probleme est detecte necessitant un remplacement de piece, votre chaudiere pourrait rester en panne plusieurs jours en plein froid.</p>
 
-      <p>Vous habitez <a href="/plombier-miribel/">Miribel</a>, <a href="/plombier-rillieux-la-pape/">Rillieux-la-Pape</a> ou une autre commune de notre zone ? Appelez le <a href="tel:0635464924">06 35 46 49 24</a> pour planifier votre entretien.</p>
+      <h2>Combien coute un entretien de chaudiere ?</h2>
+
+      <h3>Entretien ponctuel</h3>
+      <p>Le prix d'un entretien ponctuel varie entre 90 et 150 euros selon le type de chaudiere et la region. Dans l'Ain et le Rhone, comptez en moyenne :</p>
+      <ul>
+        <li>Chaudiere gaz murale : 90 a 120 euros</li>
+        <li>Chaudiere gaz au sol : 110 a 140 euros</li>
+        <li>Chaudiere fioul : 130 a 180 euros (plus long, plus technique)</li>
+        <li>Chaudiere bois/granules : 120 a 200 euros</li>
+      </ul>
+
+      <h3>Contrat d'entretien annuel</h3>
+      <p>Un contrat d'entretien annuel coute entre 120 et 200 euros selon les garanties incluses. Il offre plusieurs avantages : prise de rendez-vous automatique (vous n'oubliez plus), priorite de depannage en cas de panne, et souvent un certain nombre de pieces d'usure incluses. Chez RM Plombier SARL, nous proposons des contrats adaptes a chaque type d'equipement. Renseignements au <a href="tel:0635464924">06 35 46 49 24</a>.</p>
+
+      <h2>Les risques en cas de non-entretien</h2>
+
+      <p>Au-dela de l'aspect reglementaire, ne pas entretenir sa chaudiere presente des risques concrets :</p>
+
+      <h3>Risque de securite : le monoxyde de carbone</h3>
+      <p>Une chaudiere mal entretenue peut produire du monoxyde de carbone (CO), un gaz inodore, incolore et mortel. Chaque annee en France, le CO cause environ <span class="whitespace-nowrap">4 000</span> intoxications et une centaine de deces. Les symptomes (maux de tete, nausees, fatigue) sont facilement confondus avec une grippe, ce qui retarde le diagnostic. Un entretien annuel inclut la mesure du taux de CO et la verification de la bonne evacuation des fumees.</p>
+
+      <h3>Surconsommation energetique</h3>
+      <p>Une chaudiere encrassee consomme plus de combustible pour le meme resultat. L'entretien peut ameliorer le rendement de 8 a 12 %, ce qui represente une economie de 100 a 200 euros par an sur la facture de gaz pour un logement moyen. L'entretien se rentabilise donc largement.</p>
+
+      <h3>Reduction de la duree de vie</h3>
+      <p>Un equipement entretenu regulierement dure plus longtemps. La duree de vie moyenne d'une chaudiere gaz est de 15 a 20 ans avec un entretien regulier, contre 10 ans sans. Pour une chaudiere fioul, ces chiffres sont similaires. Le remplacement premature d'une chaudiere coute entre <span class="whitespace-nowrap">3 000</span> et <span class="whitespace-nowrap">8 000</span> euros : l'entretien est un investissement qui evite cette depense precoce.</p>
+
+      <h3>Refus d'indemnisation par l'assurance</h3>
+      <p>En cas de sinistre lie a la chaudiere (incendie, intoxication, degat des eaux), l'assurance peut refuser l'indemnisation si l'entretien n'est pas a jour. L'attestation d'entretien est le document qui prouve votre diligence.</p>
+
+      <h2>Quand remplacer plutot qu'entretenir ?</h2>
+
+      <p>L'entretien prolonge la vie de votre chaudiere, mais il arrive un moment ou le remplacement est plus judicieux. Voici les seuils a connaitre :</p>
+
+      <ul>
+        <li><strong>Age</strong> : au-dela de 15 ans pour une chaudiere standard, 20 ans pour une chaudiere de qualite superieure, le remplacement devient pertinent meme sans panne</li>
+        <li><strong>Frequence des pannes</strong> : plus de 2 pannes par an est un signal clair. Le cumul des reparations depasse rapidement le cout d'un equipement neuf</li>
+        <li><strong>Rendement</strong> : si le rendement mesure lors de l'entretien est inferieur a 80 %, votre chaudiere gaspille du combustible. Les chaudieres modernes a condensation atteignent 98 % de rendement</li>
+        <li><strong>Augmentation des factures</strong> : si votre facture de chauffage augmente de plus de 15 % sans changement d'habitude, c'est souvent lie a la perte de rendement de la chaudiere</li>
+        <li><strong>Pieces introuvables</strong> : quand le fabricant ne produit plus les pieces de rechange, la moindre panne peut immobiliser votre chaudiere des semaines</li>
+      </ul>
+
+      <p>Les chaudieres modernes a condensation consomment 15 a 30 % de moins que les anciens modeles. Avec les aides (MaPrimeRenov', CEE), le retour sur investissement est souvent atteint en 4 a 6 ans. Consultez notre page <a href="/services/installation-chaudiere/">installation et remplacement de chaudiere</a> pour en savoir plus sur les options disponibles.</p>
+
+      <p>Vous habitez <a href="/plombier-miribel/">Miribel</a>, <a href="/plombier-beynost/">Beynost</a>, <a href="/plombier-montluel/">Montluel</a> ou une autre commune de l'Ain et du nord du Rhone ? Appelez le <a href="tel:0635464924">06 35 46 49 24</a> pour planifier votre entretien ou obtenir un devis de remplacement.</p>
+
+      <h2>Questions frequentes</h2>
+
+      <h3>L'entretien de la chaudiere est-il obligatoire ?</h3>
+      <p>Oui, l'entretien annuel est obligatoire pour toutes les chaudieres gaz, fioul, bois et charbon de 4 a 400 kW, selon le decret n°2009-649 du 9 juin 2009. Le non-respect n'entraine pas d'amende directe, mais peut avoir des consequences sur votre assurance en cas de sinistre.</p>
+
+      <h3>Combien coute un entretien de chaudiere dans l'Ain ?</h3>
+      <p>Le prix d'un entretien ponctuel varie entre 90 et 150 euros selon le type de chaudiere. Un contrat d'entretien annuel coute entre 120 et 200 euros et inclut souvent un depannage prioritaire et des pieces d'usure.</p>
+
+      <h3>Qui doit payer l'entretien : proprietaire ou locataire ?</h3>
+      <p>L'entretien courant est a la charge de l'occupant du logement. Si vous etes locataire, vous devez faire realiser et payer l'entretien annuel. Le proprietaire peut demander l'attestation et retenir le cout sur le depot de garantie en fin de bail si l'obligation n'a pas ete respectee.</p>
+
+      <h3>Quand faut-il remplacer sa chaudiere plutot que l'entretenir ?</h3>
+      <p>Envisagez le remplacement si votre chaudiere a plus de 15 a 20 ans, si les pannes se multiplient (plus de 2 par an), si le rendement mesure est inferieur a 80 %, ou si la facture de chauffage augmente sans changement d'habitude. Les chaudieres modernes a condensation consomment 15 a 30 % de moins. Consultez notre page <a href="/services/installation-chaudiere/">installation de chaudiere</a> pour les options et les aides.</p>
 
       <!-- CTA final -->
       <div class="not-prose mt-10 text-center">
-        <a href="/contact/" class="btn-primary">Contactez-nous pour un devis</a>
+        <a href="/contact/" class="btn-primary">Planifier mon entretien de chaudiere</a>
       </div>
     </div>
   </section>

@@ -11,31 +11,69 @@ const breadcrumbs = [
 const jsonLd = {
   '@type': 'Article',
   headline: 'Rénovation salle de bain : budget, étapes et conseils d\'un pro',
-  description: 'Quel budget pour rénover votre salle de bain ? Étapes, pièges à éviter et conseils d\'un plombier professionnel. Guide complet et concret.',
+  description: 'Guide complet rénovation salle de bain : budget détaillé par poste, étapes, tendances 2026, aides financières, choix des matériaux. Conseils d\'un plombier pro.',
   datePublished: '2026-03-01',
-  dateModified: '2026-03-01',
+  dateModified: '2026-03-19',
   author: { '@type': 'Organization', name: 'RM Plombier SARL' },
   publisher: { '@type': 'Organization', name: 'RM Plombier SARL', url: 'https://rm-plombier.fr/' },
   mainEntityOfPage: 'https://rm-plombier.fr/blog/renovation-salle-de-bain-budget/',
 };
+
+const faqJsonLd = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quel budget pour rénover une salle de bain en 2026 ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Le budget dépend de l\'ampleur des travaux. Rénovation légère (robinetterie, meuble) : 2 000 à 4 000 euros. Rénovation moyenne avec reprise de plomberie : 5 000 à 9 000 euros. Rénovation complète du sol au plafond : 8 000 à 15 000 euros. Ces prix incluent fourniture et pose dans l\'Ain et le Rhône.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Combien coûte une douche italienne ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'La pose d\'une douche italienne coûte entre 1 500 et 4 000 euros (fourniture et pose), selon la taille, le type de receveur et le carrelage choisi. Ce prix inclut l\'étanchéité, le receveur extra-plat ou maçonné, la robinetterie et le carrelage de la zone douche.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quelles aides financières pour rénover une salle de bain ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pour les personnes en perte d\'autonomie ou en situation de handicap, l\'ANAH propose l\'aide "Habiter facile" jusqu\'à 10 000 euros. Le crédit d\'impôt PMR couvre 25 % des dépenses d\'adaptation. La TVA réduite à 10 % s\'applique pour tous les logements de plus de 2 ans. L\'éco-PTZ peut financer les travaux d\'amélioration énergétique.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Combien de temps dure une rénovation de salle de bain ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Comptez 3 à 5 jours pour une rénovation légère, 1 à 2 semaines pour une rénovation moyenne avec reprise de plomberie, et 2 à 3 semaines pour une rénovation complète. Ces délais dépendent de la complexité du chantier et de la disponibilité des matériaux.',
+      },
+    },
+  ],
+};
 ---
 
 <Base
-  title="Rénovation salle de bain : budget et étapes | Conseils"
-  description="Quel budget pour rénover votre salle de bain ? Étapes, pièges à éviter et conseils d'un plombier professionnel. Guide complet et concret."
+  title="Rénovation salle de bain : budget et étapes | Guide 2026"
+  description="Rénovation salle de bain : budget détaillé, étapes, tendances 2026, aides financières, matériaux. Guide complet par un plombier pro."
   breadcrumbs={breadcrumbs}
-  jsonLd={jsonLd}
+  jsonLd={[jsonLd, faqJsonLd]}
   ogType="article"
 >
   <!-- Hero compact -->
   <section class="py-10 lg:py-14 bg-surface">
     <div class="max-w-3xl mx-auto px-4 lg:px-6">
-      <span class="section-label">Rénovation</span>
-      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Rénovation salle de bain : budget, étapes et conseils d'un pro</h1>
+      <span class="section-label">Renovation</span>
+      <h1 class="text-2xl lg:text-4xl font-extrabold text-primary-dark mt-2 mb-4">Renovation salle de bain : budget, etapes et conseils d'un pro</h1>
       <div class="flex items-center gap-3 text-sm text-slate-500">
         <time datetime="2026-03-01">1 mars 2026</time>
         <span class="text-slate-300">|</span>
-        <span>5 min de lecture</span>
+        <span>14 min de lecture</span>
       </div>
     </div>
   </section>
@@ -43,54 +81,157 @@ const jsonLd = {
   <!-- Contenu -->
   <section class="py-10 lg:py-14">
     <div class="max-w-3xl mx-auto px-4 lg:px-6 prose prose-slate prose-lg max-w-none">
-      <p>Rénover sa salle de bain, c'est souvent le projet que l'on repousse. Trop cher, trop compliqué, trop long. En réalité, avec une bonne préparation et un artisan fiable, une rénovation de salle de bain peut se dérouler en une semaine et transformer votre quotidien. Voici un guide pratique basé sur notre expérience de terrain.</p>
+      <p>Renover sa salle de bain, c'est souvent le projet que l'on repousse. Trop cher, trop complique, trop long. En realite, avec une bonne preparation et un artisan fiable, une renovation de salle de bain peut se derouler en une a deux semaines et transformer votre quotidien. C'est aussi l'un des travaux qui valorisent le plus un bien immobilier : une salle de bain renovee peut augmenter la valeur de votre logement de 5 a 10 %.</p>
 
-      <h2>Quel budget prévoir ?</h2>
-      <p>Le budget varie énormément selon l'ampleur des travaux et le niveau de gamme des équipements. Voici des fourchettes réalistes pour la région Ain-Rhône :</p>
+      <p>Ce guide complet vous donne un budget detaille par poste, les etapes dans le bon ordre, les tendances actuelles, les aides financieres disponibles et les conseils pratiques d'un plombier qui renove des salles de bain depuis plus de 15 ans dans l'Ain et le Rhone.</p>
 
-      <p><strong>Rénovation légère</strong> (remplacement des équipements sans modification de plomberie) : <span class="whitespace-nowrap">2 000</span> à <span class="whitespace-nowrap">4 000</span> euros. Cela inclut le remplacement de la robinetterie, du meuble vasque et de la douchette, sans toucher aux canalisations ni au carrelage.</p>
+      <h2>Budget detaille : combien coute une renovation de salle de bain ?</h2>
 
-      <p><strong>Rénovation moyenne</strong> (changement de configuration avec reprise de plomberie) : <span class="whitespace-nowrap">5 000</span> à <span class="whitespace-nowrap">9 000</span> euros. Cela comprend la dépose de la baignoire, la pose d'une douche italienne, un nouveau meuble vasque, la reprise des arrivées d'eau et des évacuations.</p>
+      <p>Le budget varie enormement selon l'ampleur des travaux et le niveau de gamme des equipements. Voici des fourchettes realistes pour la region Ain-Rhone en 2026.</p>
 
-      <p><strong>Rénovation complète</strong> (pièce refaite du sol au plafond) : <span class="whitespace-nowrap">8 000</span> à <span class="whitespace-nowrap">15 000</span> euros. Cela englobe la plomberie, les sanitaires, le carrelage, la peinture, l'éclairage et la ventilation.</p>
+      <h3>Les trois niveaux de renovation</h3>
 
-      <p>Ces prix incluent la fourniture et la pose. Les écarts s'expliquent principalement par le choix des matériaux et des équipements.</p>
+      <p><strong>Renovation legere</strong> (remplacement des equipements sans modification de plomberie) : <span class="whitespace-nowrap">2 000</span> a <span class="whitespace-nowrap">4 000</span> euros. Cela inclut le remplacement de la robinetterie, du meuble vasque et de la douchette, sans toucher aux canalisations ni au carrelage. Ideal si votre plomberie est en bon etat et que vous souhaitez simplement rafraichir la piece.</p>
 
-      <h2>Les étapes dans le bon ordre</h2>
-      <p>Une rénovation de salle de bain réussie suit un ordre précis. Intervenir dans le désordre, c'est risquer de devoir refaire deux fois le même travail.</p>
+      <p><strong>Renovation moyenne</strong> (changement de configuration avec reprise de plomberie) : <span class="whitespace-nowrap">5 000</span> a <span class="whitespace-nowrap">9 000</span> euros. Cela comprend la depose de la baignoire, la pose d'une douche italienne, un nouveau meuble vasque, la reprise des arrivees d'eau et des evacuations. C'est le type de renovation le plus demande.</p>
 
-      <p><strong>1. Définir le projet.</strong> Avant de chercher un artisan, listez vos besoins : baignoire ou douche, simple ou double vasque, sèche-serviettes, machine à laver dans la pièce ou non. Prenez des photos de salles de bain qui vous plaisent pour donner une direction au professionnel.</p>
+      <p><strong>Renovation complete</strong> (piece refaite du sol au plafond) : <span class="whitespace-nowrap">8 000</span> a <span class="whitespace-nowrap">15 000</span> euros. Cela englobe la plomberie, les sanitaires, le carrelage, la peinture, l'eclairage et la ventilation. Pour une salle de bain haut de gamme avec materiaux premium, le budget peut depasser <span class="whitespace-nowrap">15 000</span> euros.</p>
 
-      <p><strong>2. Faire réaliser une visite technique.</strong> Un bon plombier viendra chez vous, prendra les mesures et vérifiera l'état de la plomberie existante. C'est indispensable pour établir un devis fiable. Chez RM Plombier SARL, la visite et le devis sont gratuits. Voir notre page <a href="/services/renovation-salle-de-bain/">rénovation salle de bain</a>.</p>
+      <h3>Budget detaille par poste</h3>
 
-      <p><strong>3. Dépose de l'existant.</strong> Retrait des anciens sanitaires, de la robinetterie, et éventuellement du carrelage. Les gravats doivent être évacués proprement.</p>
+      <p>Pour une renovation complete d'une salle de bain de 5 a 6 m2, voici les couts moyens par poste (fourniture et pose) :</p>
 
-      <p><strong>4. Plomberie.</strong> C'est l'étape invisible mais essentielle. Reprise des arrivées d'eau chaude et froide, modification des évacuations selon le nouvel agencement, test d'étanchéité. Une plomberie bien faite, c'est la garantie de ne pas avoir de problème dans les années à venir.</p>
+      <ul>
+        <li><strong>Depose et evacuation des gravats</strong> : 300 a 600 euros</li>
+        <li><strong>Plomberie (arrivees d'eau + evacuations)</strong> : 800 a <span class="whitespace-nowrap">1 500</span> euros</li>
+        <li><strong>Etancheite (SPEC)</strong> : 300 a 500 euros</li>
+        <li><strong>Douche italienne (receveur + paroi + robinetterie)</strong> : <span class="whitespace-nowrap">1 500</span> a <span class="whitespace-nowrap">4 000</span> euros</li>
+        <li><strong>Meuble vasque + robinet</strong> : 400 a <span class="whitespace-nowrap">1 500</span> euros</li>
+        <li><strong>WC suspendu (si dans la piece)</strong> : 600 a <span class="whitespace-nowrap">1 200</span> euros</li>
+        <li><strong>Carrelage sol et murs</strong> : <span class="whitespace-nowrap">1 500</span> a <span class="whitespace-nowrap">3 500</span> euros</li>
+        <li><strong>Seche-serviettes</strong> : 200 a 500 euros</li>
+        <li><strong>Electricite (prises, eclairage, VMC)</strong> : 400 a 800 euros</li>
+        <li><strong>Peinture plafond et finitions</strong> : 200 a 500 euros</li>
+      </ul>
 
-      <p><strong>5. Étanchéité.</strong> Avant la pose du carrelage, les zones humides (douche, autour de la baignoire) doivent recevoir un traitement d'étanchéité spécifique (SPEC). C'est une étape souvent négligée qui peut coûter très cher en cas d'infiltration.</p>
+      <p>Ces prix incluent la fourniture et la pose. Les ecarts s'expliquent principalement par le choix des materiaux et des equipements. Un meuble vasque d'entree de gamme coute 200 euros, un modele design peut depasser <span class="whitespace-nowrap">1 000</span> euros.</p>
 
-      <p><strong>6. Carrelage et finitions.</strong> Pose du carrelage sol et mural, peinture, joints silicone.</p>
+      <h2>Les etapes d'une renovation reussie</h2>
 
-      <p><strong>7. Pose des équipements.</strong> Installation de la douche ou baignoire, meuble vasque, robinetterie, sèche-serviettes, accessoires.</p>
+      <p>Une renovation de salle de bain reussie suit un ordre precis. Intervenir dans le desordre, c'est risquer de devoir refaire deux fois le meme travail.</p>
 
-      <h2>Les erreurs à éviter</h2>
+      <h3>1. Definir le projet</h3>
+      <p>Avant de chercher un artisan, listez vos besoins : baignoire ou douche, simple ou double vasque, seche-serviettes, machine a laver dans la piece ou non, rangements. Prenez des photos de salles de bain qui vous plaisent (Pinterest, magazines) pour donner une direction claire au professionnel. Mesurez votre piece pour avoir les dimensions exactes.</p>
 
-      <p><strong>Sous-estimer la plomberie.</strong> Beaucoup de particuliers se focalisent sur l'esthétique (carrelage, meuble) et négligent l'état des canalisations. Si vos tuyaux ont 30 ans, c'est le moment de les remplacer. Ils seront inaccessibles après les travaux.</p>
+      <h3>2. Faire realiser une visite technique</h3>
+      <p>Un bon plombier viendra chez vous, prendra les mesures et verifiera l'etat de la plomberie existante. Cette visite permet d'identifier les contraintes techniques (emplacement des evacuations, epaisseur de la dalle, presence d'amiante dans les anciens joints) et d'etablir un devis fiable. Chez RM Plombier SARL, la visite et le devis sont gratuits. Voir notre page <a href="/services/renovation-salle-de-bain/">renovation salle de bain</a>.</p>
 
-      <p><strong>Choisir un équipement trop grand.</strong> Une douche italienne de 120 cm dans une pièce de 4 m2, c'est beau sur le plan, mais cela peut poser des problèmes de circulation et d'agencement. Mesurez, testez, faites-vous conseiller.</p>
+      <h3>3. Depose de l'existant</h3>
+      <p>Retrait des anciens sanitaires, de la robinetterie, et eventuellement du carrelage. Les gravats doivent etre evacues proprement. Pour un logement ancien, cette etape peut reveler des surprises : canalisations en plomb a remplacer, etat du sous-sol degrade, presence d'humidite. Un bon artisan sait gerer ces imprevus.</p>
 
-      <p><strong>Oublier la ventilation.</strong> Une salle de bain sans ventilation correcte, c'est de l'humidité, des moisissures et des dégradations rapides. Vérifiez que votre VMC fonctionne ou prévoyez l'installation d'un extracteur.</p>
+      <h3>4. Plomberie</h3>
+      <p>C'est l'etape invisible mais essentielle. Reprise des arrivees d'eau chaude et froide, modification des evacuations selon le nouvel agencement, test d'etancheite sous pression. Une plomberie bien faite, c'est la garantie de ne pas avoir de probleme dans les annees a venir. Un probleme de <a href="/services/detection-reparation-fuites/">fuite</a> dans une salle de bain neuve, c'est le pire scenario pour un proprietaire.</p>
 
-      <p><strong>Faire les travaux soi-même pour la plomberie.</strong> Le bricolage est tentant, mais la plomberie exige une expertise technique. Un raccord mal fait, c'est une fuite assurée dans les semaines ou les mois qui suivent. Et une fuite dans une salle de bain neuve, c'est le pire scénario.</p>
+      <h3>5. Etancheite</h3>
+      <p>Avant la pose du carrelage, les zones humides (douche, autour de la baignoire, au sol) doivent recevoir un traitement d'etancheite specifique (systeme de protection a l'eau sous carrelage, dit SPEC). C'est une etape souvent negligee par les artisans peu scrupuleux, mais elle est essentielle. Sans etancheite, l'eau s'infiltre sous le carrelage et provoque des degats structurels invisibles pendant des mois.</p>
 
-      <h2>Quand rénover ?</h2>
-      <p>Le printemps et l'été sont les meilleures périodes : les artisans sont plus disponibles et la période de chauffe est passée (important si les travaux touchent au circuit d'eau chaude). Prévoyez 1 à 2 mois entre la demande de devis et le début du chantier.</p>
+      <h3>6. Carrelage et finitions</h3>
+      <p>Pose du carrelage sol et mural, joints, peinture plafond, joints silicone. Le carrelage doit respecter les normes de resistance au glissement (classement PN ou R) pour eviter les chutes. En douche italienne, un carrelage classe R10 minimum est recommande.</p>
 
-      <p>Vous avez un projet ? Contactez RM Plombier SARL pour une visite gratuite. Nous intervenons à <a href="/plombier-caluire-et-cuire/">Caluire-et-Cuire</a>, <a href="/plombier-rillieux-la-pape/">Rillieux-la-Pape</a> et dans tout le secteur Ain-Rhône. Appelez le <a href="tel:0635464924">06 35 46 49 24</a>.</p>
+      <h3>7. Pose des equipements</h3>
+      <p>Installation de la douche ou baignoire, meuble vasque, robinetterie, seche-serviettes, accessoires (porte-serviettes, miroir, tablettes). C'est l'etape la plus visible et la plus gratifiante. Le technicien effectue les raccordements finaux, les tests d'etancheite et le reglage des mitigeurs.</p>
+
+      <h2>Les tendances salle de bain 2025-2026</h2>
+
+      <p>Les tendances evoluent, mais certaines sont deja bien installees et ne sont pas pres de disparaitre :</p>
+
+      <h3>La douche italienne, toujours en tete</h3>
+      <p>La douche a l'italienne (de plain-pied, sans seuil) reste la demande numero un. Elle est pratique (acces facile, nettoyage simple), esthetique (lignes epurees) et adaptee a tous les ages. Le receveur extra-plat a remplace le receveur maconnne dans la plupart des cas, ce qui simplifie la pose et reduit le cout.</p>
+
+      <h3>Les grands formats de carrelage</h3>
+      <p>Les carreaux grand format (60x60, 60x120 ou meme 120x120) sont tres demandes. Moins de joints, aspect plus moderne, nettoyage plus facile. En contrepartie, la pose est plus technique et necessite un sol parfaitement plan.</p>
+
+      <h3>Les couleurs naturelles</h3>
+      <p>Les teintes terracotta, vert sauge, beige chaud et gris clair dominent. Le tout blanc recule au profit de palettes plus chaleureuses. Le bois (ou ses imitations en gres cerame) reste un classique pour apporter de la chaleur dans une piece souvent froide.</p>
+
+      <h3>Le meuble vasque suspendu</h3>
+      <p>Le meuble suspendu (fixe au mur, sans pieds) facilite le nettoyage du sol et donne une impression d'espace. Les largeurs de 80 a 120 cm sont les plus demandees. La double vasque n'est pertinente que si votre piece fait au moins 7 a 8 m2.</p>
+
+      <h3>La robinetterie noire ou doree</h3>
+      <p>Le chrome reste majoritaire, mais la robinetterie noire mat et doree brossee gagnent du terrain. Attention : ces finitions sont plus sensibles aux traces de calcaire. Dans l'Ain, ou l'eau est assez calcaire, prevoyez un entretien regulier ou un adoucisseur d'eau.</p>
+
+      <h2>Les aides financieres pour renover sa salle de bain</h2>
+
+      <p>Plusieurs dispositifs peuvent reduire le cout de votre renovation, selon votre situation :</p>
+
+      <h3>La TVA a taux reduit (10 %)</h3>
+      <p>Pour les logements de plus de 2 ans (residence principale ou secondaire), les travaux de renovation beneficient d'une TVA a 10 % au lieu de 20 %, sur la main d'oeuvre et les fournitures achetees par l'artisan. C'est automatique : votre artisan applique directement le taux reduit sur le devis et la facture. Condition : vous devez signer une attestation simplifiee (fournie par l'artisan).</p>
+
+      <h3>L'aide ANAH "Habiter facile"</h3>
+      <p>Si vous etes en perte d'autonomie ou en situation de handicap, l'Agence Nationale de l'Habitat propose l'aide "Habiter facile" pour l'adaptation du logement. Elle peut couvrir jusqu'a 50 % du montant des travaux, dans la limite de <span class="whitespace-nowrap">10 000</span> euros. Cela inclut le remplacement d'une baignoire par une douche de plain-pied, l'installation de barres d'appui, la mise aux normes PMR.</p>
+
+      <h3>Le credit d'impot pour l'adaptation PMR</h3>
+      <p>Le credit d'impot pour l'adaptation du logement aux personnes a mobilite reduite couvre 25 % des depenses d'equipement (dans la limite de <span class="whitespace-nowrap">5 000</span> euros pour une personne seule, <span class="whitespace-nowrap">10 000</span> euros pour un couple). Les travaux doivent etre realises par un professionnel et le logement doit etre votre residence principale.</p>
+
+      <h3>L'eco-pret a taux zero (eco-PTZ)</h3>
+      <p>Si votre renovation inclut des travaux d'amelioration energetique (isolation des murs, remplacement du chauffe-eau par un modele thermodynamique), l'eco-PTZ peut financer jusqu'a <span class="whitespace-nowrap">50 000</span> euros de travaux sans interets. Ce pret est accessible sans condition de ressources.</p>
+
+      <h3>Les aides des caisses de retraite</h3>
+      <p>Certaines caisses de retraite (CARSAT, MSA) proposent des aides pour l'adaptation du logement des retraites. Les montants varient selon les caisses et les ressources du demandeur. Renseignez-vous aupres de votre caisse de retraite.</p>
+
+      <h2>Choisir les bons materiaux</h2>
+
+      <h3>Le carrelage : gres cerame vs faience</h3>
+      <p>Le gres cerame (carrelage pleine masse) est le choix le plus durable pour le sol et les murs de la salle de bain. Il est resistant a l'eau, aux chocs, au gel et a l'usure. La faience (carrelage emaille) est moins chere mais plus fragile. Pour le sol de la douche, choisissez un carrelage avec un classement antiderapant R10 minimum (R11 recommande).</p>
+
+      <h3>La robinetterie : privilegiez la qualite</h3>
+      <p>La robinetterie est l'element que vous utilisez plusieurs fois par jour. Investissez dans des marques reconnues (Grohe, Hansgrohe, Jacob Delafon) qui offrent des garanties de 5 a 10 ans et des pieces de rechange disponibles. Un mitigeur thermostatique pour la douche est un vrai confort au quotidien et evite les risques de brulure.</p>
+
+      <h3>Le receveur de douche : extra-plat ou maconnne ?</h3>
+      <p>Le receveur extra-plat (3 a 5 cm d'epaisseur) est devenu le standard. Il est plus simple a poser qu'un receveur maconnne, moins cher, et les modeles actuels sont tres esthetiques. Les materiaux les plus courants : resine minerale (solid surface), acrylique renforce et gres emaille. Evitez les receveurs en ceramique classique, plus lourds et plus fragiles.</p>
+
+      <h3>Le meuble vasque : solide et fonctionnel</h3>
+      <p>Privilegiez les meubles en bois stratifie hydrofuge ou en MDF laque, concus pour resister a l'humidite. Les meubles en bois massif non traite se degradent rapidement dans une salle de bain. Verifiez que le meuble est livre avec le plan vasque integre : les ensembles complets sont souvent plus economiques que l'achat separe.</p>
+
+      <h2>Les erreurs a eviter</h2>
+
+      <h3>Sous-estimer la plomberie</h3>
+      <p>Beaucoup de particuliers se focalisent sur l'esthetique (carrelage, meuble) et negligent l'etat des canalisations. Si vos tuyaux ont 30 ans, c'est le moment de les remplacer. Ils seront inaccessibles apres les travaux. Une fuite sur une canalisation vetuste apres une renovation complete, c'est l'obligation de tout recasser pour reparer.</p>
+
+      <h3>Choisir un equipement trop grand</h3>
+      <p>Une douche italienne de 120 cm dans une piece de 4 m2, c'est beau sur le plan, mais cela peut poser des problemes de circulation et d'agencement. Mesurez, testez, faites-vous conseiller. Un bon artisan vous alertera si vos choix sont incompatibles avec les dimensions de la piece.</p>
+
+      <h3>Oublier la ventilation</h3>
+      <p>Une salle de bain sans ventilation correcte, c'est de l'humidite, des moisissures et des degradations rapides. Verifiez que votre VMC fonctionne ou prevoyez l'installation d'un extracteur. Une VMC hygroregulee est l'ideal : elle adapte son debit au taux d'humidite de la piece.</p>
+
+      <h3>Faire la plomberie soi-meme</h3>
+      <p>Le bricolage est tentant pour reduire le budget, mais la plomberie exige une expertise technique. Un raccord mal fait, c'est une <a href="/services/detection-reparation-fuites/">fuite assuree</a> dans les semaines ou les mois qui suivent. Et sans assurance decennale, vous n'avez aucun recours. Faites appel a un professionnel pour la plomberie et l'etancheite, et gardez le bricolage pour la peinture ou la decoration.</p>
+
+      <h3>Negliger l'eclairage</h3>
+      <p>L'eclairage est souvent le dernier poste auquel on pense, alors qu'il change completement l'ambiance de la piece. Prevoyez au minimum deux sources lumineuses : un eclairage general (plafonnier ou spots) et un eclairage de miroir pour le maquillage et le rasage. Les spots encastres dans la douche doivent etre IP65 (etanches aux projections d'eau).</p>
+
+      <h2>Quand renover ?</h2>
+      <p>Le printemps et l'ete sont les meilleures periodes : les artisans sont plus disponibles et la periode de chauffe est passee (important si les travaux touchent au circuit d'eau chaude). Prevoyez 1 a 2 mois entre la demande de devis et le debut du chantier pour laisser le temps a l'artisan de commander les materiaux.</p>
+
+      <p>Vous avez un projet de renovation de salle de bain ? Contactez RM Plombier SARL pour une visite gratuite et un devis detaille. Nous intervenons a <a href="/plombier-caluire-et-cuire/">Caluire-et-Cuire</a>, <a href="/plombier-rillieux-la-pape/">Rillieux-la-Pape</a>, <a href="/plombier-miribel/">Miribel</a> et dans tout le secteur Ain-Rhone. Appelez le <a href="tel:0635464924">06 35 46 49 24</a>.</p>
+
+      <h2>Questions frequentes</h2>
+
+      <h3>Quel budget pour renover une salle de bain en 2026 ?</h3>
+      <p>Le budget depend de l'ampleur des travaux. Renovation legere (robinetterie, meuble) : <span class="whitespace-nowrap">2 000</span> a <span class="whitespace-nowrap">4 000</span> euros. Renovation moyenne avec reprise de plomberie : <span class="whitespace-nowrap">5 000</span> a <span class="whitespace-nowrap">9 000</span> euros. Renovation complete du sol au plafond : <span class="whitespace-nowrap">8 000</span> a <span class="whitespace-nowrap">15 000</span> euros. Ces prix incluent fourniture et pose dans l'Ain et le Rhone.</p>
+
+      <h3>Combien coute une douche italienne ?</h3>
+      <p>La pose d'une douche italienne coute entre <span class="whitespace-nowrap">1 500</span> et <span class="whitespace-nowrap">4 000</span> euros (fourniture et pose), selon la taille, le type de receveur et le carrelage choisi. Ce prix inclut l'etancheite, le receveur extra-plat ou maconne, la robinetterie et le carrelage de la zone douche.</p>
+
+      <h3>Quelles aides financieres pour renover une salle de bain ?</h3>
+      <p>Pour les personnes en perte d'autonomie, l'ANAH propose l'aide "Habiter facile" jusqu'a <span class="whitespace-nowrap">10 000</span> euros. Le credit d'impot PMR couvre 25 % des depenses d'adaptation. La TVA reduite a 10 % s'applique pour tous les logements de plus de 2 ans. L'eco-PTZ peut financer les travaux d'amelioration energetique. Consultez notre page <a href="/services/renovation-salle-de-bain/">renovation salle de bain</a> pour plus de details.</p>
+
+      <h3>Combien de temps dure une renovation de salle de bain ?</h3>
+      <p>Comptez 3 a 5 jours pour une renovation legere, 1 a 2 semaines pour une renovation moyenne avec reprise de plomberie, et 2 a 3 semaines pour une renovation complete. Ces delais dependent de la complexite du chantier et de la disponibilite des materiaux.</p>
 
       <!-- CTA final -->
       <div class="not-prose mt-10 text-center">
-        <a href="/contact/" class="btn-primary">Contactez-nous pour un devis</a>
+        <a href="/contact/" class="btn-primary">Demander un devis renovation gratuit</a>
       </div>
     </div>
   </section>

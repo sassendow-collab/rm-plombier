@@ -85,26 +85,36 @@ const faq = [
       <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
     </div>
     <div class="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
-          <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-          <span class="text-sm font-medium text-white/90">Urgence 7j/7, intervention rapide</span>
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+            <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+            <span class="text-sm font-medium text-white/90">Urgence 7j/7, intervention rapide</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">
+            Dépannage plomberie urgence à Neyron et dans <span class="text-accent">l'Ain</span>
+          </h1>
+          <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
+            Fuite d'eau, WC bouché, chauffe-eau en panne. RM Plombier SARL intervient en urgence 7 jours sur 7 dans l'Ain et le Rhône.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              Appelez le 06 35 46 49 24
+            </a>
+            <a href="/contact/" class="btn-ghost text-base py-4 px-8">
+              Obtenir un devis
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">
-          Dépannage plomberie urgence à Neyron et dans <span class="text-accent">l'Ain</span>
-        </h1>
-        <p class="text-lg text-white/70 mb-8 leading-relaxed max-w-2xl">
-          Fuite d'eau, WC bouché, chauffe-eau en panne. RM Plombier SARL intervient en urgence 7 jours sur 7 dans l'Ain et le Rhône.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="tel:0635464924" class="btn-accent text-base py-4 px-8">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            Appelez le 06 35 46 49 24
-          </a>
-          <a href="/contact/" class="btn-ghost text-base py-4 px-8">
-            Obtenir un devis
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </a>
+        <div class="hidden lg:block">
+          <img
+            src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/evier-inox-cuisine-landscape.png"
+            alt="Évier inox de cuisine avec robinetterie professionnelle"
+            class="rounded-2xl shadow-2xl w-full aspect-[4/3] object-cover"
+            loading="eager"
+          />
         </div>
       </div>
     </div>
@@ -116,6 +126,9 @@ const faq = [
     <div class="max-w-4xl mx-auto px-4 lg:px-6 reveal">
       <span class="section-label">Présentation du service</span>
       <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-8">Votre plombier d'urgence dans l'Ain et le Rhône</h2>
+      <div class="mb-8 rounded-2xl overflow-hidden shadow-md">
+        <img src="https://emqtwhjbqlgyjfopbkqg.supabase.co/storage/v1/object/public/library-images/plomberie/plombier-evier-cuisine-square.png" alt="Plombier intervenant sur un évier de cuisine" class="w-full aspect-[21/9] object-cover" loading="lazy" />
+      </div>
       <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed">
         <p>Une fuite d'eau qui s'aggrave, un WC bouché un dimanche matin, un chauffe-eau qui lâche en plein hiver. Ces situations ne préviennent pas, et c'est pour cela que RM Plombier SARL assure un service de dépannage plomberie 7 jours sur 7, jours fériés compris.</p>
         <p>Depuis notre base de Neyron, nous couvrons l'ensemble du nord de l'agglomération lyonnaise. Notre temps d'intervention moyen est de 30 à 45 minutes selon votre localisation. Dès votre appel, nous évaluons la situation par téléphone et vous donnons les premiers conseils pour limiter les dégâts en attendant notre arrivée : couper l'arrivée d'eau, isoler le circuit concerné, protéger vos biens.</p>
